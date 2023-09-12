@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
-  selector: 'app-filter-tabs',
+  selector: 'filter-tabs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [MatTabsModule],
   templateUrl: './filter-tabs.component.html',
-  styleUrls: ['./filter-tabs.component.css']
 })
 export class FilterTabsComponent {
 
