@@ -3,10 +3,10 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon'
 
 @Component({
-  selector: 'top-toolbar',
+  selector: 'app-navbar',
   standalone: true,
   imports: [ MatToolbarModule, MatIconModule ],
-  templateUrl: './top-tool-bar.component.html',
+  templateUrl: './navbar.component.html',
 })
 export class TopToolBarComponent {
 
