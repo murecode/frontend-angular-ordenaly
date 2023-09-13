@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon'
 
 @Component({
   selector: 'top-toolbar',
   standalone: true,
-  imports: [ MatToolbarModule, CommonModule ],
+  imports: [ MatToolbarModule, MatIconModule ],
   templateUrl: './top-tool-bar.component.html',
 })
 export class TopToolBarComponent {
