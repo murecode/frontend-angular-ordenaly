@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
+import { MainPageComponent } from './pages/dashboard/main-page/main-page.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    AppRoutingModule,
 
     MainPageComponent,
 

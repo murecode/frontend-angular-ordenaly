@@ -5,7 +5,7 @@ import { MatListModule } from '@angular/material/list';
 
 
 @Component({
-  selector: 'sidebar',
+  selector: 'app-sidebar',
   standalone: true,
   imports: [ MatSidenavModule, MatListModule ],
   templateUrl: './sidebar.component.html',
