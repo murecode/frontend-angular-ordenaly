@@ -3,7 +3,7 @@ import { ProductPageComponent } from "./pages/product-page/product-page.componen
 
 export default [
   {
-    path: 'product',
+    path: 'new-product',
     component: ProductPageComponent
   }
 ] as Route[]

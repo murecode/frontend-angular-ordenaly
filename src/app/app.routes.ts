@@ -1,30 +1,30 @@
 import { Routes } from "@angular/router";
 
 import { Error404PageComponent } from "./modules/error404-page/error404-page.component";
+import { MainPageComponent } from "./modules/dashboard/pages/main-page/main-page.component";
 
 export const routes: Routes = [
 
   { 
-    path: 'dashboard', 
-    loadChildren: () => import('./modules/dashboard/dashboard.routes')
+    path: '', 
+    component: MainPageComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./modules/auth/auth.routes')
   },
   {
     path: 'product',
     loadChildren: () => import('./modules/products/product.routes')
   },
-  { 
-    path: '404',
-    component: Error404PageComponent
-  },
-  { 
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
+  {
+    path: 'order',
+    loadChildren: () => import('./modules/orders/order.routes')
   },
   { 
     path: '**',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
+    component: Error404PageComponent
   },
-
+  
 ];
