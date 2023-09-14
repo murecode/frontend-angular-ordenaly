@@ -3,7 +3,7 @@ import { FilterTabsComponent } from 'src/app/components/fiterTabs/filter-tabs.co
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { SearchComponent } from 'src/app/components/search/search.component';
 import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
-import { TopToolBarComponent } from 'src/app/components/top-tool-bar/top-tool-bar.component';
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-main-page',
@@ -12,7 +12,7 @@ import { TopToolBarComponent } from 'src/app/components/top-tool-bar/top-tool-ba
     SearchComponent,
     SidebarComponent, 
     FilterTabsComponent,
-    TopToolBarComponent,
+    NavbarComponent,
     FooterComponent
   ],
   templateUrl: './main-page.component.html',

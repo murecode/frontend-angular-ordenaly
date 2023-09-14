@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon'
   imports: [ MatToolbarModule, MatIconModule ],
   templateUrl: './navbar.component.html',
 })
-export class TopToolBarComponent {
+export class NavbarComponent {
 
+  
 }

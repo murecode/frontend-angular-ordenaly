@@ -12,5 +12,7 @@ import { MatListModule } from '@angular/material/list';
 })
 export class SidebarComponent {
 
+  public showFiller = false;
+
 
 };

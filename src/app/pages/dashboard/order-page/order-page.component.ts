@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './order-page.component.html',
-  styleUrls: ['./order-page.component.css']
 })
 export class OrderPageComponent {
 
