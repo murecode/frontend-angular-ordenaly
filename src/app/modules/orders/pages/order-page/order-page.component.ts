@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { FilterTabsComponent } from 'src/app/shared/components/fiterTabs/filter-tabs.component';
 
 @Component({
   selector: 'app-order-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ FilterTabsComponent ],
   templateUrl: './order-page.component.html',
 })
 export class OrderPageComponent {
