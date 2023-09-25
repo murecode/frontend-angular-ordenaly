@@ -1,5 +1,4 @@
 import { Routes } from "@angular/router";
-
 import { Error404PageComponent } from "./shared/components/error404-page/error404-page.component"; 
 import { LayoutPageComponent } from "./layout/layout-page.component"; 
 
@@ -15,11 +14,11 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.routes')
   },
   {
-    path: 'product',
+    path: 'products',
     loadChildren: () => import('./models/products/product.routes')
   },
   {
-    path: 'order',
+    path: 'orders',
     loadChildren: () => import('./models/orders/order.routes')
   },
   { 
