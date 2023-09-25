@@ -4,7 +4,7 @@ import { OrderPageComponent } from "./order-page.component";
 
 export default [
   { 
-    path: 'new-order', component: OrderPageComponent 
+    path: 'new', component: OrderPageComponent 
   },
   { 
     path: '', component: LayoutPageComponent, 

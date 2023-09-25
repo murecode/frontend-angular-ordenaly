@@ -5,7 +5,7 @@ import { LayoutPageComponent } from "src/app/layout/layout-page.component";
 export default [
   
   {
-    path: 'new-product',
+    path: 'new',
     component: ProductPageComponent
   },
   { 
