@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MainPageComponent } from './modules/dashboard/pages/main-page/main-page.component';
+import { LayoutPageComponent } from './layout/layout-page.component';
 
 @Component({
   selector: 'app-root',
   template:'<router-outlet></router-outlet>',
   standalone: true,
-  imports: [ RouterOutlet, MainPageComponent ],
+  imports: [ RouterOutlet, LayoutPageComponent ],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

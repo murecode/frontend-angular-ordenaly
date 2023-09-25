@@ -1,5 +1,5 @@
 import { Route } from "@angular/router";
-import { ProductPageComponent } from "./pages/product-page/product-page.component";
+import { ProductPageComponent } from "./product-page.component"; 
 
 export default [
   {

@@ -5,7 +5,7 @@ import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.compone
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'app-layout-page',
   standalone: true,
   imports: [
     SidebarComponent, 
@@ -14,9 +14,9 @@ import { RouterOutlet } from '@angular/router';
 
     RouterOutlet,
   ],
-  templateUrl: './main-page.component.html',
+  templateUrl: './layout-page.component.html',
 })
-export class MainPageComponent {
+export class LayoutPageComponent {
 
 
 
