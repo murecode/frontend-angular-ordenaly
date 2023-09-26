@@ -1,13 +1,13 @@
 import { Routes } from "@angular/router";
 import { Error404PageComponent } from "./shared/components/error404-page/error404-page.component"; 
-import { LayoutPageComponent } from "./layout/layout-page.component"; 
+import { HomePageComponent } from "./shared/pages/home-page/home-page.component";
 
+// ordenaly-app.com/
 export const routes: Routes = [
 
   { 
-    path: '', 
-    component: LayoutPageComponent,
-    pathMatch: 'full'
+    path: 'home', 
+    component: HomePageComponent,
   },
   {
     path: 'auth',
@@ -20,6 +20,11 @@ export const routes: Routes = [
   {
     path: 'orders',
     loadChildren: () => import('./models/orders/order.routes')
+  },
+  { 
+    path: '', 
+    component: HomePageComponent,
+    pathMatch: 'full'
   },
   { 
     path: '**',
