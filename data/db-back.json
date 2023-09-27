@@ -1,0 +1,73 @@
+{
+  "orders": [
+    {
+      "id": "1",
+      "waiter": "Rosa",
+      "ticket": 6,
+      "table": 2,
+      "items": [
+        {
+          "id": 3,
+          "producto": "Pollo",
+          "catidad": 2
+        },
+        {
+          "id": 5,
+          "producto": "Carne",
+          "catidad": 2
+        },
+        {
+          "id": 6,
+          "producto": "Pescado",
+          "catidad": 2
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "waiter": "Martha",
+      "ticket": 7,
+      "table": 3,
+      "items": [
+        {
+          "id": 7,
+          "producto": "Pollo",
+          "catidad": 2
+        },
+        {
+          "id": 8,
+          "producto": "Carne",
+          "catidad": 2
+        },
+        {
+          "id": 9,
+          "producto": "Pescado",
+          "catidad": 2
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "waiter": "Jean",
+      "ticket": 8,
+      "table": 8,
+      "items": [
+        {
+          "id": 8,
+          "producto": "Pollo",
+          "catidad": 2
+        },
+        {
+          "id": 9,
+          "producto": "Carne",
+          "catidad": 2
+        },
+        {
+          "id": 10,
+          "producto": "Pescado",
+          "catidad": 2
+        }
+      ]
+    }
+  ]
+}
