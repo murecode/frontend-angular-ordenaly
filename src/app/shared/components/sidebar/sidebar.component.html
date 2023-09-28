@@ -1,23 +1,22 @@
-<button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+<!-- <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
   type="button"
-  class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+  class="inline-flex items-center p-2 mt-2 ml-3 text-sm rounded-lg sm:hidden">
   <span class="sr-only">Open sidebar</span>
   <mat-icon>menu</mat-icon>
-</button>
+</button> -->
 
 <aside class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
   <div class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200">
     <div class="pt-5 mt-5 space-y-2 border-t border-gray-200">
 
       <mat-list>
-
         <mat-list-item>
-          <span matListItemTitle><a mat-button href="https://www.google.com/" target="_blank">Ordernes</a></span>
+          <span matListItemTitle><a mat-button href="./layout-page.component.html">Ordernes</a></span>
           <span matListItemLine>Second line</span>
         </mat-list-item>
 
         <mat-list-item>
-          <span matListItemTitle><a mat-button href="https://www.google.com/" target="_blank">Productos</a></span>
+          <span matListItemTitle><a mat-button href="http://localhost:3000/products/">Productos</a></span>
           <span>Second line</span>
         </mat-list-item>
 
@@ -25,14 +24,14 @@
           <span matListItemTitle>Title</span>
           Second line
         </mat-list-item>
-
       </mat-list>
 
     </div>
   </div>
 
-  <!-- <div class="hidden absolute bottom-0 left-0 justify-center p-4
+  <div class="hidden absolute bottom-0 left-0 justify-center p-4
             space-x-4 w-full lg:flex bg-orange-400 z-20 border-r border-gray-200">
-  </div> -->
+            <mat-icon>settings</mat-icon>
+  </div>
 
 </aside>
