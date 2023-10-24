@@ -15,11 +15,11 @@ export const routes: Routes = [
   },
   {
     path: 'products',
-    loadChildren: () => import('./models/products/product.routes')
+    loadChildren: () => import('./model/products/product.routes')
   },
   {
     path: 'orders',
-    loadChildren: () => import('./models/orders/order.routes')
+    loadChildren: () => import('./model/orders/order.routes')
   },
   { 
     path: '', 

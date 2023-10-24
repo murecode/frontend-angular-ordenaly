@@ -5,6 +5,7 @@
       "waiter": "Rosa",
       "ticket": 6,
       "table": 2,
+      "status": "pendiente",
       "items": [
         {
           "id": 3,
@@ -28,15 +29,21 @@
       "waiter": "Martha",
       "ticket": 7,
       "table": 3,
+      "status": "pendiente",
       "items": [
         {
           "id": 7,
-          "producto": "Mariscos",
+          "producto": "Pollo",
           "catidad": 2
         },
         {
           "id": 8,
-          "producto": "Hamburgesa",
+          "producto": "Carne",
+          "catidad": 2
+        },
+        {
+          "id": 9,
+          "producto": "Pescado",
           "catidad": 2
         }
       ]
@@ -46,23 +53,31 @@
       "waiter": "Jean",
       "ticket": 8,
       "table": 8,
+      "status": "completo",
       "items": [
         {
           "id": 8,
-          "producto": "Sancocho",
+          "producto": "Pollo",
           "catidad": 2
         },
         {
           "id": 9,
-          "producto": "Filete",
+          "producto": "Carne",
           "catidad": 2
         },
         {
           "id": 10,
-          "producto": "Ajiaco",
+          "producto": "Pescado",
           "catidad": 2
         }
       ]
+    },
+    {
+      "id": "pGgECi8",
+      "waiter": "Martha",
+      "ticket": "12",
+      "table": "2",
+      "status": "completa"
     }
   ]
 }

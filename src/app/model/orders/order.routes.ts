@@ -9,14 +9,14 @@ export default [
     path: '', component: LayoutPageComponent, 
     children: [
       {
-        path: 'new-order', component: NewPageComponent 
+        path: 'new', component: NewPageComponent 
       },
       {
         path: 'edit/:id', component: NewPageComponent
       },
       {
         path: 'list', component: ListPageComponent
-      }
+      },
     ]
   },
   

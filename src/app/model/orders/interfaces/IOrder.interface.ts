@@ -5,6 +5,7 @@ export interface IOrder {
   waiter: string;
   ticket: number;
   table:  number;
+  status: string
   items:  Item[];
 }
 

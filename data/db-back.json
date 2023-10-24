@@ -5,6 +5,7 @@
       "waiter": "Rosa",
       "ticket": 6,
       "table": 2,
+      "status": "pendiente",
       "items": [
         {
           "id": 3,
@@ -28,6 +29,7 @@
       "waiter": "Martha",
       "ticket": 7,
       "table": 3,
+      "status": "pendiente",
       "items": [
         {
           "id": 7,
@@ -51,6 +53,7 @@
       "waiter": "Jean",
       "ticket": 8,
       "table": 8,
+      "status": "completo",
       "items": [
         {
           "id": 8,
