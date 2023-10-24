@@ -78,6 +78,13 @@
       "ticket": "12",
       "table": "2",
       "status": "completa"
+    },
+    {
+      "id": "NXpGsRk",
+      "waiter": "Jean",
+      "ticket": "15",
+      "table": "2",
+      "status": "pendiente"
     }
   ]
 }
