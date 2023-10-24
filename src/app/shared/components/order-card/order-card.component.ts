@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { OrderService } from 'src/app/model/orders/services/orders.service';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { IOrder } from 'src/app/model/orders/interfaces/IOrder.interface';
+import { MatButtonModule } from '@angular/material/button';
+
+import { OrderService } from 'src/app/order/service/order.service';
+import { IOrder } from 'src/app/order/interface/IOrder.interface';
 
 @Component({
   selector: 'app-order-card',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatIconModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule],
   templateUrl: './order-card.component.html',
   styles: [
   ]
