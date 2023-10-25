@@ -1,5 +1,9 @@
-<!-- <main class="w-full md:pl-64 pt-12"> -->
-  <app-filter-tabs/>
-  <app-order-card/>
-<!-- </main> -->
+
+<mat-tab-group>
+  <mat-tab *ngFor="let filterTab of filterTabs" label="{{filterTab}}"></mat-tab>
+</mat-tab-group>
+
+<!-- <app-filter-tabs/> -->
+<app-order-card/>
+
 

@@ -12,9 +12,26 @@
       <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="">Ordenaly</span>
+      <span class="text-2xl font-semibold text-white">Ordenaly</span>
       <span class="pl-8"></span>
     </mat-toolbar>
+
+    <mat-list>
+      <mat-list-item>
+        <span matListItemTitle><a mat-button href="./layout-page.component.html">Ordernes</a></span>
+        <span matListItemLine>Second line</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <span matListItemTitle><a mat-button href="http://localhost:3000/product">Productos</a></span>
+        <span>Second line</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <span matListItemTitle>Title</span>
+        Second line
+      </mat-list-item>
+    </mat-list>
 
   </mat-sidenav>
 
@@ -24,17 +41,16 @@
       <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="">Ordenaly</span>
+      <span class="text-2xl font-semibold text-white ">Ordenaly</span>
       <span class="pl-8"></span>
-      <button mat-icon-button class="">
+      <!-- <button mat-icon-button class="">
         <mat-icon>favorite</mat-icon>
-      </button>
+      </button> -->
     </mat-toolbar>
     
     <router-outlet></router-outlet>
 
   </mat-sidenav-content>
-  
   
 </mat-sidenav-container>
 

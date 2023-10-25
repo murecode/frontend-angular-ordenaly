@@ -36,11 +36,4 @@ export class OrderService {
     return this.http.get<IOrder[]>(`${this.baseUrl}/order`)
   }
 
-  getOrderById( id: String ): Observable<IOrder|undefined>  {
-    return this.http.get<IOrder>(`${this.baseUrl}/order/${ id }`)
-      .pipe(
-        catchError( error => of(undefined) )
-      )
-  }
-
 }
