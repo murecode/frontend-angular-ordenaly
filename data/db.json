@@ -1,5 +1,5 @@
 {
-  "orders": [
+  "order": [
     {
       "id": "1",
       "waiter": "Rosa",
@@ -73,17 +73,17 @@
       ]
     },
     {
-      "id": "pGgECi8",
-      "waiter": "Martha",
-      "ticket": "12",
+      "id": "YcecB8X",
+      "waiter": "Rosa",
+      "ticket": "88",
       "table": "2",
-      "status": "completa"
+      "status": "pendiente"
     },
     {
-      "id": "NXpGsRk",
-      "waiter": "Jean",
-      "ticket": "15",
-      "table": "2",
+      "id": "sdsQcAG",
+      "waiter": "Martha",
+      "ticket": "111",
+      "table": "3",
       "status": "pendiente"
     }
   ]

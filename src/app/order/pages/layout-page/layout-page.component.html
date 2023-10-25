@@ -1,0 +1,40 @@
+<!-- <app-sidebar></app-sidebar> -->
+<!-- <app-navbar></app-navbar>   -->
+
+
+
+
+<mat-sidenav-container class="w-auto">
+
+  <mat-sidenav #sidenav mode="push" class="w-64 h-auto">
+
+    <mat-toolbar class="bg-orange-400">
+      <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="">Ordenaly</span>
+      <span class="pl-8"></span>
+    </mat-toolbar>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar class="bg-orange-400">
+      <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="">Ordenaly</span>
+      <span class="pl-8"></span>
+      <button mat-icon-button class="">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </mat-toolbar>
+    
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+  
+  
+</mat-sidenav-container>
+

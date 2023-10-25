@@ -19,9 +19,7 @@ export class OrderCardComponent implements OnInit{
 
   public orderList: IOrder[] = [];
 
-  constructor( private orderService: OrderService ) {
-    console.log("ListPageComponent")
-  }
+  constructor( private orderService: OrderService ) {}
 
   ngOnInit(): void { 
     this.orderService.getOrders()
