@@ -14,11 +14,11 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.routes')
   },
   {
-    path: 'product',
+    path: 'products',
     loadChildren: () => import('./product/product.routes')
   },
   {
-    path: 'order',
+    path: 'orders',
     loadChildren: () => import('./order/order.routes')
   },
   { 

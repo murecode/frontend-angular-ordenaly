@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
-import { Item } from '../../interface/IOrder.interface';
 import { OrderService } from '../../service/order.service';
 import { IOrder } from '../../interface/IOrder.interface';
 
 @Component({
   selector: 'app-new-page',
   standalone: true,
-  imports: [ CommonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule ],
+  imports: [ CommonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatButtonModule ],
   templateUrl: './new-page.component.html',
   styles: [
   ]
@@ -38,7 +39,7 @@ export class NewPageComponent {
 
     if( this.orderForm.invalid ) return;
 
-    if( this.currentOrder.id ) {
+    if( this.currentOrder.orden ) {
       this.orderService.updateOrder( this.currentOrder )
         .subscribe( order => {
           // TODO: mostrar snackbar

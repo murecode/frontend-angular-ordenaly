@@ -9,23 +9,24 @@ import { environment } from "src/environments/environment.dev";
 export class OrderService {
 
   private baseUrl: string = environment.baseUrl;
-  constructor(private http: HttpClient) { };
+
+  constructor( private http: HttpClient ) {};
 
   displayMsg(){
     return "Run OrderService!"
   }
 
   newOrder( order: IOrder ): Observable<IOrder> {
-    return this.http.post<IOrder>(`${this.baseUrl}/order/`, order);
+    return this.http.post<IOrder>(`${this.baseUrl}/orders/`, order);
   }
 
   updateOrder( order: IOrder ): Observable<IOrder> {
-    if( !order.id ) throw Error("La orden es requerida"); 
-    return this.http.patch<IOrder>(`${this.baseUrl}/order/${ order.id }`, order)
+    if( !order.orden ) throw Error("La orden es requerida"); 
+    return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.orden }`, order)
   }
 
   removeOrderById( order: IOrder ): Observable<boolean> {
-    return this.http.delete(`${this.baseUrl}/order/${ order.id }`)
+    return this.http.delete(`${this.baseUrl}/orders/${ order.orden }`)
       .pipe(
         catchError( err => of(false) ),
         map( resp => true)
@@ -33,7 +34,14 @@ export class OrderService {
   }
 
   getOrders():Observable<IOrder[]> {
-    return this.http.get<IOrder[]>(`${this.baseUrl}/order`)
+    return this.http.get<IOrder[]>(`${this.baseUrl}/orders`)
+  }
+
+  getOrderById( id: string): Observable<IOrder|undefined> {
+    return this.http.get<IOrder>(`${ this.baseUrl }/orders/${ id }`)
+      .pipe(
+        catchError( error => of(undefined))
+      );
   }
 
 }

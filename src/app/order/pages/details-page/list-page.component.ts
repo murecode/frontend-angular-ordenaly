@@ -1,25 +1,21 @@
 
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { NgFor } from '@angular/common';
 
 import { OrderService } from '../../service/order.service';
 import { IOrder } from '../../interface/IOrder.interface';
 
 @Component({
-  selector: 'app-list-page',
+  selector: 'app-details-page',
   standalone: true,
-  imports: [ MatTabsModule, NgFor, MatButtonModule, MatCardModule, MatIconModule, RouterModule ],
-  templateUrl: './list-page.component.html',
+  imports: [ MatTabsModule, NgFor, MatButtonModule, MatCardModule ],
+  templateUrl: './details-page.component.html',
 })
-export class ListPageComponent  {
-
-  filterTabs: string[] = ['Todo','Pendientes','Completas']
+export class DetailsPageComponent  {
 
   public orderList: IOrder[] = [];
 

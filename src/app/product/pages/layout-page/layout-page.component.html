@@ -1,26 +1,52 @@
-<div class="grid grid-cols-12">
+<mat-sidenav-container class="w-auto">
 
-  <p>On layout Product page</p>
+  <mat-sidenav #sidenav mode="push" class="w-64 h-auto">
 
-  <div class="col-span-12">
-    <app-navbar></app-navbar>
-  </div>
+    <mat-toolbar class="bg-orange-400">
+      <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="text-2xl font-semibold text-white">Ordenaly</span>
+      <span class="pl-8"></span>
+    </mat-toolbar>
 
-  <div class="col-span-2">
-    <app-sidebar></app-sidebar>
-  </div>
-  
-  <div class="col-span-10">
+    <mat-list>
+      <mat-list-item>
+        <span matListItemTitle>
+          <a mat-button routerLink="/orders/list">Ordernes</a></span>
+        <span matListItemLine>Second line</span>
+      </mat-list-item>
+
+      <div class="bg-orange-100">
+        <mat-list-item>
+          <span matListItemTitle><a mat-button>Productos</a></span>
+          <span >Gestiona tus productos</span>
+        </mat-list-item>
+      </div>
+
+      <mat-list-item>
+        <span matListItemTitle>Title</span>
+        Second line
+      </mat-list-item>
+    </mat-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar class="bg-orange-400">
+      <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="text-2xl font-semibold text-white ">Productos</span>
+      <span class="pl-8"></span>
+      <!-- <button mat-icon-button class="">
+        <mat-icon>favorite</mat-icon>
+      </button> -->
+    </mat-toolbar>
+
     <router-outlet></router-outlet>
-  </div>
 
-  <div class="col-span-12">
-    <app-footer></app-footer>
-  </div>
-    
-</div>
+  </mat-sidenav-content>
 
-
-
-
-
+</mat-sidenav-container>

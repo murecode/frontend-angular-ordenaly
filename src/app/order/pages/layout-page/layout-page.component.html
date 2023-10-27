@@ -1,29 +1,27 @@
-<!-- <app-sidebar></app-sidebar> -->
-<!-- <app-navbar></app-navbar>   -->
-
-
-
-
 <mat-sidenav-container class="w-auto">
 
   <mat-sidenav #sidenav mode="push" class="w-64 h-auto">
 
     <mat-toolbar class="bg-orange-400">
       <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
+        <mat-icon>keyboard_arrow_left</mat-icon>
       </button>
       <span class="text-2xl font-semibold text-white">Ordenaly</span>
       <span class="pl-8"></span>
     </mat-toolbar>
 
     <mat-list>
-      <mat-list-item>
-        <span matListItemTitle><a mat-button href="./layout-page.component.html">Ordernes</a></span>
-        <span matListItemLine>Second line</span>
-      </mat-list-item>
+      <div class="bg-orange-100">
+        <mat-list-item>
+          <span matListItemTitle><a mat-button routerLink="/orders/list">Ordernes</a></span>
+          <span matListItemLine>Second line</span>
+        </mat-list-item>
+      </div>
 
       <mat-list-item>
-        <span matListItemTitle><a mat-button href="http://localhost:3000/product">Productos</a></span>
+        <span matListItemTitle>
+          <a mat-button routerLink="/products">Productos</a>
+        </span>
         <span>Second line</span>
       </mat-list-item>
 
@@ -41,16 +39,31 @@
       <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="text-2xl font-semibold text-white ">Ordenaly</span>
+      <span class="text-2xl font-semibold text-white ">Ordenes</span>
       <span class="pl-8"></span>
       <!-- <button mat-icon-button class="">
         <mat-icon>favorite</mat-icon>
       </button> -->
+
+      <!-- avatar -->
+      <button clas type="button" class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0"
+        routerLink="/auth/login">
+        <img class="w-8 h-8 rounded-full"
+          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png" alt="user photo" />
+      </button>
+
     </mat-toolbar>
-    
-    <router-outlet></router-outlet>
+
+    <div class="flex flex-wrap">
+      <div class=" flex-auto w-64">
+        <router-outlet></router-outlet>
+      </div>
+      <div class=" flex-auto w-64">
+        <p>Esto es otra seccion</p>
+        <app-details-page></app-details-page>
+      </div>
+    </div>
 
   </mat-sidenav-content>
-  
-</mat-sidenav-container>
 
+</mat-sidenav-container>
