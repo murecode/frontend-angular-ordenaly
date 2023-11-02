@@ -1,6 +1,6 @@
-<mat-sidenav-container class="w-auto">
+<mat-sidenav-container class="w-auto h-screen">
 
-  <mat-sidenav #sidenav mode="push" class="w-64 h-auto">
+  <mat-sidenav #sidenav mode="push" class="w-64 h-screen">
 
     <mat-toolbar class="bg-orange-400">
       <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
@@ -16,7 +16,6 @@
           <span matListItemTitle>
             <a mat-button
               routerLink="/orders/list"
-              routerLinkActive=""
             >Ordernes</a></span>
           <span matListItemLine>Second line</span>
         </mat-list-item>
@@ -26,12 +25,12 @@
         <span matListItemTitle>
           <a mat-button routerLink="/products">Productos</a>
         </span>
-        <span>Second line</span>
+        <span>Administra el menú</span>
       </mat-list-item>
 
       <mat-list-item>
-        <span matListItemTitle>Title</span>
-        Second line
+        <span matListItemTitle>Personal</span>
+        Gestiona tus colaboradores
       </mat-list-item>
     </mat-list>
 
@@ -63,7 +62,6 @@
         <router-outlet></router-outlet>
       </div>
       <div class=" flex-auto w-64">
-        <p>Esto es otra seccion</p>
         <app-details-page></app-details-page>
       </div>
     </div>

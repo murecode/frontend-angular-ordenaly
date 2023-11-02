@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": 1,        
+      "productName": "pizza",
+      "description": "napolitana con queso",
+      "price": 12000,      
+      "inStock": true  
+    },
+    {
+      "id": 2,        
+      "productName": "sandwich",
+      "description": "pavo y salsa de ajo",
+      "price": 15200,      
+      "inStock": true  
+    },
+    {
+      "id": 3,        
+      "productName": "hamburgesa",
+      "description": "carne a la parrilla y queso amarillo",
+      "price": 25000,      
+      "inStock": false  
+    },
+    {
+      "id": 4,        
+      "productName": "hot dog",
+      "description": "mucho queso y salsas",
+      "price": 13600,      
+      "inStock": true  
+    }
+  ]
+}

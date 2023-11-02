@@ -1,1 +1,17 @@
 <p>list-page works!</p>
+
+<ul>
+  <li>Hola</li>
+  <li>Como</li>
+  <li>Estas</li>
+</ul>
+
+<ul *ngFor="let product of productList">
+  <li>
+    {{product.id}}
+    {{product.productName}}
+    {{product.description}}
+    {{product.price}}
+    {{product.inStock}}
+  </li>
+</ul>

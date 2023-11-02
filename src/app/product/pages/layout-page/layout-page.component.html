@@ -1,6 +1,6 @@
-<mat-sidenav-container class="w-auto">
+<mat-sidenav-container class="w-auto h-screen">
 
-  <mat-sidenav #sidenav mode="push" class="w-64 h-auto">
+  <mat-sidenav #sidenav mode="push" class="w-64 h-screen">
 
     <mat-toolbar class="bg-orange-400">
       <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
@@ -45,7 +45,7 @@
       </button> -->
     </mat-toolbar>
 
-    <mat-tab-group>
+    <mat-tab-group animationDuration="0ms">
       <mat-tab *ngFor="let filterTab of filterTabs" label="{{filterTab}}"></mat-tab>
     </mat-tab-group>
 

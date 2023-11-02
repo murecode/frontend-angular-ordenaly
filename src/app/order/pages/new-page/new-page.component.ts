@@ -39,7 +39,7 @@ export class NewPageComponent {
 
     if( this.orderForm.invalid ) return;
 
-    if( this.currentOrder.orden ) {
+    if( this.currentOrder.id ) {
       this.orderService.updateOrder( this.currentOrder )
         .subscribe( order => {
           // TODO: mostrar snackbar

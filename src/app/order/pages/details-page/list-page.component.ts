@@ -17,13 +17,21 @@ import { IOrder } from '../../interface/IOrder.interface';
 })
 export class DetailsPageComponent  {
 
-  public orderList: IOrder[] = [];
+  // public orderList: IOrder[] = [];
+  public order: IOrder[] = [];
 
   constructor( private orderService: OrderService ) {}
 
-  ngOnInit(): void { 
-    this.orderService.getOrders()
-        .subscribe( order => this.orderList = order );
-  }
+  // ngOnInit(): void { 
+  //   this.orderService.getOrders()
+  //       .subscribe( order => this.orderList = order );
+  // }
+
+  // showOrderDetails( id: string ) {
+  //   this.orderService.getOrderDetails( id )
+  //     .subscribe(order => this.order = order)
+  // }
+
+  
 
 }

@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
-import { Error404PageComponent } from "./shared/pages/error404-page/error404-page.component"; 
+
 import { HomePageComponent } from "./shared/pages/home-page/home-page.component";
+import { Error404PageComponent } from "./shared/pages/error404-page/error404-page.component"; 
 
 // ordenaly-app.com/
 export const routes: Routes = [

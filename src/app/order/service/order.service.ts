@@ -12,36 +12,34 @@ export class OrderService {
 
   constructor( private http: HttpClient ) {};
 
-  displayMsg(){
-    return "Run OrderService!"
-  }
 
   newOrder( order: IOrder ): Observable<IOrder> {
-    return this.http.post<IOrder>(`${this.baseUrl}/orders/`, order);
-  }
-
-  updateOrder( order: IOrder ): Observable<IOrder> {
-    if( !order.orden ) throw Error("La orden es requerida"); 
-    return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.orden }`, order)
-  }
-
-  removeOrderById( order: IOrder ): Observable<boolean> {
-    return this.http.delete(`${this.baseUrl}/orders/${ order.orden }`)
-      .pipe(
-        catchError( err => of(false) ),
-        map( resp => true)
-      )
+    return this.http.post<IOrder>(`${this.baseUrl}/orders`, order);
   }
 
   getOrders():Observable<IOrder[]> {
     return this.http.get<IOrder[]>(`${this.baseUrl}/orders`)
   }
 
-  getOrderById( id: string): Observable<IOrder|undefined> {
+  getOrderById( id: string ): Observable<IOrder|undefined> {
     return this.http.get<IOrder>(`${ this.baseUrl }/orders/${ id }`)
       .pipe(
-        catchError( error => of(undefined))
+        catchError( () => of(undefined))
       );
   }
+
+  updateOrder( order: IOrder ): Observable<IOrder> {
+    if( !order.id ) throw Error("La orden es requerida"); 
+    return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.id }`, order)
+  }
+
+  removeOrder( id: string ): Observable<boolean> {
+    return this.http.delete(`${this.baseUrl}/orders/${ id }`)
+      .pipe(
+        catchError( err => of(false) ),
+        map( resp => true)
+      )
+  }
+
 
 }

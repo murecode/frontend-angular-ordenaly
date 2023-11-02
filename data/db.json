@@ -1,45 +1,72 @@
 {
   "orders": [
     {
-      "orden": 15,
-      "turno": 9,
-      "mesa": 1,
-      "mesero": "Rosa",
-      "estado": "PENDIENTE",
-      "pedido": [
-          {
-              "id": 9,
-              "producto": "Pizza",
-              "cantidad": 3
-          },
-          {
-              "id": 10,
-              "producto": "Hamburgesa",
-              "cantidad": 2
-          }
-      ]
-  },
-  {
-      "orden": 17,
+      "id": 17,
       "turno": 10,
       "mesa": 3,
       "mesero": "Marta",
       "estado": "PENDIENTE",
       "pedido": [
-          {
-              "id": 11,
-              "producto": "Hamburgesa",
-              "cantidad": 1
-          }
+        {
+          "id": 11,
+          "producto": "Hamburgesa",
+          "cantidad": 1
+        }
       ]
-  },
-  {
-      "orden": 18,
-      "turno": 8,
-      "mesa": 6,
+    },
+    {
+      "id": 15,
+      "turno": 9,
+      "mesa": 1,
       "mesero": "Rosa",
       "estado": "PENDIENTE",
-      "pedido": []
-  }
+      "pedido": [
+        {
+          "id": 9,
+          "producto": "Pizza",
+          "cantidad": 3
+        },
+        {
+          "id": 10,
+          "producto": "Hamburgesa",
+          "cantidad": 2
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "turno": 34,
+      "mesa": 6,
+      "mesero": "Ricardo",
+      "estado": "COMPLETA",
+      "pedido": [
+        {
+          "id": 13,
+          "producto": "Sancocho",
+          "cantidad": 2
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "waiter": "Jean",
+      "ticket": "66",
+      "table": "3",
+      "status": "completa",
+      "items": null
+    },
+    {
+      "id": 122,
+      "waiter": "Rosa",
+      "ticket": "666",
+      "table": "2",
+      "status": "completa",
+      "items": null
+    }
   ]
+
 }
+
+
+
+

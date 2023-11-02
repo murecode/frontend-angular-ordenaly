@@ -5,16 +5,20 @@
 <mat-card *ngFor="let order of orderList" class="bg-white rounded-md border shadow-md m-2">
   <mat-card-header>
     <mat-card-title class="text-sm">Turno: {{ order.turno }}</mat-card-title>
+    <mat-card-subtitle class="text-sm">No. Orden: {{ order.id }}</mat-card-subtitle>
     <mat-card-subtitle class="text-sm">Mesa: {{ order.mesa }}</mat-card-subtitle>
     <mat-card-subtitle class="text-sm">Mesero: {{ order.mesero }}</mat-card-subtitle>
     <mat-card-subtitle class="text-sm">Estado: {{ order.estado }}</mat-card-subtitle>    
   </mat-card-header>
+
   <mat-card-actions align="end">
-    <button mat-button>
-      <a [routerLink]="['/order/list']" ></a> 
-      <mat-icon>keyboard_arrow_right</mat-icon>
-      Ver pedido
-    </button>
+    <div class="bg-orange-400 p-1.5 rounded">
+      <button class="text-white" routerLink="/products">
+        <!-- <mat-icon>keyboard_arrow_right</mat-icon> -->
+        Ver detalles
+      </button>
+    </div>
   </mat-card-actions>
+
 </mat-card>
 
