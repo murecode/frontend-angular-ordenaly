@@ -1,16 +1,12 @@
 import { Routes } from "@angular/router";
 
-import { HomePageComponent } from "./shared/pages/home-page/home-page.component";
+import { HomePageComponent } from "./others/home-page/home-page.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { Error404PageComponent } from "./shared/pages/error404-page/error404-page.component"; 
+import { Error404PageComponent } from "./others/error404-page/error404-page.component"; 
 
 // ordenaly-app.com/
 export const routes: Routes = [
 
-  { 
-    path: 'home', 
-    component: HomePageComponent,
-  },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.routes')

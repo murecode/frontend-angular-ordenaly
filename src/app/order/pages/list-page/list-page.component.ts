@@ -1,33 +1,32 @@
 
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 
-import { OrderService } from '../../service/order.service';
-import { IOrder } from '../../interface/IOrder.interface';
+// import { OrderService } from '../../service/order.service';
+// import { IOrder } from '../../interface/IOrder.interface';
+
+import { OrderCardComponent } from '../../components/order-card/order-card.component';
 
 @Component({
   selector: 'app-list-page',
   standalone: true,
-  imports: [ MatTabsModule, NgFor, MatButtonModule, MatCardModule, MatIconModule, RouterModule ],
+  imports: [ MatTabsModule, NgFor, OrderCardComponent ],
   templateUrl: './list-page.component.html',
 })
 export class ListPageComponent  {
 
   filterTabs: string[] = ['Todo','Pendientes','Completas']
 
-  public orderList: IOrder[] = [];
+  // public orderList: IOrder[] = [];
 
-  constructor( private orderService: OrderService ) {}
+  // constructor( private orderService: OrderService ) {}
 
-  ngOnInit(): void { 
-    this.orderService.getOrders()
-        .subscribe( order => this.orderList = order );
-  }
+  // ngOnInit(): void { 
+  //   this.orderService.getOrders()
+  //       .subscribe( order => this.orderList = order );
+  // }
 
 }
