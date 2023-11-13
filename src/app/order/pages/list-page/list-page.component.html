@@ -2,30 +2,9 @@
   <mat-tab *ngFor="let filterTab of filterTabs" label="{{filterTab}}"></mat-tab>
 </mat-tab-group>
 
-<mat-card *ngFor="let order of orderList" class="bg-white rounded-md border shadow-md m-2">
-  <mat-card-header>
-    <mat-card-title class="text-sm">Turno: {{ order.turno }}</mat-card-title>
-    <mat-card-subtitle class="text-sm">No. Orden: {{ order.id }}</mat-card-subtitle>
-    <mat-card-subtitle class="text-sm">Mesa: {{ order.mesa }}</mat-card-subtitle>
-    <mat-card-subtitle class="text-sm">Mesero: {{ order.mesero }}</mat-card-subtitle>
-    <mat-card-subtitle class="text-sm">Estado: {{ order.estado }}</mat-card-subtitle>    
-  </mat-card-header>
 
-  <mat-card-actions align="end">
-    <div class="bg-orange-400 p-1.5 rounded">
-      <button class="text-white" routerLink="/products">
-        <!-- <mat-icon>keyboard_arrow_right</mat-icon> -->
-        Ver detalles
-      </button>
-    </div>
-  </mat-card-actions>
+<main class="md: m-2">
+  
+  <order-card></order-card>
 
-</mat-card>
-
-
-<ul>
-  <li>Orden: 1</li>
-  <li>Orden: 2</li>
-  <li>Orden: 3</li>
-</ul>
-
+</main>
