@@ -49,19 +49,17 @@
     },
     {
       "id": 121,
-      "waiter": "Jean",
-      "ticket": "66",
-      "table": "3",
-      "status": "completa",
-      "items": null
-    },
-    {
-      "id": 122,
-      "waiter": "Rosa",
-      "ticket": "666",
-      "table": "2",
-      "status": "completa",
-      "items": null
+      "turno": 34,
+      "mesa": 6,
+      "mesero": "Adalberto",
+      "estado": "Pendiente",
+      "pedido": [
+        {
+          "id": 13,
+          "producto": "Pizza",
+          "cantidad": 5
+        }
+      ]
     }
   ]
 
