@@ -10,30 +10,34 @@
       <span class="pl-8"></span>
     </mat-toolbar>
 
-    <mat-list-item>
-      <span matListItemTitle>
-        <a mat-button routerLink="/dashboard/tickets">Turnos</a>
-      </span>
-      <span matListItemLine>Genera turnos</span>
-    </mat-list-item>
-
-    <mat-list>
-      <mat-list-item>
+    <mat-list class="mt-0">
+      <mat-list-item class="hover:bg-orange-200">
         <span matListItemTitle>
-          <a mat-button routerLink="/dashboard/orders/list">Ordernes</a></span>
+          <a mat-button routerLink="/dashboard/tickets">Turnos</a>
+        </span>
+        <span matListItemLine>Genera turnos</span>
+      </mat-list-item>
+
+      <mat-list-item class="hover:bg-orange-200">
+        <span matListItemTitle>
+          <a mat-button
+             routerLink="/dashboard/orders/list">Ordernes</a>
+        </span>
         <span matListItemLine>Second line</span>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item class="hover:bg-orange-200">
         <span matListItemTitle>
           <a mat-button routerLink="/dashboard/products/list">Productos</a>
         </span>
         <span>Administra el menú</span>
       </mat-list-item>
 
-      <mat-list-item>
-        <span matListItemTitle>Personal</span>
-        Gestiona tus colaboradores
+      <mat-list-item class="hover:bg-orange-200">
+        <span matListItemTitle>
+          <a mat-button routerLink="/dashboard/users">Personal</a>
+        </span>
+         <span class="text-sm" >Gestiona tus colaboradores</span>
       </mat-list-item>
     </mat-list>
 

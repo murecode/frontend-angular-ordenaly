@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-
+import { RouterLinkActive } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { NgIf } from '@angular/common';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,12 +16,13 @@ import { MatListModule } from '@angular/material/list';
     CommonModule,
     RouterOutlet,
     RouterModule,
+    RouterLinkActive,
+    NgIf,
 
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    NgIf,
 
   ],
   templateUrl: './dashboard.component.html',
