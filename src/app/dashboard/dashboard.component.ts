@@ -9,6 +9,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
+interface MenuOption {
+  title: string;
+  route: string;
+}
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -17,7 +22,7 @@ import { MatListModule } from '@angular/material/list';
     RouterOutlet,
     RouterModule,
     RouterLinkActive,
-    NgIf,
+    NgIf, NgFor,
 
     MatToolbarModule,
     MatIconModule,
@@ -30,5 +35,12 @@ import { MatListModule } from '@angular/material/list';
   ]
 })
 export class DashboardComponent {
+
+  public menuOption: MenuOption[] = [
+    { title: 'Turnos', route: '/dashboard/tickets' },
+    { title: 'Ordenes', route: '/dashboard/orders/list' },
+    { title: 'Menú', route: '/dashboard/products/list' },
+    { title: 'Personal', route: '/dashboard/users' },
+  ];
 
 }
