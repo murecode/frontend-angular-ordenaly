@@ -11,7 +11,7 @@ export default [
         path:'login', component: LoginPageComponent,
       },
       { 
-        path:'new-account', component: RegisterPageComponent 
+        path:'register', component: RegisterPageComponent 
       },
       {
         path:'**', component: LoginPageComponent
