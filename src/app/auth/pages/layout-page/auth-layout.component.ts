@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-layout-page',
+  selector: 'auth-layout',
   standalone: true,
   imports: [
   
     RouterOutlet,
   ],
-  templateUrl: './layout-page.component.html',
+  templateUrl: './auth-layout.html',
 })
-export class LayoutPageComponent {
+export class AuthLayoutComponent {
 
 
 

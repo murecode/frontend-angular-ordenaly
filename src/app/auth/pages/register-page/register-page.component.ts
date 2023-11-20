@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
 
@@ -20,17 +20,21 @@ import { MatInputModule } from '@angular/material/input';
    ],
   templateUrl: './register-page.component.html',
 })
-export class RegisterPageComponent {
+export class RegisterPageComponent implements OnInit {
 
   public registerForm: FormGroup = this.formBuilder.group({
     name: ['',[ Validators.required, Validators.minLength(4) ]],
-    lastname: [''],
+    surname: [''],
     // username: [''],
-    email: ['', [ Validators.email, Validators.required ], []],
-    password: ['', [ Validators.required ], []],
+    email: ['', [ Validators.email, Validators.required ]],
+    password: ['', [ Validators.required ]],
   });
 
   constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.registerForm.reset({email:'correo'})
+  }
 
   onSave() {
     if( this.registerForm.invalid ) return; //Si algun campo del formulario es invalido no continua
