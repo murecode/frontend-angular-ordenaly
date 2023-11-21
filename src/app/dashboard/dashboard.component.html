@@ -1,6 +1,6 @@
 <mat-sidenav-container class="w-auto h-screen">
 
-  <mat-sidenav #sidenav mode="push" class="w-64 h-screen">
+  <mat-sidenav #sidenav mode="over" class="w-64 h-screen">
 
     <mat-toolbar class="bg-orange-400">
       <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
@@ -10,30 +10,12 @@
       <span class="pl-8"></span>
     </mat-toolbar>
 
-    <mat-list-item>
-      <span matListItemTitle>
-        <a mat-button routerLink="/dashboard/tickets">Turnos</a>
-      </span>
-      <span matListItemLine>Genera turnos</span>
-    </mat-list-item>
-
-    <mat-list>
-      <mat-list-item>
-        <span matListItemTitle>
-          <a mat-button routerLink="/dashboard/orders/list">Ordernes</a></span>
-        <span matListItemLine>Second line</span>
-      </mat-list-item>
-
-      <mat-list-item>
-        <span matListItemTitle>
-          <a mat-button routerLink="/dashboard/products/list">Productos</a>
-        </span>
-        <span>Administra el menú</span>
-      </mat-list-item>
-
-      <mat-list-item>
-        <span matListItemTitle>Personal</span>
-        Gestiona tus colaboradores
+    <mat-list class="mt-0">
+      <mat-list-item 
+        *ngFor="let item of menuOption"
+        [routerLink]="[ item.route]">
+        <span matListItemTitle>{{ item.title }}</span>
+        <span matListItemLine>Genera turnos</span>
       </mat-list-item>
     </mat-list>
 

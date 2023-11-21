@@ -9,5 +9,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Dev
 1. Clonar el proyecto
 2. Ejecutar ```npm install```
-3. Levantar el backend de pruebas ```
+3. Levantar el backend de pruebas ```npm run backend```
 4. Run App ```ng serve -o```

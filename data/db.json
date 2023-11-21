@@ -5,7 +5,7 @@
       "turno": 10,
       "mesa": 3,
       "mesero": "Marta",
-      "estado": "PENDIENTE",
+      "estado": "COMPLETADO",
       "pedido": [
         {
           "id": 11,

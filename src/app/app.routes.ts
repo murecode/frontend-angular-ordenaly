@@ -3,6 +3,7 @@ import { Routes } from "@angular/router";
 import { HomePageComponent } from "./others/home-page/home-page.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { Error404PageComponent } from "./others/error404-page/error404-page.component"; 
+import { UserComponent } from "./user/user.component";
 
 // ordenaly-app.com/
 export const routes: Routes = [
@@ -23,6 +24,9 @@ export const routes: Routes = [
   {
     path: 'dashboard/tickets', component: DashboardComponent,
     loadChildren: () => import('./ticket/ticket.routes')
+  },
+  {
+    path: 'dashboard/users', component: UserComponent
   },
   { 
     path: '', 
