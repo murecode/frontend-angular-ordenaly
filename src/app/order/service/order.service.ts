@@ -9,6 +9,7 @@ import { environment } from "src/environments/environment.dev";
 export class OrderService {
 
   private baseUrl: string = environment.baseUrl;
+  private ordenalyURL: string = 'http://localhost:8080/orders/list'
 
   constructor( private http: HttpClient ) {};
 
@@ -18,7 +19,7 @@ export class OrderService {
   }
 
   getOrders():Observable<IOrder[]> {
-    return this.http.get<IOrder[]>(`${this.baseUrl}/orders`)
+    return this.http.get<IOrder[]>(`${this.ordenalyURL}`)
   }
 
   getOrderById( id: string ): Observable<IOrder|undefined> {
