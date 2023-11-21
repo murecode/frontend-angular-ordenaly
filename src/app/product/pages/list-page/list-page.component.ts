@@ -13,8 +13,6 @@ import { ProductCardComponent } from '../../components/product-card/product-card
 })
 export class ListPageComponent {
 
-
-
 }
 
 

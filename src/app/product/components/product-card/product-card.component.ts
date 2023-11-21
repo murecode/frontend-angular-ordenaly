@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 
-// import { IProduct } from '../../interface/IProduct.inteface';
-// import { ProductService } from '../../services/product.service';
+import { IProduct } from '../../interface/IProduct.inteface';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'product-card',
@@ -14,6 +14,13 @@ import { CommonModule, NgFor } from '@angular/common';
 })
 export class ProductCardComponent {
 
-  // constructor(private productService: ProductService) {};
+  public productList: IProduct[] = []
+   
+  constructor(private productService: ProductService) {};
+
+  ngOnInit(): void {
+    this.productService.getProducts()
+      .subscribe( product => this.productList = product )
+  }
 
 }
