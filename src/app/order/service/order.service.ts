@@ -9,6 +9,7 @@ import { environment } from "src/environments/environment.dev";
 export class OrderService {
 
   private baseUrl: string = environment.baseUrl;
+  // private ordenalyURL: string = 'http://localhost:8080/orders/list'
 
   constructor( private http: HttpClient ) {};
 

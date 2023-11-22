@@ -6,6 +6,7 @@
       "mesa": 3,
       "mesero": "Marta",
       "estado": "COMPLETADO",
+      "pago": "REALIZADO",
       "pedido": [
         {
           "id": 11,
@@ -20,6 +21,7 @@
       "mesa": 1,
       "mesero": "Rosa",
       "estado": "PENDIENTE",
+      "pago": "REALIZADO",
       "pedido": [
         {
           "id": 9,
@@ -39,6 +41,7 @@
       "mesa": 6,
       "mesero": "Ricardo",
       "estado": "COMPLETA",
+      "pago": "REALIZADO",
       "pedido": [
         {
           "id": 13,
@@ -52,7 +55,8 @@
       "turno": 34,
       "mesa": 6,
       "mesero": "Adalberto",
-      "estado": "Pendiente",
+      "estado": "PENDIENTE",
+      "pago": "PENDIENTE",
       "pedido": [
         {
           "id": 13,

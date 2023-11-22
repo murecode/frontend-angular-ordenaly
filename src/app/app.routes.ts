@@ -1,9 +1,11 @@
 import { Routes } from "@angular/router";
 
 import { HomePageComponent } from "./others/home-page/home-page.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
 import { Error404PageComponent } from "./others/error404-page/error404-page.component"; 
 import { UserComponent } from "./user/user.component";
+import { OrderLayoutComponent } from "./order/pages/layout-page/order-layout.component";
+import { ProductLayoutComponent } from "./product/pages/layout-page/product-layout.component";
+import { TicketLayoutComponent } from "./ticket/pages/layout-page/ticket-layout.component";
 
 // ordenaly-app.com/
 export const routes: Routes = [
@@ -13,20 +15,20 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.routes')
   },
   {
-    path: 'dashboard/products', component: DashboardComponent,
+    path: 'products', component: ProductLayoutComponent,
     loadChildren: () => import('./product/product.routes')
   },
   
   {
-    path: 'dashboard/orders', component: DashboardComponent,
+    path: 'orders', component: OrderLayoutComponent,
     loadChildren: () => import('./order/order.routes')
   },
   {
-    path: 'dashboard/tickets', component: DashboardComponent,
+    path: 'tickets', component: TicketLayoutComponent,
     loadChildren: () => import('./ticket/ticket.routes')
   },
   {
-    path: 'dashboard/users', component: UserComponent
+    path: 'users', component: UserComponent
   },
   { 
     path: '', 

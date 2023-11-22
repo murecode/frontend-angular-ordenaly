@@ -37,10 +37,10 @@ interface MenuOption {
 export class DashboardComponent {
 
   public menuOption: MenuOption[] = [
-    { title: 'Turnos', route: '/dashboard/tickets' },
-    { title: 'Ordenes', route: '/dashboard/orders/list' },
-    { title: 'Menú', route: '/dashboard/products/list' },
-    { title: 'Personal', route: '/dashboard/users' },
+    { title: 'Turnos', route: '/tickets' },
+    { title: 'Ordenes', route: '/orders/list' },
+    { title: 'Menú', route: '/products/list' },
+    { title: 'Personal', route: '/users' },
   ];
 
 }

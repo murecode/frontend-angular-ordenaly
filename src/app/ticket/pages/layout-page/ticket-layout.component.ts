@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-layout-page',
+  selector: 'ticket-layout',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './layout-page.component.html',
+  templateUrl: './ticket-layout.html',
   styles: [
   ]
 })
-export class LayoutPageComponent {
+export class TicketLayoutComponent {
 
 }

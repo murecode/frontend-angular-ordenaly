@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-
-import { ProductCardComponent } from '../../components/product-card/product-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-list-page',
   standalone: true,
-  imports: [ ProductCardComponent ],
+  imports: [CommonModule],
   templateUrl: './list-page.component.html',
   styles: [
   ]
@@ -14,5 +12,3 @@ import { ProductCardComponent } from '../../components/product-card/product-card
 export class ListPageComponent {
 
 }
-
-

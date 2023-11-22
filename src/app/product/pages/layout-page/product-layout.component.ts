@@ -4,13 +4,13 @@ import { RouterModule } from '@angular/router';
 import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-layout-page',
+  selector: 'layout-page',
   standalone: true,
   imports: [ CommonModule, NgFor, RouterOutlet, RouterModule
   ],
-  templateUrl: './layout-page.component.html',
+  templateUrl: './product-layout.html',
 })
-export class LayoutPageComponent {
+export class ProductLayoutComponent {
 
 
 }

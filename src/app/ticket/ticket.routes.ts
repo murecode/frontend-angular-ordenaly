@@ -1,14 +1,15 @@
 import { Route } from "@angular/router";
 
-import { LayoutPageComponent } from "./pages/layout-page/layout-page.component";
+import { TicketLayoutComponent } from "./pages/layout-page/ticket-layout.component";
+import { ListPageComponent } from "./pages/list-page/list-page.component";
 
 export default [
   
   { 
-    path: '', component: LayoutPageComponent, 
+    path: '', component: TicketLayoutComponent, 
     children: [
       {
-        path: 'list', component: LayoutPageComponent
+        path: 'list', component: ListPageComponent,
       }
     ]
   }

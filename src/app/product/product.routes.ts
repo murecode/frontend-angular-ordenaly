@@ -1,6 +1,6 @@
 import { Route } from "@angular/router";
 
-import { LayoutPageComponent } from "./pages/layout-page/layout-page.component";
+import { ProductLayoutComponent } from "./pages/layout-page/product-layout.component";
 import { ListPageComponent } from "./pages/list-page/list-page.component";
 import { NewPageComponent } from "./pages/new-page/new-page.component";
 
@@ -8,7 +8,7 @@ import { NewPageComponent } from "./pages/new-page/new-page.component";
 export default [
   
   { 
-    path: '', component: LayoutPageComponent, 
+    path: '', component: ProductLayoutComponent, 
     children: [
       {
         path: 'new', component: NewPageComponent
