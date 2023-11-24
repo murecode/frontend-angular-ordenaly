@@ -14,9 +14,6 @@ export default [
         path: 'new', component: NewPageComponent 
       },
       {
-        path: 'by/:id', component: DetailsPageComponent
-      },
-      {
         path: 'list', component: ListPageComponent
       },
       {
@@ -24,7 +21,10 @@ export default [
       },
       {
         path: 'details', component: DetailsPageComponent
-      }
+      },
+      {
+        path: 'by/:id', component: DetailsPageComponent
+      },
     ]
   },
   

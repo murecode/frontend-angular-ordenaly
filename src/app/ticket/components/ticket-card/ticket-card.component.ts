@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 
 import { ITicket } from '../../interface/ITicket.interface';
+import { TicketService } from '../../service/ticket.service';
 
 @Component({
   selector: 'ticket-card',
@@ -15,11 +16,11 @@ export class TicketCardComponent {
 
   public ticketList: ITicket[] = [];
 
-  // constructor( private orderService: OrderService ) {}
+  constructor( private ticketService: TicketService ) {}
 
-  // ngOnInit(): void { 
-  //   this.orderService.getOrders()
-  //       .subscribe( order => this.orderList = order );
-  // }
+  ngOnInit(): void { 
+    this.ticketService.getTickets()
+      .subscribe( ticket => this.ticketList = ticket )
+  }
 
 }

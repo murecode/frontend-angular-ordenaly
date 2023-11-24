@@ -1,26 +1,23 @@
-
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
-
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
 
 import { OrderService } from '../../service/order.service';
-import { IOrder } from '../../interface/IOrder.interface';
+import { IOrder, Pedido } from '../../interface/IOrder.interface';
+
+import { TableDetailsComponent } from '../../components/table-details/table-details.component';
 
 @Component({
   selector: 'app-details-page',
   standalone: true,
-  imports: [ MatTabsModule, NgFor, MatButtonModule, MatCardModule ],
+  imports: [ TableDetailsComponent ],
   templateUrl: './details-page.component.html',
 })
 export class DetailsPageComponent  {
+  
 
   // public orderList: IOrder[] = [];
-  public order: IOrder[] = [];
+  // public pedidoList: IOrder[] = [];
 
-  constructor( private orderService: OrderService ) {}
+  // constructor( private orderService: OrderService ) {}
 
   // ngOnInit(): void { 
   //   this.orderService.getOrders()
