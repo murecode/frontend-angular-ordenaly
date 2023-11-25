@@ -20,10 +20,7 @@ export default [
         path: 'edit/:id', component: NewPageComponent
       },
       {
-        path: 'details', component: DetailsPageComponent
-      },
-      {
-        path: 'by/:id', component: DetailsPageComponent
+        path: 'details/:id', component: DetailsPageComponent
       },
     ]
   },

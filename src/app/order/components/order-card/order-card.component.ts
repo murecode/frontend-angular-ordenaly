@@ -17,7 +17,7 @@ export class OrderCardComponent {
 
   public orderList: IOrder[] = [];
 
-  constructor( private orderService: OrderService ) {}
+  constructor( private orderService: OrderService ) { }
 
   ngOnInit(): void { 
     this.orderService.getOrders()

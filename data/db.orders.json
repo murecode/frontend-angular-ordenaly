@@ -40,7 +40,7 @@
       "turno": 34,
       "mesa": 6,
       "mesero": "Ricardo",
-      "estado": "COMPLETA",
+      "estado": "COMPLETADO",
       "pago": "REALIZADO",
       "pedido": [
         {
