@@ -2,10 +2,11 @@
 
   <!-- order card -->
   <div class="max-w-sm bg-white px-4 py-2.5 rounded-xl shadow-lg transform" *ngFor="let order of orderList">
+    <p #orderId class="invisible">{{ order.id }}</p>
     <div class="flex items-center justify-between">
       <p class=" text-xl font-bold text-orange-500">Turno: <span>{{ order.turno }}</span></p>
-      <p class="rounded-xl bg-red-100 text-red-600 px-2 py-1 text-xs">{{ order.estado }}</p>
-      <!-- <p class="rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs">{{ order.estado }}</p> -->
+      <p *ngIf="order.estado === 'PENDIENTE'" class="rounded-xl bg-red-100 text-red-600 px-2 py-1 text-xs">{{ order.estado }}</p>
+      <p *ngIf="order.estado === 'COMPLETADO'" class="rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs">{{ order.estado }}</p>
     </div>
 
     <div class="my-1">
@@ -32,42 +33,18 @@
         </div>
       </dl>
 
-      <button class="mt-4 w-full font-semibold text-white bg-orange-500 py-2 rounded-xl shadow-lg hover:bg-orange-600">Detalles</button>
+      <button
+        class="mt-4 w-full font-semibold text-white bg-orange-500 py-2 rounded-xl shadow-lg hover:bg-orange-600"
+        [routerLink]="['/orders/details',order.id]"
+        >Detalles
+      </button>
+
+      {{ order.id | json }}
 
     </div>
   </div>
   <!-- end order card -->
-
-  <!-- boton para agregar nueva orden -->
-  <div class="flex flex-col bg-orange-50 rounded-lg p-3 cursor-pointer
-   items-center justify-center border-orange-300 border-2 border-dashed">
-    <div class="flex items-center border-2 border-dashed h-14 w-14
-      rounded-full cursor-pointer border-orange-300">
-      <i class="p-2 text-orange-300 text-5xl"> + </i>
-    </div>
-    <p class="text-xl text-orange-300 font-medium">Crear nueva orden</p>
-  </div>
-
 </div>
 
+{{ orderList | json }}
 
-
-<!-- <mat-card *ngFor="let order of orderList" class="bg-white rounded-md border shadow-md m-2">
-  <mat-card-header>
-    <mat-card-title class="text-sm">Turno: {{ order.turno }}</mat-card-title>
-    <mat-card-subtitle class="text-sm">No. Orden: {{ order.id }}</mat-card-subtitle>
-    <mat-card-subtitle class="text-sm">Mesa: {{ order.mesa }}</mat-card-subtitle>
-    <mat-card-subtitle class="text-sm">Mesero: {{ order.mesero }}</mat-card-subtitle>
-    <mat-card-subtitle class="text-sm">Estado: {{ order.estado }}</mat-card-subtitle>    
-  </mat-card-header>
-
-  <mat-card-actions align="end">
-    <div class="bg-orange-400 p-1.5 rounded">
-      <button class="text-white" routerLink="/products">
-        <mat-icon>keyboard_arrow_right</mat-icon>
-        Ver detalles
-      </button>
-    </div>
-  </mat-card-actions>
-
-</mat-card> -->

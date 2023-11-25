@@ -25,8 +25,12 @@ export class OrderService {
   getOrderById( id: string ): Observable<IOrder|undefined> {
     return this.http.get<IOrder>(`${ this.baseUrl }/orders/${ id }`)
       .pipe(
-        catchError( () => of(undefined))
+        catchError(() => of(undefined))
       );
+  }
+
+  getOrderDetails( id: number ): Observable<IOrder|undefined> {
+    return this.http.get<IOrder>(`${ this.baseUrl }/orders/details/${id}`)
   }
 
   updateOrder( order: IOrder ): Observable<IOrder> {

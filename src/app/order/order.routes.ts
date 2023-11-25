@@ -14,17 +14,14 @@ export default [
         path: 'new', component: NewPageComponent 
       },
       {
-        path: 'by/:id', component: DetailsPageComponent
-      },
-      {
         path: 'list', component: ListPageComponent
       },
       {
         path: 'edit/:id', component: NewPageComponent
       },
       {
-        path: 'details', component: DetailsPageComponent
-      }
+        path: 'details/:id', component: DetailsPageComponent
+      },
     ]
   },
   

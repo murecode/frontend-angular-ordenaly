@@ -9,12 +9,12 @@ import { Observable } from "rxjs";
 export class ProductService {
 
   private baseUrl: string = environment.baseUrl;
-  private ordenaly: string = 'http://localhost:8080/products/list'
+  // private ordenaly: string = 'http://localhost:8080/products/list'
 
   constructor( private http: HttpClient ) {};
 
   getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(`${this.ordenaly}`);
+    return this.http.get<IProduct[]>(`${this.baseUrl}/products`);
   }
 
 }
