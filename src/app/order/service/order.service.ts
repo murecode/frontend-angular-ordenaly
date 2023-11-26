@@ -29,10 +29,6 @@ export class OrderService {
       );
   }
 
-  getOrderDetails( id: number ): Observable<IOrder|undefined> {
-    return this.http.get<IOrder>(`${ this.baseUrl }/orders/details/${id}`)
-  }
-
   updateOrder( order: IOrder ): Observable<IOrder> {
     if( !order.id ) throw Error("La orden es requerida"); 
     return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.id }`, order)
