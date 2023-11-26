@@ -1,1 +1,38 @@
 <p>table-details works!</p>
+
+<div *ngIf="order" class="overflow-x-auto">
+
+  <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+
+    <thead class="ltr:text-left rtl:text-right">
+      <tr>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Producto
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Cantidad
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Costo
+        </th>
+        <!-- <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Salary
+        </th> -->
+      </tr>
+    </thead>
+
+    <tbody class="divide-y divide-gray-200">
+      <tr *ngFor="let item of order.pedido">
+        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{{ item.producto }}</td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ item.cantidad}}</td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700">321</td>
+      </tr>
+      {{ order.pedido | json }}
+    </tbody>
+
+  </table>
+
+</div>
+
+
+
