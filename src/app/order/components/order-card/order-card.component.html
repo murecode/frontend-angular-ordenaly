@@ -3,7 +3,7 @@
   <!-- order card -->
   <div class="max-w-sm bg-white px-4 py-2.5 rounded-xl shadow-lg transform" *ngFor="let order of orderList">
     <div class="flex items-center justify-between">
-      <p class=" text-xl font-bold text-orange-500">Turno: <span>{{ order.turno }}</span></p>
+      <p class="text-lg font-bold text-orange-500">Turno: <span>{{ order.turno }}</span></p>
       <p *ngIf="order.estado === 'PENDIENTE'" class="rounded-xl bg-red-100 text-red-600 px-2 py-1 text-xs">{{ order.estado }}</p>
       <p *ngIf="order.estado === 'COMPLETADO'" class="rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs">{{ order.estado }}</p>
     </div>
@@ -24,13 +24,13 @@
 
       <dl class="mt-1.5 flex gap-4 sm:gap-6">
         <div class="flex flex-col">
-          <dt class="font-medium text-gray-600">No. orden</dt>
-          <dd class="text-gray-500"> {{ order.id }}</dd>
+          <dt class="text-sm font-medium text-gray-600">No. orden</dt>
+          <dd class="text-sm text-gray-500"> {{ order.id }}</dd>
         </div>
 
         <div class="flex flex-col">
-          <dt class="font-medium text-gray-600">Estado de pago</dt>
-          <dd class="text-gray-500">{{ order.pago }}</dd>
+          <dt class="text-sm font-medium text-gray-600">Estado de pago</dt>
+          <dd class="text-sm text-gray-500">{{ order.pago }}</dd>
         </div>
       </dl>
 
@@ -46,7 +46,7 @@
   <!-- componente de prueba temporal -->
   <div class="max-w-sm bg-white px-4 py-2.5 rounded-xl shadow-lg transform">
     <div class="flex items-center justify-between">
-      <p class=" text-xl font-bold text-orange-500">Turno: <span>17</span></p>
+      <p class=" text-lg font-bold text-orange-500">Turno: <span>17</span></p>
       <p class="rounded-xl bg-red-100 text-red-600 px-2 py-1 text-xs">Pendiente</p>
       <!-- <p class="rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs">{{ order.estado }}</p> -->
     </div>
@@ -67,13 +67,13 @@
 
       <dl class="mt-1.5 flex gap-4 sm:gap-6">
         <div class="flex flex-col">
-          <dt class="font-medium text-gray-600">No. orden</dt>
-          <dd class="text-gray-500">741</dd>
+          <dt class="text-sm font-medium text-gray-600">No. orden</dt>
+          <dd class="text-sm text-gray-500">741</dd>
         </div>
 
         <div class="flex flex-col">
-          <dt class="font-medium text-gray-600">Estado de pago</dt>
-          <dd class="text-gray-500">Pendiente</dd>
+          <dt class="text-sm font-medium text-gray-600">Estado de pago</dt>
+          <dd class="text-sm text-gray-500">Pendiente</dd>
         </div>
       </dl>
 
