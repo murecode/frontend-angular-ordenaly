@@ -8,10 +8,12 @@ export interface IOrder {
   estado: string;
   pago:   string;
   pedido: Pedido[];
+  notas:  string;
 }
 
 export interface Pedido {
   id:       number;
   producto: string;
+  precio:   number;
   cantidad: number;
 }

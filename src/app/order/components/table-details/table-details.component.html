@@ -1,38 +1,55 @@
-<p>table-details works!</p>
+<p>Detalles de la order</p>
+<p>Estado de pago</p>
+<p>MEsero</p>
+<p>Numero orden</p>
 
-<div *ngIf="order" class="overflow-x-auto">
-
+<div *ngIf="order" class="w-auto shadow-lg ">
   <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
 
+    <!-- se puede usar un ngFor para iterar los encabezados -->
     <thead class="ltr:text-left rtl:text-right">
       <tr>
-        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-orange-500">
           Producto
         </th>
-        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-orange-500">
+          Pre. unitario
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-orange-500">
           Cantidad
         </th>
-        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-          Costo
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-orange-500">
+          Precio
         </th>
-        <!-- <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-          Salary
-        </th> -->
       </tr>
     </thead>
 
     <tbody class="divide-y divide-gray-200">
       <tr *ngFor="let item of order.pedido">
-        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{{ item.producto }}</td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ item.producto }}</td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ item.precio }}</td>
         <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ item.cantidad}}</td>
-        <td class="whitespace-nowrap px-4 py-2 text-gray-700">321</td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ item.cantidad * item.precio }}</td>
       </tr>
-      {{ order.pedido | json }}
     </tbody>
 
+    <tfoot>
+      <p class="px-4 py-2 font-medium text-orange-500">Total</p>
+    </tfoot>
+
   </table>
+
+ 
+
 
 </div>
 
 
 
+<!-- <div> "ESTE BLOCQUE VA PERO EN EL FORMULARIO DE ORDENES"
+  <label for="OrderNotes" class="block text-sm font-medium text-gray-700">
+    Order notes
+  </label>
+  <textarea id="OrderNotes" class="mt-2 w-full rounded-lg border-gray-200 align-top shadow-sm sm:text-sm" rows="4"
+    placeholder="Enter any additional order notes..."></textarea>
+</div> -->

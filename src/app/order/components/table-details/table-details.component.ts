@@ -38,6 +38,10 @@ export class TableDetailsComponent implements OnInit {
     );
   }
 
+  calcularPrecio(): number|undefined {
+    return this.order?.pedido.reduce( (precio, pedido) => precio + (pedido.cantidad * pedido.precio), 0 )
+  }
+
 }
 
 //* ActiveRoute, proporciona acceso a información sobre una ruta asociada...
