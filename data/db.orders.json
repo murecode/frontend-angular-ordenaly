@@ -5,15 +5,17 @@
       "turno": 10,
       "mesa": 3,
       "mesero": "Marta",
-      "estado": "COMPLETADO",
+      "estado": "ATENDIDA",
       "pago": "REALIZADO",
       "pedido": [
         {
           "id": 11,
           "producto": "Hamburgesa",
+          "precio": 12000,
           "cantidad": 1
         }
-      ]
+      ],
+      "notas": ""
     },
     {
       "id": 15,
@@ -26,29 +28,34 @@
         {
           "id": 9,
           "producto": "Pizza",
+          "precio": 9000,
           "cantidad": 3
         },
         {
           "id": 10,
           "producto": "Hamburgesa",
+          "precio": 12000,
           "cantidad": 2
         }
-      ]
+      ],
+      "notas": ""
     },
     {
       "id": 120,
       "turno": 34,
       "mesa": 6,
       "mesero": "Ricardo",
-      "estado": "COMPLETADO",
+      "estado": "ATENDIDA",
       "pago": "REALIZADO",
       "pedido": [
         {
           "id": 13,
           "producto": "Sancocho",
+          "precio": 12000,
           "cantidad": 2
         }
-      ]
+      ],
+      "notas": ""
     },
     {
       "id": 121,
@@ -59,15 +66,35 @@
       "pago": "PENDIENTE",
       "pedido": [
         {
-          "id": 13,
+          "id": 1,
           "producto": "Pizza",
+          "precio": 7500,
+          "cantidad": 2
+        },
+        {
+          "id": 2,
+          "producto": "Hamburgesa",
+          "precio": 12000,
+          "cantidad": 2
+        },
+        {
+          "id": 3,
+          "producto": "Hot Dog",
+          "precio": 8000,
+          "cantidad": 1
+        },
+        {
+          "id": 4,
+          "producto": "Soda",
+          "precio": 4500,
           "cantidad": 5
         }
-      ]
+      ],
+      "notas": "La carne sin cebolla"
     }
   ]
-
 }
+
 
 
 

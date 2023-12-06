@@ -3,15 +3,17 @@
 export interface IOrder {
   id:     number;
   turno:  number;
-  // mesa:   number;
+  mesa:   number;
   mesero: string;
   estado: string;
   pago:   string;
   pedido: Pedido[];
+  notas:  string;
 }
 
 export interface Pedido {
   id:       number;
   producto: string;
+  precio:   number;
   cantidad: number;
 }
