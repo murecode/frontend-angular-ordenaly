@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 
 import { IOrder } from '../../interface/IOrder.interface';
 import { OrderService } from '../../service/order.service';
+import { ShowOrderStatesDirective } from '../../show-order-states.directive';
 
 @Component({
   selector: 'order-card',
   standalone: true,
-  imports: [CommonModule, NgFor, RouterModule],
+  imports: [CommonModule, NgFor, RouterModule, ShowOrderStatesDirective],
   templateUrl: './order-card.component.html',
   styles: [
   ]

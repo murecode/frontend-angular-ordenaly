@@ -3,7 +3,7 @@
 export interface IOrder {
   id:     number;
   turno:  number;
-  // mesa:   number;
+  mesa:   number;
   mesero: string;
   estado: string;
   pago:   string;

@@ -38,9 +38,10 @@ export class TableDetailsComponent implements OnInit {
     );
   }
 
-  calcularPrecio(): number|undefined {
+  calcularTotal(): number|undefined {
     return this.order?.pedido.reduce( (precio, pedido) => precio + (pedido.cantidad * pedido.precio), 0 )
   }
+  
 
 }
 
