@@ -10,14 +10,14 @@ import { OrderService } from '../../service/order.service';
 import { IOrder } from '../../interface/IOrder.interface';
 
 @Component({
-  selector: 'app-new-page',
+  selector: 'new-order-page',
   standalone: true,
   imports: [ CommonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatButtonModule ],
-  templateUrl: './new-page.component.html',
+  templateUrl: './new-order-page.html',
   styles: [
   ]
 })
-export class NewPageComponent {
+export class NewOrderPageComponent {
 
   public orderForm = new FormGroup({
     id:      new FormControl(),  
