@@ -1,0 +1,136 @@
+<main class="m-2">
+
+  <div class="my-1 overflow-x-auto min-w-full bg-white px-4 py-2.5 rounded-xl shadow-lg transform">
+    <h2 class="text-lg tracking-wide font-medium text-orange-400">Informacion</h2>
+    <dl class="mt-1.5 flex justify-between gap-4 sm:gap-6">
+
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">Turno</dt>
+        <dd class="text-sm text-gray-500">23</dd>
+      </div>
+
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">Mesa</dt>
+        <dd class="text-sm text-gray-500">6</dd>
+      </div>
+
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">Pago</dt>
+        <dd class="text-sm text-gray-500">pendiente</dd>
+      </div>
+
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">Mesero</dt>
+        <dd class="text-sm text-gray-500">Marta</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="mt-2 overflow-x-auto bg-white rounded-xl shadow-lg transform">
+    <h2 class="px-4 py-2 tracking-wide text-lg font-medium text-orange-400">Listado de productos</h2>
+    <form class="min-w-full" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+
+      <table class="table-auto min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+        <thead>
+          <tr class="text-orange-400 bg-orange-50">
+            <th class="font-medium py-3 px-4 text-left">Producto</th>
+            <th class="font-medium py-3 px-4 text-left">Cantidad</th>
+            <th class="font-medium py-3 px-4 text-left">Accion</th>
+          </tr>
+        </thead>
+
+        <tbody class="border-b border-blue-gray-200">
+
+          <tr class="border-b border-blue-gray-200">
+            <td class="text-sm py-3 px-4">Hamburgesa</td>
+            <td class="text-sm py-3 px-4">5</td>
+            <td class="">
+              <div class="flex justify-start gap-4">
+                <button class="text-lg">✏️</button>
+                <button class="text-lg">🗑️</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="border-b border-blue-gray-200">
+            <td class="text-sm py-3 px-4">Hamburgesa</td>
+            <td class="text-sm py-3 px-4">5</td>
+            <td class="">
+              <div class="flex justify-start gap-4">
+                <button class="text-lg">✏️</button>
+                <button class="text-lg">🗑️</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="border-b border-blue-gray-200">
+            <td class="text-sm py-3 px-4">Hamburgesa</td>
+            <td class="text-sm py-3 px-4">5</td>
+            <td class="">
+              <div class="flex justify-start gap-4">
+                <button class="text-lg">✏️</button>
+                <button class="text-lg">🗑️</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="border-b border-blue-gray-200">
+            <td class="text-sm py-3 px-4">Hamburgesa</td>
+            <td class="text-sm py-3 px-4">5</td>
+            <td class="">
+              <div class="flex justify-start gap-4">
+                <button class="text-lg">✏️</button>
+                <button class="text-lg">🗑️</button>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <div class="flex justify-between my-2 p-2">
+        <select class="w-full rounded-md border-gray-200 p-2 pe-10 shadow-sm text-sm">
+          <option disabled selected>Elija producto</option>
+          <option value="">John Mayer</option>
+          <option value="">Stevie Ray Vaughn</option>
+          <option value="">Jimi Hendrix</option>
+        </select>
+
+        <button class="rounded-lg tracking-wide bg-orange-400 px-4 py-2 ml-4 font-medium text-white">
+          Agregar
+        </button>
+      </div>
+
+      <div class="mx-2">
+        <label for="OrderNotes" class="block text-lg font-medium text-orange-400"> Notas </label>
+        <textarea id="OrderNotes" class="mt-2 w-full rounded-lg p-2 font-sans align-top focus:border-2 placeholder-shown:border placeholder-shown:border-gray-400 shadow-sm sm:text-sm" rows="4"
+          placeholder="Escribe observaciones del pedido..."></textarea>
+      </div>
+
+      <div class="flex justify-end m-2">
+        <button type=""
+          class="inline-block rounded-lg tracking-wide bg-orange-400 mr-4 px-4 py-2 font-medium text-white">
+          Cancelar
+        </button>
+
+        <button type="" (click)="onSubmit()"
+          class="inline-block rounded-lg tracking-wide bg-orange-400 mr-4 px-4 py-2 font-medium text-white">
+          Enviar
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</main>
+
+
+
+
+<pre>{{ currentOrder | json }}</pre>
+
+
+
+<pre>{{ currentOrder | json }}</pre>

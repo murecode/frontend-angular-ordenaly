@@ -2,32 +2,32 @@
   "tickets": [
     {
       "id": 1,
-      "hora": "03:32:15",
+      "hora": "03:32",
       "mesa": 3, 
       "orden": 12
     },
     {
       "id": 2,
-      "hora": "15:32:15",
+      "hora": "15:32",
       "mesa": 6, 
-      "orden": 23
+      "orden": 89
     },
     {
       "id": 3,
-      "hora": "18:32:15",
+      "hora": "18:32",
       "mesa": 1, 
-      "orden": 43
+      "orden": 23
     },
     {
       "id": 4,
-      "hora": "21:32:15",
-      "mesa": 2, 
+      "hora": "21:32",
+      "mesa": 7, 
       "orden": 16
     },{
       "id": 5,
-      "hora": "22:15:15",
-      "mesa": 2, 
-      "orden": 16
+      "hora": "22:15",
+      "mesa": 8, 
+      "orden": 45
     }
   ]
 }
