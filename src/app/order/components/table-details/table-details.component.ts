@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 
-import { IOrder } from '../../interface/IOrder.interface';
+import { IItem, IOrder } from '../../interface/IOrder.interface';
 import { OrderService } from '../../service/order.service';
 import { switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,7 +30,7 @@ export class TableDetailsComponent implements OnInit {
         switchMap( ({ id }) => this.orderService.getOrderById( id ) ), //**
       )
       .subscribe( order => {
-        if( !order ) return this.router.navigate(['/orders/list'])
+        if( !order ) return this.router.navigate(['/orders'])
         this.order = order;
         console.log({order})
         return;
@@ -38,8 +38,12 @@ export class TableDetailsComponent implements OnInit {
     );
   }
 
+  calcularPrecio(item: IItem): number {
+    return item.producto.precio * item.cantidad;
+  }
+
   calcularTotal(): number|undefined {
-    return this.order?.pedido.reduce( (precio, pedido) => precio + (pedido.cantidad * pedido.precio), 0 )
+    return this.order?.pedido.reduce( (precio, pedido) => precio + (pedido.producto.precio * pedido.producto.precio), 0 )
   }
   
 

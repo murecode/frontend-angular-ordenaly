@@ -9,7 +9,7 @@ export default [
     path: '', component: TicketLayoutComponent, 
     children: [
       {
-        path: 'list', component: ListPageComponent,
+        path: '', component: ListPageComponent,
       }
     ]
   }

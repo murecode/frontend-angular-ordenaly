@@ -3,13 +3,13 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, map, of } from "rxjs";
 
 import { IOrder } from "../interface/IOrder.interface";
-import { environment } from "src/environments/environment.dev";
+// import { environment } from "src/environments/environment.dev";
+import { environment } from "src/environments/environment.prod";
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
 
   private baseUrl: string = environment.baseUrl;
-  // private ordenalyURL: string = 'http://localhost:8080/orders/list'
 
   constructor( private http: HttpClient ) {};
 
@@ -22,16 +22,16 @@ export class OrderService {
     return this.http.get<IOrder[]>(`${this.baseUrl}/orders`)
   }
 
-  getOrderById( id: string ): Observable<IOrder|undefined> {
-    return this.http.get<IOrder>(`${ this.baseUrl }/orders/${ id }`)
+  getOrderById( ordenId: number ): Observable<IOrder|undefined> {
+    return this.http.get<IOrder>(`${ this.baseUrl }/orders/${ ordenId }`)
       .pipe(
         catchError(() => of(undefined))
       );
   }
 
   updateOrder( order: IOrder ): Observable<IOrder> {
-    if( !order.id ) throw Error("La orden es requerida"); 
-    return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.id }`, order)
+    if( !order.ordenId ) throw Error("La orden es requerida"); 
+    return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.ordenId }`, order)
   }
 
   removeOrder( id: string ): Observable<boolean> {

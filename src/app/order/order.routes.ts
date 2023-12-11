@@ -8,19 +8,19 @@ import { DetailsPageComponent } from "./pages/details-page/list-page.component";
 export default [
   
   { 
-    path: '', component: OrderLayoutComponent, 
+    path: '', component: ListPageComponent, 
     children: [
       {
         path: 'new', component: NewOrderPageComponent 
       },
-      {
-        path: 'list', component: ListPageComponent
-      },
+      // {
+      //   path: '', component: ListPageComponent
+      // },
       {
         path: 'edit/:id', component: NewOrderPageComponent
       },
       {
-        path: ':id', component: DetailsPageComponent
+        path: 'orders:id', component: DetailsPageComponent
       },
     ]
   },

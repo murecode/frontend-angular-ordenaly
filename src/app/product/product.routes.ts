@@ -14,7 +14,7 @@ export default [
         path: 'new', component: NewPageComponent
       },
       {
-        path: 'list', component: ListPageComponent
+        path: '', component: ListPageComponent
       }
     ]
   }

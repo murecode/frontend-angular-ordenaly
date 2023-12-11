@@ -1,6 +1,11 @@
 <div class="my-1  overflow-x-auto min-w-full bg-white px-4 py-2.5 rounded-xl shadow-lg transform" >
-  <h2 class="text-xl font-medium text-orange-400">Informacion de la orden</h2>
+  <h2 class="text-xl font-medium text-orange-400">Informacion</h2>
   <dl class="mt-1.5 flex justify-between gap-4 sm:gap-6">
+
+    <div class="flex flex-col">
+      <dt class="font-medium text-gray-500">No. Orden</dt>
+      <dd class="text-sm text-gray-500">{{ order?.ordenId }}</dd>
+    </div>
 
     <div class="flex flex-col">
       <dt class="font-medium text-gray-500">Turno</dt>
@@ -25,7 +30,7 @@
 </div>
 
 <div class="mt-2 overflow-x-auto bg-white rounded-xl shadow-lg transform" *ngIf="order">
-  <h2 class="px-4 py-2 text-xl font-medium text-orange-400">Pedido</h2>
+  <caption class="px-4 py-2 text-xl font-medium text-orange-400">Pedido</caption>
   <table class="min-w-full">
     <thead>
       <tr class="text-orange-400 bg-orange-50">
@@ -41,7 +46,7 @@
         <td class="text-sm py-3 px-4">{{ item.producto }}</td>
         <td class="text-sm py-3 px-4">{{ item.precio }}</td>
         <td class="text-sm py-3 px-4">{{ item.cantidad }}</td>
-        <td class="text-sm py-3 px-4">{{ item.cantidad * item.precio }}</td>
+        <td class="text-sm py-3 px-4">{{ calcularPrecio }}</td>
         <!-- <td class="py-3 px-4"><a href="#" class="font-medium text-blue-600 hover:text-blue-800">Edit</a></td> -->
       </tr>
       <tr class="border-b border-blue-gray-200 bg-orange-50">
@@ -52,7 +57,13 @@
         <!-- <td class="py-3 px-4"></td> -->
       </tr>
     </tbody>
-  </table>
+  </table>  
+
+  <div>
+    <caption class="px-4 py-2 text-xl font-medium text-orange-400">Observaciones:</caption>
+    <p class="px-4 py-2">{{ order.notas }}</p>
+  </div>
+  
 </div>
 
 

@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrl: 'https://ordenaly.com/api'
+  baseUrl: 'http://localhost:8080'
 }
