@@ -5,6 +5,7 @@ import { IItem, IOrder } from '../../interface/IOrder.interface';
 import { OrderService } from '../../service/order.service';
 import { switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IProduct } from 'src/app/product/interface/IProduct.inteface';
 
 @Component({
   selector: 'table-details',
@@ -17,6 +18,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TableDetailsComponent implements OnInit {
 
   public order?: IOrder;
+  public item?: IItem;
 
   constructor(
     private orderService: OrderService,
@@ -36,10 +38,6 @@ export class TableDetailsComponent implements OnInit {
         return;
       }
     );
-  }
-
-  calcularPrecio(item: IItem): number {
-    return item.producto.precio * item.cantidad;
   }
 
   calcularTotal(): number|undefined {

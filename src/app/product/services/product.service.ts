@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 import { IProduct } from "../interface/IProduct.inteface";
 // import { environment } from "src/environments/environment.dev";
 import { environment } from "src/environments/environment.prod";
-import { Observable } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class ProductService {

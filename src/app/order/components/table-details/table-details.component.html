@@ -46,7 +46,7 @@
         <td class="text-sm py-3 px-4">{{ item.producto }}</td>
         <td class="text-sm py-3 px-4">{{ item.precio }}</td>
         <td class="text-sm py-3 px-4">{{ item.cantidad }}</td>
-        <td class="text-sm py-3 px-4">{{ calcularPrecio }}</td>
+        <td class="text-sm py-3 px-4">{{ item.cantidad * item.producto.precio }}</td>
         <!-- <td class="py-3 px-4"><a href="#" class="font-medium text-blue-600 hover:text-blue-800">Edit</a></td> -->
       </tr>
       <tr class="border-b border-blue-gray-200 bg-orange-50">

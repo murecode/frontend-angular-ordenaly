@@ -18,6 +18,7 @@ import { AddButtonComponent } from 'src/app/shared/components/add-button/add-but
 export class TicketCardComponent {
 
   public ticketList: ITicket[] = [];
+  public ticket?: ITicket;
 
   constructor( private ticketService: TicketService ) {}
 
@@ -26,8 +27,9 @@ export class TicketCardComponent {
       .subscribe( ticket => this.ticketList = ticket )
   }
 
-  newTicket() {
-    console.log("Funcion Nuevo Ticket")
+  newTicket(ticket: ITicket) {
+    // this.ticketService.addTicket(ticket)
+    return console.log(ticket)
   }
 
 }

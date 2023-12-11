@@ -22,7 +22,7 @@ export class OrderService {
     return this.http.get<IOrder[]>(`${this.baseUrl}/orders`)
   }
 
-  getOrderById( ordenId: number ): Observable<IOrder|undefined> {
+  getOrderById( ordenId: string ): Observable<IOrder|undefined> {
     return this.http.get<IOrder>(`${ this.baseUrl }/orders/${ ordenId }`)
       .pipe(
         catchError(() => of(undefined))

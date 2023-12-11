@@ -7,10 +7,10 @@ import { TicketCardComponent } from '../../components/ticket-card/ticket-card.co
   selector: 'app-list-page',
   standalone: true,
   imports: [ TicketCardComponent ],
-  templateUrl: './list-page.component.html',
+  templateUrl: './list-ticket.html',
   styles: [
   ]
 })
-export class ListPageComponent {
+export class ListTicketComponent {
 
 }

@@ -15,20 +15,21 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.routes')
   },
   {
-    path: 'products', component: ProductLayoutComponent,
+    path: 'products',
     loadChildren: () => import('./product/product.routes')
   },
   
   {
-    path: 'orders', component: OrderLayoutComponent,
+    path: 'orders',
     loadChildren: () => import('./order/order.routes')
   },
   {
-    path: 'tickets', component: TicketLayoutComponent,
+    path: 'tickets',
     loadChildren: () => import('./ticket/ticket.routes')
   },
   {
-    path: 'users', component: UserComponent
+    path: 'users',
+    loadChildren: () => import('./user/user.routes')
   },
   { 
     path: '', 
