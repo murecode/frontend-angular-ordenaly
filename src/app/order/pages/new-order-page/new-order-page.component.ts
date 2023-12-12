@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule, NgFor } from '@angular/common';
+import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 import { OrderService } from '../../service/order.service';
@@ -12,32 +10,37 @@ import { IOrder } from '../../interface/IOrder.interface';
 @Component({
   selector: 'new-order-page',
   standalone: true,
-  imports: [ CommonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatButtonModule ],
+  imports: [ CommonModule, NgFor, ReactiveFormsModule, MatButtonModule ],
   templateUrl: './new-order-page.html',
   styles: [
   ]
 })
 export class NewOrderPageComponent {
 
-  public orderForm = new FormGroup({
-    id:      new FormControl(),  
-    waiter:  new FormControl<string>(''),
-    ticket:  new FormControl<number>(0),
-    table:   new FormControl<number>(0),
-    status:  new FormControl<string>(''),
-    items:   new FormControl(),
+  public form: FormGroup = this.orderForm.group({
+    productos: this.orderForm.array([
+      ['Hot Dog'],
+      ['Burger'],
+      ['Pizza']
+    ])
   })
 
-  constructor( private orderService: OrderService ) {}
+  constructor(
+    private orderService: OrderService,
+    private orderForm: FormBuilder
+  ) {}
+
+  get productList() {
+    return this.form.get('products') as FormArray
+  }
 
   get currentOrder(): IOrder {
-    const order = this.orderForm.value as IOrder;
+    const order = this.form.value as IOrder;
     return order;
   }
 
   onSubmit(): void {
-
-    if( this.orderForm.invalid ) return;
+    if( this.form.invalid ) return;
 
     if( this.currentOrder.ordenId ) {
       this.orderService.updateOrder( this.currentOrder )
@@ -55,8 +58,8 @@ export class NewOrderPageComponent {
 
     //Solo muestra datos en consola
     console.log({
-      formIsValid: this.orderForm.valid,
-      value: this.orderForm.value,
+      formIsValid: this.form.valid,
+      value: this.form.value,
     })
 
   }
