@@ -26,196 +26,68 @@
     </dl>
   </div>
 
-  <!-- Start coding here -->
-  <div class="bg-white relative shadow-lg rounded-xl sm:rounded-lg overflow-hidden">
+  <form action="" class="min-w-full" [formGroup]="form" (ngSubmit)="onSubmit()">
 
-    <!-- <div class="overflow-x-auto"> -->
+    <!-- Start coding here -->
+    <div class="bg-white relative shadow-lg rounded-xl sm:rounded-lg overflow-hidden">
 
-    <table class="w-full text-sm text-left text-gray-500">
-      <thead class="text-lg tracking-wide font-medium text-orange-400">
-        <tr>
-          <th scope="col" class="px-2 py-2">Producto</th>
-          <th scope="col" class="px-2 py-2">Cantidad</th>
-          <th scope="col" class="px-2 py-2">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
+      <!-- <div class="overflow-x-auto"> -->
 
-        <tr class="">
-          <th class="px-2 py-2">Hot Dog</th>
-          <td class="px-2 py-2">2</td>
-          <td class="px-2 py-2 flex items-center justify-start">
-            <div class="flex items-center space-x-3 w-full md:w-auto">
-              <button
-                class="flex items-center justify-center text-white bg-orange-400 hover:bg-orange-500 font-medium rounded-lg px-4 py-2"
-                type="button">
-                ✏️
-              </button>
-              <button
-                class="flex items-center justify-center text-white bg-orange-400 hover:bg-orange-500 font-medium rounded-lg px-4 py-2"
-                type="button">
-                🗑️
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="">
-          <th class="px-2 py-2">Burger</th>
-          <td class="px-2 py-2">2</td>
-          <td class="px-2 py-2 flex items-center justify-start">
-            <div class="flex items-center space-x-3 w-full md:w-auto">
-              <button
-                class="flex items-center justify-center text-white bg-orange-400 hover:bg-orange-500 font-medium rounded-lg px-4 py-2"
-                type="button">
-                ✏️
-              </button>
-              <button
-                class="flex items-center justify-center text-white bg-orange-400 hover:bg-orange-500 font-medium rounded-lg px-4 py-2"
-                type="button">
-                🗑️
-              </button>
-            </div>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-
-    <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-2 p-2">
-      <div
-        class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-        <button type="button"
-          class="flex items-center justify-center text-white bg-orange-400 hover:bg-orange-500 font-medium rounded-lg px-4 py-2">
-          Agregar
-        </button>
-      </div>
-    </div>
-
-  </div>
-  <!-- </div> -->
-
-  <div class="my-1 overflow-x-auto min-w-full bg-white px-2 py-2.5 rounded-xl shadow-lg transform">
-    <div class="">
-      <label for="OrderNotes" class="block text-lg font-medium text-orange-400"> Notas </label>
-      <textarea id="OrderNotes"
-        class="mt-2 w-full rounded-lg p-2 font-sans align-top focus:border-2 placeholder-shown:border placeholder-shown:border-gray-400 shadow-sm sm:text-sm"
-        rows="4" placeholder="Escribe observaciones del pedido..."></textarea>
-    </div>
-
-    <div class="flex justify-end m-2">
-      <button type="" class="inline-block rounded-lg tracking-wide bg-orange-400 mr-4 px-4 py-2 font-medium text-white">
-        Cancelar
-      </button>
-
-      <button type="" (click)="onSubmit()"
-        class="inline-block rounded-lg tracking-wide bg-orange-400 mr-4 px-4 py-2 font-medium text-white">
-        Enviar
-      </button>
-    </div>
-  </div>
-
-
-  <!-- <div class="mt-2 overflow-x-auto bg-white rounded-xl shadow-lg transform">
-    <h2 class="px-4 py-2 tracking-wide text-lg font-medium text-orange-400">Listado de productos</h2>
-    <form class="min-w-full" [formGroup]="form" (ngSubmit)="onSubmit()">
-
-      <table class="table-auto min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-        <thead>
-          <tr class="text-orange-400 bg-orange-50">
-            <th class="font-medium py-3 px-4 text-left">Producto</th>
-            <th class="font-medium py-3 px-4 text-left">Cantidad</th>
-            <th class="font-medium py-3 px-4 text-left">Accion</th>
+      <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-lg tracking-wide font-medium text-orange-400">
+          <tr>
+            <th class="px-2 py-2">Producto</th>
+            <th class="px-2 py-2">Cantidad</th>
+            <th class="px-2 py-2">Acciones</th>
           </tr>
         </thead>
+        <tbody formArrayName="productos">
 
-        <tbody class="border-b border-blue-gray-200">
-
-          <tr class="border-b border-blue-gray-200">
-            <td class="text-sm py-3 px-4">Hamburgesa</td>
-            <td class="text-sm py-3 px-4">5</td>
-            <td class="">
-              <div class="flex justify-start gap-4">
-                <button class="text-lg">✏️</button>
-                <button class="text-lg">🗑️</button>
+          <tr class="" *ngFor="let item of productList.controls; let i = index">
+            <th class="px-2 py-2">Hot Dog</th>
+            <td class="px-2 text-center py-2">2</td>
+            <td class="px-2 py-2 flex items-center justify-start">
+              <div class="flex items-center space-x-3 w-full md:w-auto">
+                <button
+                  class="flex items-center justify-center text-white bg-orange-100 hover:bg-orange-500 font-medium rounded-lg px-4 py-2"
+                  type="button">
+                  ✏️
+                </button>
+                <button
+                  class="flex items-center justify-center text-white bg-orange-100 hover:bg-orange-500 font-medium rounded-lg px-4 py-2"
+                  type="button">
+                  🗑️
+                </button>
               </div>
             </td>
           </tr>
-
-          <tr class="border-b border-blue-gray-200">
-            <td class="text-sm py-3 px-4">Hamburgesa</td>
-            <td class="text-sm py-3 px-4">5</td>
-            <td class="">
-              <div class="flex justify-start gap-4">
-                <button class="text-lg">✏️</button>
-                <button class="text-lg">🗑️</button>
-              </div>
-            </td>
-          </tr>
-
-          <tr class="border-b border-blue-gray-200">
-            <td class="text-sm py-3 px-4">Hamburgesa</td>
-            <td class="text-sm py-3 px-4">5</td>
-            <td class="">
-              <div class="flex justify-start gap-4">
-                <button class="text-lg">✏️</button>
-                <button class="text-lg">🗑️</button>
-              </div>
-            </td>
-          </tr>
-
-          <tr class="border-b border-blue-gray-200">
-            <td class="text-sm py-3 px-4">Hamburgesa</td>
-            <td class="text-sm py-3 px-4">5</td>
-            <td class="">
-              <div class="flex justify-start gap-4">
-                <button class="text-lg">✏️</button>
-                <button class="text-lg">🗑️</button>
-              </div>
-            </td>
-          </tr>
-
         </tbody>
+
+        <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-2 p-2">
+          <div
+            class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+            <input
+              class="flex items-center justify-center text-white bg-orange-100 hover:bg-orange-500 font-medium rounded-lg px-4 py-2">
+            <button type="button"
+              class="flex items-center justify-center text-white bg-orange-400 hover:bg-orange-500 font-medium rounded-lg px-4 py-2">
+              Agregar
+            </button>
+          </div>
+        </div>
+
+
       </table>
 
 
-      <div class="flex justify-between my-2 p-2" formArrayName="productos" >
+    </div>
+    <!-- </div> -->
 
-        <div *ngFor="let item of productList.controls; let i = index" >
-          <div>
-            <label for="UserEmail" class="block text-xs font-medium text-gray-700"> Email </label>
-          
-            <input [formControlName]="i"
-              placeholder="john@rhcp.com"
-              class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
-            />
-          </div>
-        </div>
-
-        <select formArrayName="productos">
-          <option value="" disabled selected>Elija producto</option>
-          <option *ngFor="let item of productList.controls" [value]="item" selected>{{ item.value }}</option>
-        </select>
-
-        <div>
-          <label for="Quantity" class="sr-only"> Quantity </label>
-        
-          <div class="flex items-center gap-1">
-            <input type="number" id="Quantity" value="1"
-              class="h-10 w-24 rounded border-gray-200 [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
-            />
-          </div>
-        </div>
-
-        <button class="rounded-lg tracking-wide bg-orange-400 px-4 py-2 ml-4 font-medium text-white">
-          Agregar
-        </button>
-      </div>
-
-      <div class="mx-2">
+    <div class="my-1 overflow-x-auto min-w-full bg-white px-2 py-2.5 rounded-xl shadow-lg transform">
+      <div class="">
         <label for="OrderNotes" class="block text-lg font-medium text-orange-400"> Notas </label>
-        <textarea id="OrderNotes" class="mt-2 w-full rounded-lg p-2 font-sans align-top focus:border-2 placeholder-shown:border placeholder-shown:border-gray-400 shadow-sm sm:text-sm" rows="4"
-          placeholder="Escribe observaciones del pedido..."></textarea>
+        <textarea id="OrderNotes"
+          class="mt-2 w-full rounded-lg p-2 font-sans align-top focus:border-2 placeholder-shown:border placeholder-shown:border-gray-400 shadow-sm sm:text-sm"
+          rows="4" placeholder="Escribe observaciones del pedido..."></textarea>
       </div>
 
       <div class="flex justify-end m-2">
@@ -229,10 +101,9 @@
           Enviar
         </button>
       </div>
+    </div>
 
-    </form>
-
-  </div> -->
+  </form>
 
 </main>
 

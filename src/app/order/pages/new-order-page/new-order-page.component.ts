@@ -21,6 +21,9 @@ export class NewOrderPageComponent {
     productos: this.orderForm.array([
       ['Hot Dog'],
       ['Burger'],
+      ['Pizza'],
+      ['Pizza'],
+      ['Pizza'],
       ['Pizza']
     ])
   })
