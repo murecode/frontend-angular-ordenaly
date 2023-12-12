@@ -1,21 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { IItem, IOrder } from '../../interface/IOrder.interface';
 import { OrderService } from '../../service/order.service';
-import { switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from 'src/app/product/interface/IProduct.inteface';
+import { switchMap } from 'rxjs';
 
 @Component({
-  selector: 'table-details',
+  selector: 'app-details-page',
   standalone: true,
-  imports: [CommonModule, NgFor],
-  templateUrl: './table-details.component.html',
-  styles: [
-  ]
+  imports: [ CommonModule ],
+  templateUrl: './order-details-page.html',
 })
-export class TableDetailsComponent implements OnInit {
+export class OrderDetailsComponent  {
 
   public order?: IOrder;
   public item?: IItem;
@@ -43,14 +40,5 @@ export class TableDetailsComponent implements OnInit {
   calcularTotal(): number|undefined {
     return this.order?.pedido.reduce( (precio, pedido) => precio + (pedido.producto.precio * pedido.producto.precio), 0 )
   }
-  
-
+    
 }
-
-//* ActiveRoute, proporciona acceso a información sobre una ruta asociada...
-//  con un componente que se carga en un *outlet*. Se utiliza para recorrer...
-//  el árbol de RouterState y extraer información de los nodos.
-
-//** switcMap, cancela observables anteriores y cambia al nuevo observable emitido...
-// util cuando, se tiene un flujo continuo de eventos, como solicitudes HTTP, y...
-// solo estás interesado en el resultado del último evento

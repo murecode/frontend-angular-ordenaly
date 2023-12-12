@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
 import { ITicket } from '../../interface/ITicket.interface';
 import { TicketService } from '../../service/ticket.service';
 
 import { AddButtonComponent } from 'src/app/shared/components/add-button/add-button.component';
 
 @Component({
-  selector: 'ticket-card',
+  selector: 'app-list-page',
   standalone: true,
-  imports: [CommonModule, NgFor, RouterModule, AddButtonComponent],
-  templateUrl: './ticket-card.component.html',
+  imports: [ RouterModule, CommonModule, AddButtonComponent ],
+  templateUrl: './ticket-list-page.html',
   styles: [
   ]
 })
-export class TicketCardComponent {
+export class TicketListComponent {
 
   public ticketList: ITicket[] = [];
   public ticket?: ITicket;
@@ -27,9 +26,10 @@ export class TicketCardComponent {
       .subscribe( ticket => this.ticketList = ticket )
   }
 
-  newTicket(ticket: ITicket) {
-    // this.ticketService.addTicket(ticket)
-    return console.log(ticket)
+  public newTicket(): void {
+    this.ticketService.addTicket()
+      .subscribe()
+    console.log("Ticket Creado")
   }
 
 }

@@ -1,0 +1,56 @@
+<main class="md: m-2">
+
+  <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 space-y-3 md:space-y-0">
+
+    <!-- order card -->
+    <div class="max-w-sm bg-white px-4 py-2.5 rounded-xl shadow-lg transform" *ngFor="let order of orderList">
+      <div class="flex items-center justify-between">
+        <p class="text-xl font-medium text-orange-400">Turno: <span>{{ order.turno }}</span></p>
+        <!-- <span showOrderStates >{{ order.estado }}</span> -->
+        <span *ngIf="order.estado === 'PENDIENTE'" class="rounded-xl bg-red-100 text-red-600 px-2 py-1 text-xs">{{ order.estado }}</span>
+        <span *ngIf="order.estado === 'ATENDIDA'" class="rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs">{{ order.estado }}</span>
+      </div>
+  
+      <div class="my-1">
+        <div class="mt-1.5 flex gap-4 sm:gap-6" >
+  
+          <!-- <div class="flex flex-col">
+            <dt class="font-medium text-gray-600">No. orden</dt>
+            <dd class="text-gray-500"> {{ order.ordenId }}</dd>
+          </div> -->
+  
+          <div class="flex flex-col">
+            <dt class="font-medium text-gray-600">Mesa: </dt>
+            <dd class="text-gray-500">{{ order.mesa }}</dd>
+          </div>
+    
+          <div class="flex flex-col">
+            <dt class="font-medium text-gray-600">Mesero: </dt>
+            <dd class="text-gray-500">{{ order.mesero }}</dd>
+          </div>
+  
+          <div class="flex flex-col">
+            <dt class="font-medium text-gray-600">Pago:</dt>
+            <dd class="text-gray-500">{{ order.pago }}</dd>
+          </div>
+        </div>
+  
+        <button
+          class="mt-4 w-full font-medium text-white text-lg bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
+          [routerLink]="[ '/orders/', order.ordenId ]"
+          >Detalles
+        </button>
+
+      </div>
+    </div>
+    <!-- end order card -->
+  
+  </div>
+  
+  <!-- {{ orderList | json }} -->
+  
+
+
+
+  <!-- <order-card></order-card> -->
+</main>
