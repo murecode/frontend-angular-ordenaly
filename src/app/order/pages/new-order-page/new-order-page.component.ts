@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
-import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-
-import { MatButtonModule } from '@angular/material/button';
+import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { OrderService } from '../../service/order.service';
 import { IOrder } from '../../interface/IOrder.interface';
@@ -10,22 +8,23 @@ import { IOrder } from '../../interface/IOrder.interface';
 @Component({
   selector: 'new-order-page',
   standalone: true,
-  imports: [ CommonModule, NgFor, ReactiveFormsModule, MatButtonModule ],
+  imports: [ CommonModule, NgFor, ReactiveFormsModule ],
   templateUrl: './new-order-page.html',
   styles: [
   ]
 })
 export class NewOrderPageComponent {
 
-  public form: FormGroup = this.orderForm.group({
-    productos: this.orderForm.array([
-      ['Hot Dog'],
-      ['Burger'],
-      ['Pizza'],
-      ['Pizza'],
-      ['Pizza'],
-      ['Pizza']
-    ])
+  public newItem: FormControl = new FormControl('')
+
+  public newOrderForm: FormGroup = this.orderForm.group({
+    ticketId: ['', Validators.required ],
+    mesa: [''],
+    mesero: ['', Validators.required ],
+    estado: ['PENDIENTE', Validators.required],
+    pago: ['PENDIENTE', Validators.required ],
+    pedido: this.orderForm.array([ ]),
+    nota: ['Escriba una nota']
   })
 
   constructor(
@@ -33,17 +32,28 @@ export class NewOrderPageComponent {
     private orderForm: FormBuilder
   ) {}
 
-  get productList() {
-    return this.form.get('products') as FormArray
+  addProduct(): void {
+    if ( this.newItem.invalid ) return;
+    const newitem = this.newItem.value;
+
+    console.log( newitem )
+
+    this.pedido.push(
+      this.orderForm.control( newitem )
+    )
+  }
+
+  get pedido() {
+    return this.newOrderForm.get('pedido') as FormArray
   }
 
   get currentOrder(): IOrder {
-    const order = this.form.value as IOrder;
+    const order = this.newOrderForm.value as IOrder;
     return order;
   }
 
   onSubmit(): void {
-    if( this.form.invalid ) return;
+    if( this.newOrderForm.invalid ) return;
 
     if( this.currentOrder.ordenId ) {
       this.orderService.updateOrder( this.currentOrder )
@@ -61,8 +71,8 @@ export class NewOrderPageComponent {
 
     //Solo muestra datos en consola
     console.log({
-      formIsValid: this.form.valid,
-      value: this.form.value,
+      formIsValid: this.newOrderForm.valid,
+      value: this.newOrderForm.value,
     })
 
   }
