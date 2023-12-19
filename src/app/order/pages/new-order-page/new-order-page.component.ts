@@ -23,7 +23,7 @@ export class NewOrderPageComponent {
     mesero: ['', Validators.required ],
     estado: ['PENDIENTE', Validators.required],
     pago: ['PENDIENTE', Validators.required ],
-    pedido: this.orderForm.array([ ]),
+    pedido: this.orderForm.array([]),
     nota: ['Escriba una nota']
   })
 

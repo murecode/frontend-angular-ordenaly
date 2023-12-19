@@ -17,6 +17,5 @@ export interface IOrder {
 export interface IItem {
   itemId:   number;
   producto: IProduct;
-  precio:   IProduct;
   cantidad: number;
 }
