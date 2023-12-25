@@ -1,7 +1,7 @@
-import { IOrder } from "src/app/order/interface/IOrder.interface";
+// import { IOrder } from "src/app/order/interface/IOrder.interface";
 
 export interface ITicket {
-  ticketId:    number;
-  hora:        string;
-  orden:       IOrder;
+  ticket_id:     string;
+  created_at:    string;
+  related_order: number;
 }

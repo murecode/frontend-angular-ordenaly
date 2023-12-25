@@ -30,8 +30,8 @@ export class OrderService {
   }
 
   updateOrder( order: IOrder ): Observable<IOrder> {
-    if( !order.ordenId ) throw Error("La orden es requerida"); 
-    return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.ordenId }`, order)
+    if( !order.order_id ) throw Error("La orden es requerida"); 
+    return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.order_id }`, order)
   }
 
   removeOrder( id: string ): Observable<boolean> {

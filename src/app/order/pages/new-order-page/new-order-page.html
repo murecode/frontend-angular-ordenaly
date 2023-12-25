@@ -1,23 +1,27 @@
 
 <form [formGroup]="newOrderForm" (ngSubmit)="onSubmit()">
 
-  <label>Ticket: </label>
+  <label>Turno: </label>
   <input formControlName="ticketId">
+
   <label>Mesa: </label>
   <input formControlName="mesa">
+
   <label>Mesero: </label>
   <input formControlName="mesero">
+
   <label>Estado: </label>
   <input formControlName="estado">
+
   <label>Pago: </label>
   <input formControlName="pago">
   
-  <label>nuevo item: </label>
+  <label>Producto: </label>
   <input [formControl]="newItem">
   <button (click)="addProduct()">Agregar</button>
 
   <label>Nota: </label>
-  <input formControlName="pago">
+  <input formControlName="nota">
   
   <div formArrayName="pedido">
     <p>Listado pedido: </p>

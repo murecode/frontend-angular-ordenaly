@@ -24,7 +24,7 @@ export class NewOrderPageComponent {
     estado: ['PENDIENTE', Validators.required],
     pago: ['PENDIENTE', Validators.required ],
     pedido: this.orderForm.array([]),
-    nota: ['Escriba una nota']
+    nota: ['Observaciones del pedido']
   })
 
   constructor(
@@ -55,7 +55,7 @@ export class NewOrderPageComponent {
   onSubmit(): void {
     if( this.newOrderForm.invalid ) return;
 
-    if( this.currentOrder.ordenId ) {
+    if( this.currentOrder.order_id ) {
       this.orderService.updateOrder( this.currentOrder )
         .subscribe( order => {
           // TODO: mostrar snackbar

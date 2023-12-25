@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ITicket } from '../../interface/ITicket.interface';
 import { TicketService } from '../../service/ticket.service';
 
@@ -19,12 +19,20 @@ export class TicketListComponent {
   public ticketList: ITicket[] = [];
   public ticket?: ITicket;
 
-  constructor( private ticketService: TicketService ) {}
+  constructor(
+    private ticketService: TicketService,
+    ) {}
 
   ngOnInit(): void { 
     this.ticketService.getTickets()
       .subscribe( ticket => this.ticketList = ticket )
+
   }
+
+  // public verTicket(): void {
+  //   alert("viendo detalles")
+  //   this.router.navigate(['orders/new'], { queryParams: { } }) 
+  // }
 
   public newTicket(): void {
     this.ticketService.addTicket()

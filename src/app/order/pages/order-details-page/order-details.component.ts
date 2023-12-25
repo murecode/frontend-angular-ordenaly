@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IItem, IOrder } from '../../interface/IOrder.interface';
+import { IOrder } from '../../interface/IOrder.interface';
 import { OrderService } from '../../service/order.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
@@ -15,7 +15,7 @@ import { switchMap } from 'rxjs';
 export class OrderDetailsComponent  {
 
   public order?: IOrder;
-  public item?: IItem;
+  // public item?: IItem;
 
   constructor(
     private orderService: OrderService,
@@ -38,7 +38,7 @@ export class OrderDetailsComponent  {
   }
 
   calcularTotal(): number|undefined {
-    return this.order?.pedido.reduce( (precio, pedido) => precio + (pedido.producto.precio * pedido.producto.precio), 0 )
+    return this.order?.item_list.reduce( (precio, pedido) => precio + ( pedido.price * pedido.price ), 0 )
   }
     
 }

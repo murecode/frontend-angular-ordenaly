@@ -6,27 +6,27 @@
   
       <div class="flex flex-col">
         <dt class="font-medium text-gray-500">No. Orden</dt>
-        <dd class="text-sm text-gray-500">{{ order?.ordenId }}</dd>
+        <dd class="text-sm text-gray-500">{{ order?.order_id }}</dd>
       </div>
   
       <div class="flex flex-col">
         <dt class="font-medium text-gray-500">Turno</dt>
-        <dd class="text-sm text-gray-500">{{ order?.turno }}</dd>
+        <dd class="text-sm text-gray-500">{{ order?.related_ticket }}</dd>
       </div>
   
       <div class="flex flex-col">
         <dt class="font-medium text-gray-500">Mesa</dt>
-        <dd class="text-sm text-gray-500">{{ order?.mesa }}</dd>
+        <dd class="text-sm text-gray-500">{{ order?.table }}</dd>
       </div>
   
       <div class="flex flex-col">
         <dt class="font-medium text-gray-500">Pago</dt>
-        <dd class="text-sm text-gray-500">{{ order?.pago | lowercase }}</dd>
+        <dd class="text-sm text-gray-500">{{ order?.payment_status| lowercase }}</dd>
       </div>
   
       <div class="flex flex-col">
         <dt class="font-medium text-gray-500">Mesero</dt>
-        <dd class="text-sm text-gray-500">{{ order?.mesero }}</dd>
+        <dd class="text-sm text-gray-500">{{ order?.waiter }}</dd>
       </div>
     </dl>
   </div>
@@ -44,11 +44,11 @@
         </tr>
       </thead>
       <tbody class="text-blue-gray-900">
-        <tr class="border-b border-blue-gray-200" *ngFor="let item of order.pedido">
-          <td class="text-sm py-3 px-4">{{ item.producto }}</td>
-          <td class="text-sm py-3 px-4">{{ item.producto.precio }}</td>
-          <td class="text-sm py-3 px-4">{{ item.cantidad }}</td>
-          <td class="text-sm py-3 px-4">{{ item.cantidad * item.producto.precio }}</td>
+        <tr class="border-b border-blue-gray-200" *ngFor="let item of order.item_list">
+          <td class="text-sm py-3 px-4">{{ item.product_name }}</td>
+          <td class="text-sm py-3 px-4">{{ item.price }}</td>
+          <td class="text-sm py-3 px-4">{{ item.quantity }}</td>
+          <td class="text-sm py-3 px-4">{{ item.quantity * item.price }}</td>
           <!-- <td class="py-3 px-4"><a href="#" class="font-medium text-blue-600 hover:text-blue-800">Edit</a></td> -->
         </tr>
         <tr class="border-b border-blue-gray-200 bg-orange-50">
@@ -63,7 +63,7 @@
   
     <div>
       <caption class="px-4 py-2 text-xl font-medium text-orange-400">Observaciones:</caption>
-      <p class="px-4 py-2">{{ order.notas }}</p>
+      <p class="px-4 py-2">{{ order.order_comment }}</p>
     </div>
     
   </div>
