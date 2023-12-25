@@ -3,18 +3,21 @@
 <form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
 
   <label>Nombre: </label>
-  <input type="text" formControlName="productName">
+  <input formControlName="product_id">
+
+  <label>Nombre: </label>
+  <input formControlName="product_name">
 
   <label>Descripcion: </label>
-  <input type="text" formControlName="description">
+  <input formControlName="description">
 
   <label>Precio: </label>
   <input type="number" formControlName="price">
 
   <label>Disponible: </label>
-  <input formControlName="inStock">
+  <input formControlName="in_stock">
 
-  <button (click)="onSubmit()" >Enviar</button>
+  <button (click)="onSubmit()">Enviar</button>
   
 </form>
 

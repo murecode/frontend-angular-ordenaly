@@ -3,9 +3,6 @@ import { Routes } from "@angular/router";
 import { HomePageComponent } from "./shared/pages/home-page/home-page.component"; 
 import { Error404PageComponent } from "./shared/pages/error404-page/error404-page.component"; 
 import { UserComponent } from "./user/user.component";
-import { OrderLayoutComponent } from "./order/pages/layout-page/order-layout.component";
-import { ProductLayoutComponent } from "./product/pages/layout-page/product-layout.component";
-import { TicketLayoutComponent } from "./ticket/pages/layout-page/ticket-layout.component";
 
 // ordenaly-app.com/
 export const routes: Routes = [
@@ -18,7 +15,6 @@ export const routes: Routes = [
     path: 'products',
     loadChildren: () => import('./product/product.routes')
   },
-  
   {
     path: 'orders',
     loadChildren: () => import('./order/order.routes')

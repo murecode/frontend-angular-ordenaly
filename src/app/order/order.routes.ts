@@ -10,16 +10,20 @@ export default [
     path: '',
     children: [
       {
-        path: 'new', component: NewOrderPageComponent 
+        path: 'new',
+        component: NewOrderPageComponent 
       },
       {
-        path: '', component: OrderListComponent
+        path: '',
+        component: OrderListComponent
       },
       {
-        path: 'edit/:id', component: NewOrderPageComponent
+        path: 'edit/:id',
+        component: NewOrderPageComponent
       },
       {
-        path: ':id', component: OrderDetailsComponent
+        path: ':id',
+        component: OrderDetailsComponent
       },
     ]
   },

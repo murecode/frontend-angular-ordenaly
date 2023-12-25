@@ -67,6 +67,10 @@
   <!-- componente de prueba-->
 
   <!-- boton para agregar nuevo producto -->
-  <add-button (click)="addProduct()" ></add-button>
+  <add-button 
+    (click)="addProduct()"
+    [routerLink]="['/products/new']"
+    >
+  </add-button>
 
 </div>

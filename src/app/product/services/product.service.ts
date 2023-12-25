@@ -9,7 +9,7 @@ import { environment } from "src/environments/environment.prod";
 @Injectable({providedIn: 'root'})
 export class ProductService {
 
-  private baseUrl: string = environment.baseUrl;
+  private baseUrl:string = environment.baseUrl;
 
   constructor( private http: HttpClient ) {};
 
@@ -17,8 +17,12 @@ export class ProductService {
     return this.http.get<IProduct[]>(`${this.baseUrl}/products`);
   }
 
-  newProduct( product: IProduct ): Observable<IProduct> {
-    return this.http.post<IProduct>(`${this.baseUrl}/products/new`, product)
+  newProduct( product:IProduct ): Observable<IProduct> {
+    return this.http.post<IProduct>(`${this.baseUrl}/products`, product)
+  }
+
+  updateProduct( product:IProduct ):Observable<IProduct> {
+    return this.http.put<IProduct>(`${this.baseUrl}/products/${ product.product_id }`, product)
   }
 
 }

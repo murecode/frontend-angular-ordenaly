@@ -16,11 +16,11 @@ import { OrderService } from '../../service/order.service';
 })
 export class OrderListComponent {
   
-  filterTabs: string[] = ['Todo','Pendientes','Completas']
+  filterTabs:string[] = ['Todo','Pendientes','Completas']
 
-  public orderList: IOrder[] = [];
+  public orderList:IOrder[] = [];
 
-  constructor( private orderService: OrderService ) { }
+  constructor( private orderService:OrderService ) { }
 
   ngOnInit(): void { 
     this.orderService.getOrders()

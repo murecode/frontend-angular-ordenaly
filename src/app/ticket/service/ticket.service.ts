@@ -13,13 +13,12 @@ export class TicketService {
 
   constructor( private http: HttpClient ) {}
 
-
   getTickets(): Observable<ITicket[]> {
     return this.http.get<ITicket[]>(`${this.baseUrl}/tickets`)
   }
 
-  addTicket(): Observable<ITicket>  {
-    return this.http.get<ITicket>(`${this.baseUrl}/tickets/new`)
+  newTicket():Observable<ITicket>  {
+    return this.http.post<ITicket>(`${this.baseUrl}/tickets/new`, {})
   }
 
 

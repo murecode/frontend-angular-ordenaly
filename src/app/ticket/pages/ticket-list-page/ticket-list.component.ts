@@ -9,7 +9,7 @@ import { AddButtonComponent } from 'src/app/shared/components/add-button/add-but
 @Component({
   selector: 'app-list-page',
   standalone: true,
-  imports: [ RouterModule, CommonModule, AddButtonComponent ],
+  imports: [RouterModule, CommonModule, AddButtonComponent],
   templateUrl: './ticket-list-page.html',
   styles: [
   ]
@@ -17,16 +17,14 @@ import { AddButtonComponent } from 'src/app/shared/components/add-button/add-but
 export class TicketListComponent {
 
   public ticketList: ITicket[] = [];
-  public ticket?: ITicket;
 
   constructor(
     private ticketService: TicketService,
-    ) {}
+  ) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.ticketService.getTickets()
-      .subscribe( ticket => this.ticketList = ticket )
-
+      .subscribe(ticket => this.ticketList = ticket)
   }
 
   // public verTicket(): void {
@@ -34,10 +32,12 @@ export class TicketListComponent {
   //   this.router.navigate(['orders/new'], { queryParams: { } }) 
   // }
 
-  public newTicket(): void {
-    this.ticketService.addTicket()
-      .subscribe()
-    console.log("Ticket Creado")
+  addTicket(): void {
+    this.ticketService.newTicket()
+      .subscribe(ticket => {
+        console.log("Ticket Creado")
+      })
+
   }
 
 }
