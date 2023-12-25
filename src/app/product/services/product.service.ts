@@ -1,20 +1,24 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 import { IProduct } from "../interface/IProduct.inteface";
-import { environment } from "src/environments/environment.dev";
-import { Observable } from "rxjs";
+// import { environment } from "src/environments/environment.dev";
+import { environment } from "src/environments/environment.prod";
 
 @Injectable({providedIn: 'root'})
 export class ProductService {
 
   private baseUrl: string = environment.baseUrl;
-  // private ordenaly: string = 'http://localhost:8080/products/list'
 
   constructor( private http: HttpClient ) {};
 
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(`${this.baseUrl}/products`);
+  }
+
+  newProduct( product: IProduct ): Observable<IProduct> {
+    return this.http.post<IProduct>(`${this.baseUrl}/products/new`, product)
   }
 
 }

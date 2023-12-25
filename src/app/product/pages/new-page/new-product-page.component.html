@@ -1,0 +1,22 @@
+<p>Crear Producto</p>
+
+<form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+
+  <label>Nombre: </label>
+  <input type="text" formControlName="productName">
+
+  <label>Descripcion: </label>
+  <input type="text" formControlName="description">
+
+  <label>Precio: </label>
+  <input type="number" formControlName="price">
+
+  <label>Disponible: </label>
+  <input formControlName="inStock">
+
+  <button (click)="onSubmit()" >Enviar</button>
+  
+</form>
+
+
+<pre>{{ currentProduct | json}}</pre>

@@ -1,7 +1,7 @@
 export interface IProduct {
-  id:           number;
-  nombre:       string;
-  descripcion:  string;
-  precio:       number;
-  disponible:   boolean;
+  product_id:   string;
+  product_name: string;
+  description:  string;
+  price:        number;
+  in_stock:     boolean;
 }

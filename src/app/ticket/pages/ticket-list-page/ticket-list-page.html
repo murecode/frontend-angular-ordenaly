@@ -1,0 +1,39 @@
+<main class="md: m-2">
+
+  <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-4 gap-3 space-y-3 md:space-y-0">
+
+    <!-- ticket card -->
+    <div class="max-w-sm bg-white px-4 pt-4 pb-2 rounded-xl shadow-lg transform" *ngFor="let ticket of ticketList">
+      <div class="flex items-center justify-between">
+        <p class=" text-lg font-medium text-orange-400">Turno <span>{{ ticket.ticket_id }}</span></p>
+      </div>
+      <div class="flex items-center justify-between">
+  
+        <dl class="flex gap-4 sm:gap-6">
+          <div class="flex flex-col">
+            <dt class="font-medium text-gray-500">Hora</dt>
+            <dd class="text-sm text-gray-500">{{ ticket.created_at }}</dd>
+          </div>
+  
+          <div class="flex flex-col">
+            <dt class="font-medium text-gray-500">Orden</dt>
+            <dd class="text-sm text-gray-500">{{ ticket.related_order }}</dd>
+          </div>
+        </dl>
+        <button class="w-1/3 font-medium text-lg text-white bg-orange-400 py-1.5 px-1 rounded-xl hover:bg-orange-500"
+                [routerLink]="['/orders/new']"
+                >Atender
+        </button>
+  
+      </div>
+    </div>
+    <!-- End Ticket Card-->
+  
+    <!-- boton para generar Nuevo ticket --> 
+      <add-button type="button" (click)="newTicket()"></add-button>
+  
+  </div>
+
+</main>
+
+<!-- <pre>{{ verTicket }}</pre> -->

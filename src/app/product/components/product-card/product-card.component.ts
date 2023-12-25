@@ -24,4 +24,8 @@ export class ProductCardComponent {
       .subscribe( product => this.productList = product )
   }
 
+  addProduct() {
+    console.log("Enviar a formulario de nuevo producto")
+  }
+
 }
