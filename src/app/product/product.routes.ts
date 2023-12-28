@@ -11,10 +11,16 @@ export default [
     path: '', component: ProductLayoutComponent, 
     children: [
       {
-        path: 'new', component: NewProductComponent
+        path: 'new',
+        component: NewProductComponent
       },
       {
-        path: '', component: ListPageComponent
+        path: ':id/edit',
+        component: NewProductComponent
+      },
+      {
+        path: '',
+        component: ListPageComponent
       }
     ]
   }

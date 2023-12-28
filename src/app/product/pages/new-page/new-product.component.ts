@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
 import { ProductService } from '../../services/product.service';
 import { IProduct } from '../../interface/IProduct.inteface';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'new-product-page',
@@ -12,35 +15,53 @@ import { IProduct } from '../../interface/IProduct.inteface';
   styles: [
   ]
 })
-export class NewProductComponent {
+export class NewProductComponent implements OnInit {
 
-  public product?: IProduct;
+  product?: IProduct;
 
   public newProductForm: FormGroup = this.productForm.group({
-    product_id: [''],
-    product_name: ['', Validators.required],
+    product_name: [''],
     description: [''],
-    price: [0.1, Validators.required],
+    price: [0.1],
     in_stock: [true]
   })
 
   constructor(
-    private productService: ProductService,
-    private productForm: FormBuilder
-  ) { }
+    private productService:ProductService,
+    private productForm:FormBuilder,
+    private activeRoute:ActivatedRoute,
+    private router:Router
+  ) {}
 
-  get currentProduct(): IProduct {
+  get currentProduct():IProduct {
     const product = this.newProductForm.value as IProduct;
     return product;
   }
+  
+  ngOnInit():void {
 
-  onSubmit(): void {
+    if ( this.router.url.includes('edit') ) return;
+
+    this.activeRoute.params
+      .pipe(
+        switchMap( ({ id }) => this.productService.getProduct( id ) ),
+      ).subscribe( product => {
+
+        if ( !product ) return this.router.navigateByUrl('/');
+
+        this.newProductForm.reset( product )
+        return;
+      });
+
+  }
+
+  onSubmit():void {
 
     if (this.newProductForm.invalid) return;
 
     // Si no tiene id se crea un nuevo recurso
     if (!this.currentProduct.product_id) {
-      this.productService.newProduct(this.currentProduct)
+      this.productService.newProduct( this.currentProduct )
         .subscribe(product => {
           console.log("producto enviado");
         })
@@ -52,7 +73,8 @@ export class NewProductComponent {
       .subscribe(product => {
         //TODO: mostrar snackbar, y navegar a /product/edit/id
         console.log("producto actualizado");
-      } )
+      })
+
   }
 
 }

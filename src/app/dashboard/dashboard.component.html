@@ -1,14 +1,15 @@
+
 <mat-sidenav-container class="w-auto h-screen">
 
-  <mat-sidenav #sidenav mode="push" class="w-64 h-screen">
+  <mat-sidenav #sidenav mode="over" class="w-64 h-screen">
 
-    <mat-toolbar class="bg-orange-400">
+    <mat-toolbar-row class="bg-orange-400">
       <button mat-icon-button class="pr-4 text-white" (click)="sidenav.toggle()">
         <mat-icon>keyboard_arrow_left</mat-icon>
       </button>
       <span class="text-2xl font-semibold text-white">Administrar</span>
       <span class="pl-8"></span>
-    </mat-toolbar>
+    </mat-toolbar-row>
 
     <mat-list class="mt-0">
       <mat-list-item 
@@ -23,22 +24,22 @@
 
   <mat-sidenav-content>
 
-    <mat-toolbar class="bg-orange-400">
-      <button mat-icon-button class="pr-4" (click)="sidenav.toggle()">
+    <mat-toolbar class="bg-orange-400 flex justify-between">
+      <button mat-icon-button class="pr-4 text-white" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
       <span class="text-2xl font-semibold text-white ">Ordenaly</span>
       <span class="pl-8"></span>
-      <!-- <button mat-icon-button class="">
-        <mat-icon>favorite</mat-icon>
-      </button> -->
-
-      <!-- avatar -->
-      <button clas type="button" class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0" routerLink="/auth/login">
-        <img class="w-8 h-8 rounded-full"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png" alt="user photo" />
-      </button>
-
+       <div>
+         <a href="#" class="block shrink-0">
+          <span class="sr-only">Profile</span>
+          <img
+            alt="Man"
+            src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+            class="h-10 w-10 rounded-full object-cover"
+          />
+        </a>
+       </div>
     </mat-toolbar>
 
     <div class="flex flex-wrap">
@@ -46,7 +47,10 @@
         <router-outlet></router-outlet>
       </div>
     </div>
-
+    
   </mat-sidenav-content>
+  
 
 </mat-sidenav-container>
+
+

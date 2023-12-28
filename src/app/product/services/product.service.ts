@@ -13,16 +13,20 @@ export class ProductService {
 
   constructor( private http: HttpClient ) {};
 
-  getProducts(): Observable<IProduct[]> {
+  getProducts():Observable<IProduct[]> {
     return this.http.get<IProduct[]>(`${this.baseUrl}/products`);
   }
 
-  newProduct( product:IProduct ): Observable<IProduct> {
-    return this.http.post<IProduct>(`${this.baseUrl}/products`, product)
+  getProduct( id:string ):Observable<IProduct|undefined> {
+    return this.http.get<IProduct>(`${this.baseUrl}/products/${ id }`);
+  }
+
+  newProduct( product:IProduct ):Observable<IProduct> {
+    return this.http.post<IProduct>(`${this.baseUrl}/products`, product);
   }
 
   updateProduct( product:IProduct ):Observable<IProduct> {
-    return this.http.put<IProduct>(`${this.baseUrl}/products/${ product.product_id }`, product)
+    return this.http.put<IProduct>(`${this.baseUrl}/products/${ product.product_id }`, product);
   }
 
 }

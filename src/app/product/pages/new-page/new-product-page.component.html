@@ -3,11 +3,8 @@
 <form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
 
   <label>Nombre: </label>
-  <input formControlName="product_id">
-
-  <label>Nombre: </label>
   <input formControlName="product_name">
-
+  
   <label>Descripcion: </label>
   <input formControlName="description">
 
@@ -17,9 +14,8 @@
   <label>Disponible: </label>
   <input formControlName="in_stock">
 
-  <button (click)="onSubmit()">Enviar</button>
-  
 </form>
 
+<!-- <button (click)="onSubmit()"> Enviar </button> -->
 
 <pre>{{ currentProduct | json}}</pre>
