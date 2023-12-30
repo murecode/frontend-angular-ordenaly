@@ -2,30 +2,29 @@ import { Routes } from "@angular/router";
 
 import { HomePageComponent } from "./shared/pages/home-page/home-page.component"; 
 import { Error404PageComponent } from "./shared/pages/error404-page/error404-page.component"; 
-import { UserComponent } from "./user/user.component";
 
 // ordenaly-app.com/
 export const routes: Routes = [
 
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.routes')
+    loadChildren: () => import('./routes/auth.routes')
   },
   {
     path: 'products',
-    loadChildren: () => import('./product/product.routes')
+    loadChildren: () => import('./routes/product.routes')
   },
   {
     path: 'orders',
-    loadChildren: () => import('./order/order.routes')
+    loadChildren: () => import('./routes/order.routes')
   },
   {
     path: 'tickets',
-    loadChildren: () => import('./ticket/ticket.routes')
+    loadChildren: () => import('./routes/ticket.routes')
   },
   {
     path: 'users',
-    loadChildren: () => import('./user/user.routes')
+    loadChildren: () => import('./routes/user.routes')
   },
   { 
     path: '', 
