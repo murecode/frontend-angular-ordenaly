@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
@@ -21,8 +21,8 @@ export class TicketService {
     return this.http.get<ITicket>(`${this.baseUrl}/tickets/${ id }`)
   }
 
-  newTicket():Observable<ITicket> {
-    return this.http.post<ITicket>(`${this.baseUrl}/tickets`, {})
+  newTicket( data:any ):Observable<any> {
+    return this.http.post<ITicket>(`${this.baseUrl}/tickets`, data, undefined )
   }
 
 

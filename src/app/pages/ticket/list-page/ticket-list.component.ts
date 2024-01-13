@@ -17,6 +17,7 @@ import { AddButtonComponent } from 'src/app/shared/components/add-button/add-but
 export class TicketListComponent {
 
   public ticketList: ITicket[] = [];
+  
 
   constructor(
     private ticketService: TicketService,
@@ -32,12 +33,11 @@ export class TicketListComponent {
   //   this.router.navigate(['orders/new'], { queryParams: { } }) 
   // }
 
-  addTicket():void {
-    this.ticketService.newTicket()
+  addTicket() {
+    this.ticketService.newTicket( undefined )
       .subscribe(ticket => {
         console.log("Ticket Creado")
       })
-
   }
 
 }
