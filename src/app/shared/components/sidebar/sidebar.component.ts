@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgIf, NgFor } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 interface MenuOption {
@@ -10,20 +8,14 @@ interface MenuOption {
 }
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-sidebar',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    RouterModule,
-    RouterLinkActive,
-    NgIf, NgFor,
-  ],
-  templateUrl: './dashboard.component.html',
+  imports: [CommonModule, RouterModule],
+  templateUrl: './sidebar.component.html',
   styles: [
   ]
 })
-export class DashboardComponent {
+export class SidebarComponent {
 
   public menuOption: MenuOption[] = [
     { title: 'Turnos',   route: '/tickets' },

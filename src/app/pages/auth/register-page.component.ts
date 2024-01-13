@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
 
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-
 @Component({
   selector: 'app-register-page',
   standalone: true,
@@ -13,10 +9,6 @@ import { MatInputModule } from '@angular/material/input';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatCheckboxModule, 
    ],
   templateUrl: './register-page.component.html',
 })

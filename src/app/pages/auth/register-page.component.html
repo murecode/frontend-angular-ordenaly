@@ -28,35 +28,35 @@
 
         <form class="mt-8 grid grid-cols-6 gap-3" autocomplete="off" [formGroup]="registerForm" (ngSubmit)="onSave()">
 
-          <mat-form-field class="col-span-6 sm:col-span-3">
-            <mat-label>Nombre</mat-label>
+          <div class="col-span-6 sm:col-span-3">
+            <label>Nombre</label>
             <input type="text" matInput formControlName="name">
-            <mat-hint class="text-xs">Errors</mat-hint>
+            <p class="text-xs">Errors</p>
               <!-- @if(registerForm  ){} -->
 
-          </mat-form-field>
+          </div>
 
-          <mat-form-field class="col-span-6 sm:col-span-3">
-            <mat-label>Apellido</mat-label>
+          <div class="col-span-6 sm:col-span-3">
+            <label>Apellido</label>
             <input type="text" matInput formControlName="lastname">
-          </mat-form-field>
+          </div>
 
-          <mat-form-field class="col-span-6">
-            <mat-label>Correo electronico</mat-label>
+          <div class="col-span-6">
+            <label>Correo electronico</label>
             <input type="email" matInput formControlName="email">
-            <mat-hint class="text-xs">Error correo</mat-hint>
+            <p class="text-xs">Error correo</p>
 
-          </mat-form-field>
+          </div>
 
-          <mat-form-field class="col-span-6 sm:col-span-3">
-            <mat-label>Contraseña</mat-label>
+          <div class="col-span-6 sm:col-span-3">
+            <label>Contraseña</label>
             <input type="password" matInput formControlName="password">
-          </mat-form-field>
+          </div>
 
-          <mat-form-field class="col-span-6 sm:col-span-3">
-            <mat-label>Confirmar contraseña</mat-label>
+          <div class="col-span-6 sm:col-span-3">
+            <label>Confirmar contraseña</label>
             <input type="password" matInput formControlName="password">
-          </mat-form-field>
+          </div>
 
           <!-- <div class="col-span-6">
             <label for="MarketingAccept" class="flex gap-4">
