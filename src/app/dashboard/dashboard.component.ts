@@ -19,7 +19,7 @@ interface MenuOption {
     RouterLinkActive,
     NgIf, NgFor,
   ],
-  templateUrl: './dashboard.component.html',
+  templateUrl: './dashboard-page.html',
   styles: [
   ]
 })

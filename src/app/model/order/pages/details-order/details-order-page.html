@@ -1,0 +1,87 @@
+<main class="md: m-2">
+
+  <div class="my-1  overflow-x-auto min-w-full bg-white px-4 py-2.5 rounded-xl shadow-lg transform" >
+    <h2 class="text-xl font-medium text-orange-400">Informacion</h2>
+    <dl class="mt-1.5 flex justify-between gap-4 sm:gap-6">
+  
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">No. Orden</dt>
+        <dd class="text-sm text-gray-500">{{ order?.order_id }}</dd>
+      </div>
+  
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">Turno</dt>
+        <dd class="text-sm text-gray-500">{{ order?.related_ticket }}</dd>
+      </div>
+  
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">Mesa</dt>
+        <dd class="text-sm text-gray-500">{{ order?.table }}</dd>
+      </div>
+  
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">Pago</dt>
+        <dd class="text-sm text-gray-500">{{ order?.payment_status| lowercase }}</dd>
+      </div>
+  
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-500">Mesero</dt>
+        <dd class="text-sm text-gray-500">{{ order?.waiter }}</dd>
+      </div>
+    </dl>
+  </div>
+  
+  <div class="mt-2 overflow-x-auto bg-white rounded-xl shadow-lg transform" *ngIf="order">
+    <caption class="px-4 py-2 text-xl font-medium text-orange-400">Pedido</caption>
+    <table class="min-w-full">
+      <thead>
+        <tr class="text-orange-400 bg-orange-50">
+          <th class="font-medium py-3 px-4 text-left">Producto</th>
+          <th class="font-medium py-3 px-4 text-left">Precio</th>
+          <th class="font-medium py-3 px-4 text-left">Cantidad</th>
+          <th class="font-medium py-3 px-4 text-left">Total</th>
+          <!-- <th class="py-3 px-4 text-left">Action</th> -->
+        </tr>
+      </thead>
+      <tbody class="text-blue-gray-900">
+        <tr class="border-b border-blue-gray-200" *ngFor="let item of order.item_list">
+          <td class="text-sm py-3 px-4">{{ item.product_name }}</td>
+          <td class="text-sm py-3 px-4">{{ item.price }}</td>
+          <td class="text-sm py-3 px-4">{{ item.quantity }}</td>
+          <td class="text-sm py-3 px-4">{{ item.price * item.quantity }}</td>
+          <!-- <td class="py-3 px-4"><a href="#" class="font-medium text-blue-600 hover:text-blue-800">Edit</a></td> -->
+        </tr>
+        <tr class="border-b border-blue-gray-200 bg-orange-50">
+          <td class="py-3 px-4 font-medium text-gray-600">Total</td>
+          <td class="py-3 px-4"></td>
+          <td class="py-3 px-4"></td>
+          <td class="py-3 px-4 font-medium text-gray-600 ">{{ calcularTotal() }}</td>
+          <!-- <td class="py-3 px-4"></td> -->
+        </tr>
+      </tbody>
+    </table>  
+  
+    <div>
+      <caption class="px-4 py-2 text-xl font-medium text-orange-400">Observaciones:</caption>
+      <p class="px-4 py-2">{{ order.order_comment }}</p>
+    </div>
+    
+  </div>
+  
+  
+  
+  <!-- <div> "ESTE BLOCQUE VA PERO EN EL FORMULARIO DE ORDENES"
+    <label for="OrderNotes" class="block text-sm font-medium text-gray-700">
+      Order notes
+    </label>
+    <textarea id="OrderNotes" class="mt-2 w-full rounded-lg border-gray-200 align-top shadow-sm sm:text-sm" rows="4"
+      placeholder="Enter any additional order notes..."></textarea>
+  </div> -->
+
+  <!-- <table-details></table-details> -->
+</main>
+
+
+
+
+
