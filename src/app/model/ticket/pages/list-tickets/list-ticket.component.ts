@@ -5,11 +5,12 @@ import { ITicket } from '../../ITicket.interface';
 import { TicketService } from '../../ticket.service';
 
 import { AddButtonComponent } from 'src/app/shared/components/add-button/add-button.component';
+import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-list-page',
   standalone: true,
-  imports: [RouterModule, CommonModule, AddButtonComponent],
+  imports: [RouterModule, CommonModule, AddButtonComponent, NavbarComponent],
   templateUrl: './list-ticket-page.html',
   styles: [
   ]

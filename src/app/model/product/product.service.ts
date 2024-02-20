@@ -3,8 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 import { IProduct } from "./IProduct.inteface"; 
-// import { environment } from "src/environments/environment.dev";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment.dev";
+// import { environment } from "src/environments/environment.prod";
 
 @Injectable({providedIn: 'root'})
 export class ProductService {
@@ -22,11 +22,11 @@ export class ProductService {
   }
 
   newProduct( product:IProduct ):Observable<IProduct> {
-    return this.http.post<IProduct>( `${this.baseUrl}/product`, product);
+    return this.http.post<IProduct>( `${this.baseUrl}/products`, product);
   }
 
-  updateProduct( product:IProduct ):Observable<IProduct> {
-    return this.http.put<IProduct>(`${this.baseUrl}/products/${ product.product_id }`, product);
-  }
+  // updateProduct( product:IProduct ):Observable<IProduct> {
+  //   return this.http.put<IProduct>(`${this.baseUrl}/products/${ product.product_id }`, product);
+  // }
 
 }

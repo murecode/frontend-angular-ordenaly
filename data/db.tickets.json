@@ -1,33 +1,24 @@
 {
   "tickets": [
     {
-      "id": 1,
-      "hora": "03:32",
-      "mesa": 3, 
-      "orden": 12
+      "ticket_id": "22",
+      "created_at": "05:33:13 p. m.",
+      "related_order": 0
     },
     {
-      "id": 2,
-      "hora": "15:32",
-      "mesa": 6, 
-      "orden": 89
+      "ticket_id": "23",
+      "created_at": "06:33:13 p. m.",
+      "related_order": 0
     },
     {
-      "id": 3,
-      "hora": "18:32",
-      "mesa": 1, 
-      "orden": 23
+      "ticket_id": "24",
+      "created_at": "07:33:13 p. m.",
+      "related_order": 0
     },
     {
-      "id": 4,
-      "hora": "21:32",
-      "mesa": 7, 
-      "orden": 16
-    },{
-      "id": 5,
-      "hora": "22:15",
-      "mesa": 8, 
-      "orden": 45
+      "ticket_id": "25",
+      "created_at": "08:33:13 p. m.",
+      "related_order": 0
     }
   ]
 }

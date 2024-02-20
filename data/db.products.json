@@ -1,32 +1,68 @@
 {
   "products": [
     {
-      "id": 1,        
-      "nombre": "pizza",
-      "descripcion": "napolitana con queso",
-      "precio": 12000,      
-      "disponible": true  
+      "product_id": "1",
+      "product_name": "Pizza",
+      "url_image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Napolitana con Salami",
+      "price": 12500,
+      "in_stock": true
     },
     {
-      "id": 2,        
-      "nombre": "sandwich",
-      "descripcion": "pavo y salsa de ajo",
-      "precio": 15200,      
-      "disponible": true  
+      "product_id": "3",
+      "product_name": "Papa",
+      "url_image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Criolla de la Sabana",
+      "price": 25000,
+      "in_stock": true
     },
     {
-      "id": 3,        
-      "nombre": "hamburgesa",
-      "descripcion": "carne a la parrilla y queso amarillo",
-      "precio": 25000,      
-      "disponible": false  
+      "product_id": "4",
+      "product_name": "Malteada",
+      "url_image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "De fresa con leche",
+      "price": 5000,
+      "in_stock": true
     },
     {
-      "id": 4,        
-      "nombre": "hot dog",
-      "descripcion": "mucho queso y salsas",
-      "precio": 13600,      
-      "disponible": true  
+      "product_id": "5",
+      "product_name": "Caldo de pollo",
+      "url_image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Me encanta el caldo de pollo",
+      "price": 85200,
+      "in_stock": false
+    },
+    {
+      "product_id": "8",
+      "product_name": "Hawwai Pizza",
+      "url_image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Deliciasa pizza Hawaina",
+      "price": 32000,
+      "in_stock": false
+    },
+    {
+      "product_id": "11",
+      "product_name": "Papaya",
+      "url_image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Borrar",
+      "price": 5200,
+      "in_stock": false
+    },
+    {
+      "product_id": "12",
+      "product_name": "Calabaza",
+      "url_image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Punking",
+      "price": 6325,
+      "in_stock": false
+    },
+    {
+      "product_id": "14",
+      "product_name": "Sancocho",
+      "url_image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Caliente",
+      "price": 12000,
+      "in_stock": true
     }
   ]
 }

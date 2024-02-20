@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+// import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { ProductService } from '../../product.service'; 
 import { IProduct } from '../../IProduct.inteface'; 
-import { switchMap } from 'rxjs';
+// import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'new-product-page',
@@ -19,8 +19,10 @@ export class NewProductComponent implements OnInit {
 
   product?: IProduct;
 
-  public newProductForm: FormGroup = this.productForm.group({
+  public productForm: FormGroup = this.formBuilder.group({
+    product_id: [''],
     product_name: [''],
+    url_image: [''],
     description: [''],
     price: [0.1],
     in_stock: [true]
@@ -28,13 +30,13 @@ export class NewProductComponent implements OnInit {
 
   constructor(
     private productService:ProductService,
-    private productForm:FormBuilder,
-    private activeRoute:ActivatedRoute,
-    private router:Router
+    private formBuilder:FormBuilder,
+    // private activeRoute:ActivatedRoute,
+    // private router:Router
   ) {}
 
   get currentProduct():IProduct {
-    const product = this.newProductForm.value as IProduct;
+    const product = this.productForm.value as IProduct;
     return product;
   }
   
@@ -49,7 +51,7 @@ export class NewProductComponent implements OnInit {
 
     //     if ( !product ) return this.router.navigateByUrl('/');
 
-    //     this.newProductForm.reset( product )
+    //     this.productForm.reset( product )
     //     return product.product_id;
     //   });
 
@@ -57,25 +59,27 @@ export class NewProductComponent implements OnInit {
 
   onSubmit():void {
 
-    // if (this.newProductForm.invalid) return;
+    if (this.productForm.invalid) return;
 
-    // // Si no tiene id se crea un nuevo recurso
-    // if (!this.currentProduct.product_id) {
-      this.productService.newProduct( this.currentProduct )
-        .subscribe( product => {
-          next: ( product )
-          console.log("Producto Creado");
-          return product
-        })
-    // }
-
-    // // Si tiene id se actualiza el recurso por su id
-    // this.productService.updateProduct( this.currentProduct )
-    //   .subscribe(product => {
+    // // // Si tiene id se actualiza el recurso por su id
+    // if ( this.currentProduct.product_id ) {
+    //   this.productService.updateProduct( this.currentProduct )
+    //   .subscribe( product => {
     //     //TODO: mostrar snackbar, y navegar a /product/edit/id
-    //     next: ( product )
     //     console.log("Producto actualizado" );
-    //   })
+    //   });
+    //   return;
+    // }
+    
+    // // Si no tiene id se crea un nuevo recurso
+    this.productService.newProduct(this.currentProduct)
+      .subscribe(product => {
+        ( product )
+        console.log("Producto Creado");
+        return product
+      });
+     
+      return;
 
   }
 
