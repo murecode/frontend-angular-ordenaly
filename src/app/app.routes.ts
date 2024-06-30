@@ -12,7 +12,7 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.routes')
+    loadChildren: () => import('./core/auth/auth.routes')
   },
   {
     path: 'products',
@@ -20,11 +20,11 @@ export const routes: Routes = [
   },
   {
     path: 'orders',
-    loadChildren: () => import('./model/order/order.routes')
+    loadChildren: () => import('./order/order.routes')
   },
   {
     path: 'tickets',
-    loadChildren: () => import('./model/ticket/ticket.routes')
+    loadChildren: () => import('./ticket/ticket.routes')
   },
   {
     path: 'users',

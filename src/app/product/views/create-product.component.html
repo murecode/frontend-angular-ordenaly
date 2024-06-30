@@ -1,0 +1,29 @@
+<p>Crear Producto</p>
+
+<form [formGroup]="productForm">
+
+  <!-- <label>Código: </label>
+  <input formControlName="product_id"> <br> -->
+
+  <label>Nombre: </label>
+  <input type="text" formControlName="product_name"> <br>
+
+  <!-- <label>Imagen: </label>
+  <input formControlName="url_image"> <br> -->
+
+  <label>Descripcion: </label>
+  <input type="text" formControlName="description"> <br>
+
+  <label>Precio: </label>
+  <input type="number" step="any" formControlName="price"> <br>
+
+  <label>Disponible: </label>
+  <input type="checkbox" formControlName="in_stock"> <br>
+
+  <button (click)="onSubmit()">Enviar</button>
+
+</form>
+
+
+<pre>{{ currentProduct | json }}</pre> 
+
