@@ -43,18 +43,18 @@ export class NewOrderPageComponent {
     return order;
   }
 
-  ngOnInit():void {
+  // ngOnInit():void {
 
-    this.activeRoute.params
-      .pipe(
-        switchMap(({ id }) => this.ticketService.getTicket(id)),
-      ).subscribe(ticket => {
-        if (!ticket) return this.router.navigateByUrl('/');
-        this.newOrderForm.reset(ticket)
-        return;
-      });
+  //   this.activeRoute.params
+  //     .pipe(
+  //       switchMap(({ id }) => this.ticketService.getTicket(id)),
+  //     ).subscribe(ticket => {
+  //       if (!ticket) return this.router.navigateByUrl('/');
+  //       this.newOrderForm.reset(ticket)
+  //       return;
+  //     });
 
-  }
+  // }
 
   get pedido() {
     return this.newOrderForm.get('pedido') as FormArray

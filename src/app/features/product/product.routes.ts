@@ -1,12 +1,10 @@
 import { Route } from "@angular/router";
 
-import { ListProductComponent } from "./pages/list-product/list-product.component"; 
-import { NewProductComponent } from "./pages/new-product/new-product.component";
+import { ListProductComponent } from "././views/list-products.component"; 
+import { NewProductComponent } from "././views/create-product.component";
 
-//localhost:4200/dashboard/products/
 export default [
-  
-  { 
+  {
     path: '',
     children: [
       {
@@ -20,9 +18,7 @@ export default [
       {
         path: ':id/edit',
         component: NewProductComponent
-      },
-      
+      }
     ]
   }
-
-] as Route[]
+] as Route[];

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 import { switchMap } from 'rxjs';
 
 import { ProductService } from '../product.service'; 
@@ -11,7 +12,7 @@ import { Product } from '../Product.inteface';
   selector: 'new-product-page',
   standalone: true,
   templateUrl: './create-product.component.html',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatCardModule],
   styles: []
 })
 export class NewProductComponent implements OnInit {

@@ -20,16 +20,21 @@ export class ListProductComponent {
 
   public productList: Product[] = []
    
-  constructor(private productService: ProductService) {};
+  constructor(
+    private productService: ProductService
+  ) {};
 
   ngOnInit(): void {
+
     this.productService.getProducts()
-      .subscribe( product => this.productList = product )
+      .subscribe(
+        product => this.productList = product
+      )
+
   }
 
   openModal() {
     console.log("Activo");
-    
   }
 
 }

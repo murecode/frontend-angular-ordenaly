@@ -5,16 +5,15 @@ import { NewOrderPageComponent } from "./views/new-order.component";
 import { OrderDetailsComponent } from "./views/detail-order.component";  
 
 export default [
-  
   { 
     children: [
       {
-        path: 'new',
-        component: NewOrderPageComponent 
-      },
-      {
         path: '',
         component: OrderListComponent
+      },
+      {
+        path: 'new',
+        component: NewOrderPageComponent 
       },
       {
         path: 'edit/:id',
@@ -26,5 +25,4 @@ export default [
       },
     ]
   },
-  
 ] as Route[]

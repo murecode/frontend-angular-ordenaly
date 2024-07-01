@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule, Validators } 
     FormsModule,
     ReactiveFormsModule,
    ],
-  templateUrl: './register-page.component.html',
+  templateUrl: './register.component.html',
 })
 export class RegisterPageComponent implements OnInit {
 

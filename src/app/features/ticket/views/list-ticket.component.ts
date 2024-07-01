@@ -20,11 +20,15 @@ export class TicketListComponent {
   
   constructor(
     private ticketService: TicketService,
-  ) { }
+  ) {}
 
   ngOnInit():void {
+
     this.ticketService.getTickets()
-      .subscribe(ticket => this.ticketList = ticket)
+      .subscribe(
+        ticket => this.ticketList = ticket
+        )
+
   }
 
   // public verTicket(): void {
@@ -32,11 +36,11 @@ export class TicketListComponent {
   //   this.router.navigate(['orders/new'], { queryParams: { } }) 
   // }
 
-  addTicket() {
-    this.ticketService.newTicket()
-      .subscribe(ticket => {
-        console.log("Ticket Creado")
-      })
-  }
+  // addTicket() {
+  //   this.ticketService.newTicket()
+  //     .subscribe(ticket => {
+  //       console.log("Ticket Creado")
+  //     })
+  // }
 
 }

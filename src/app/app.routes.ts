@@ -1,7 +1,6 @@
 import { Routes } from "@angular/router";
 
-import { HomePageComponent } from "./shared/pages/home-page/home-page.component"; 
-import { Error404PageComponent } from "./shared/pages/error404-page/error404-page.component"; 
+import { HomePageComponent } from "./shared/pages/home-page/home.component"; 
 
 // ordenaly-app.com/
 export const routes: Routes = [
@@ -21,17 +20,14 @@ export const routes: Routes = [
     path: 'tickets',
     loadChildren: () => import('./features/ticket/ticket.routes')
   },
-  {
-    //empty
-  },
   { 
-    path: '', 
+    path: 'home', 
     component: HomePageComponent,
     pathMatch: 'full'
   },
   { 
     path: '**',
-    component: Error404PageComponent
+    component: HomePageComponent
   },
   
 ];

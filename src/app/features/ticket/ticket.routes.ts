@@ -1,10 +1,9 @@
 import { Route } from "@angular/router";
 
-import { NewOrderPageComponent } from "../order/views/new-order.component"; 
 import { TicketListComponent } from "./views/list-ticket.component"; 
+import { TicketCreateComponent } from "./views/create-ticket.component";
 
 export default [
-  
   { 
     path: '',
     children: [
@@ -12,9 +11,8 @@ export default [
         path: '', component: TicketListComponent,
       },
       {
-        path: 'new', component: NewOrderPageComponent
+        path: 'new', component: TicketCreateComponent
       },
     ]
   }
-
 ] as Route[]

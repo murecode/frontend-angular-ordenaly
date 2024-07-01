@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, map, of } from "rxjs";
 
-import { IOrder } from "./Order.interface"; 
+import { Order } from "./Order.interface"; 
 // import { environment } from "src/environments/environment.dev";
 import { environment } from "src/environments/environment.prod";
 
@@ -14,24 +14,24 @@ export class OrderService {
   constructor( private http: HttpClient ) {};
 
 
-  getOrders():Observable<IOrder[]> {
-    return this.http.get<IOrder[]>(`${this.baseUrl}/orders`)
+  getOrders():Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.baseUrl}/orders`)
   }
 
-  getOrderById( ordenId:string ):Observable<IOrder|undefined> {
-    return this.http.get<IOrder>(`${ this.baseUrl }/orders/${ ordenId }`)
+  getOrderById( ordenId:string ):Observable<Order|undefined> {
+    return this.http.get<Order>(`${ this.baseUrl }/orders/${ ordenId }`)
       .pipe(
         catchError(() => of(undefined))
       );
   }
 
-  newOrder( order:IOrder ):Observable<IOrder> {
-    return this.http.post<IOrder>(`${this.baseUrl}/orders`, order);
+  newOrder( order:Order ):Observable<Order> {
+    return this.http.post<Order>(`${this.baseUrl}/orders`, order);
   }
 
-  updateOrder( order:IOrder ):Observable<IOrder> {
+  updateOrder( order:Order ):Observable<Order> {
     if( !order.order_id ) throw Error("La orden es requerida"); 
-    return this.http.patch<IOrder>(`${this.baseUrl}/orders/${ order.order_id }`, order)
+    return this.http.patch<Order>(`${this.baseUrl}/orders/${ order.order_id }`, order)
   }
 
   removeOrder( id:string ): Observable<boolean> {
