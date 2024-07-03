@@ -29,7 +29,7 @@ export class ListProductComponent {
     this.productService.getProducts()
       .subscribe(
         product => this.productList = product
-      )
+        )
 
   }
 

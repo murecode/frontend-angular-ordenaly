@@ -74,13 +74,13 @@ export class NewOrderPageComponent {
   onSubmit(): void {
     if (this.newOrderForm.invalid) return;
 
-    if (this.currentOrder.order_id) {
-      this.orderService.updateOrder(this.currentOrder)
-        .subscribe(order => {
-          // TODO: mostrar snackbar
-        });
-      return;
-    }
+    // if (this.currentOrder.order) {
+    //   this.orderService.updateOrder(this.currentOrder)
+    //     .subscribe(order => {
+    //       // TODO: mostrar snackbar
+    //     });
+    //   return;
+    // }
 
     this.orderService.newOrder(this.currentOrder)
       .subscribe(order => {

@@ -6,12 +6,12 @@
   
       <div class="flex flex-col">
         <dt class="font-medium text-gray-500">No. Orden</dt>
-        <dd class="text-sm text-gray-500">{{ order?.order_id }}</dd>
+        <dd class="text-sm text-gray-500">{{ order?.order }}</dd>
       </div>
   
       <div class="flex flex-col">
         <dt class="font-medium text-gray-500">Turno</dt>
-        <dd class="text-sm text-gray-500">{{ order?.related_ticket }}</dd>
+        <dd class="text-sm text-gray-500">{{ order?.ticket }}</dd>
       </div>
   
       <div class="flex flex-col">
@@ -21,7 +21,7 @@
   
       <div class="flex flex-col">
         <dt class="font-medium text-gray-500">Pago</dt>
-        <dd class="text-sm text-gray-500">{{ order?.payment_status| lowercase }}</dd>
+        <dd class="text-sm text-gray-500">{{ order?.paymentStatus| lowercase }}</dd>
       </div>
   
       <div class="flex flex-col">
@@ -44,26 +44,26 @@
         </tr>
       </thead>
       <tbody class="text-blue-gray-900">
-        <tr class="border-b border-blue-gray-200" *ngFor="let item of order.item_list">
+        <!-- <tr class="border-b border-blue-gray-200" *ngFor="let item of order.item_list">
           <td class="text-sm py-3 px-4">{{ item.product_name }}</td>
           <td class="text-sm py-3 px-4">{{ item.price }}</td>
           <td class="text-sm py-3 px-4">{{ item.quantity }}</td>
           <td class="text-sm py-3 px-4">{{ item.price * item.quantity }}</td>
-          <!-- <td class="py-3 px-4"><a href="#" class="font-medium text-blue-600 hover:text-blue-800">Edit</a></td> -->
+          <td class="py-3 px-4"><a href="#" class="font-medium text-blue-600 hover:text-blue-800">Edit</a></td>
         </tr>
         <tr class="border-b border-blue-gray-200 bg-orange-50">
           <td class="py-3 px-4 font-medium text-gray-600">Total</td>
           <td class="py-3 px-4"></td>
           <td class="py-3 px-4"></td>
-          <!-- <td class="py-3 px-4 font-medium text-gray-600 ">{{ calcularTotal() }}</td> -->
-          <!-- <td class="py-3 px-4"></td> -->
-        </tr>
+          <td class="py-3 px-4 font-medium text-gray-600 ">{{ calcularTotal() }}</td>
+          <td class="py-3 px-4"></td>
+        </tr> -->
       </tbody>
     </table>  
   
     <div>
       <caption class="px-4 py-2 text-xl font-medium text-orange-400">Observaciones:</caption>
-      <p class="px-4 py-2">{{ order.order_comment }}</p>
+      <p class="px-4 py-2">commern</p>
     </div>
     
   </div>

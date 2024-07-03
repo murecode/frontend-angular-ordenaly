@@ -1,19 +1,25 @@
-import { Item } from "./Item.interface";
+import { Pageable, Sort } from "../util/pageable.interface"
 
-export interface Order {
-  order_id?:       string;
-  related_ticket?: number;
-  table?:          string;
-  waiter?:         string;
-  order_status?:   string;
-  payment_status?: string;
-  item_list:       Item[];
-  order_comment?:  string;
+export interface OrderData {
+  content:          Order[];
+  pageable:         Pageable;
+  last:             boolean;
+  totalPages:       number;
+  totalElements:    number;
+  first:            boolean;
+  size:             number;
+  number:           number;
+  sort:             Sort;
+  numberOfElements: number;
+  empty:            boolean;
 }
 
-// export interface ItemList {
-//   item_id?:      string;
-//   product_name?: string;
-//   price?:        number;
-//   quantity?:     number;
-// }
+export interface Order {
+  order:           number;
+  ticket:          number;
+  createdAt:       string;
+  waiter:          string;
+  table:           string;
+  isOrderComplete: boolean;
+  paymentStatus:   string;
+}

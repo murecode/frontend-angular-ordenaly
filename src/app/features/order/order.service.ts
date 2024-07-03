@@ -29,18 +29,18 @@ export class OrderService {
     return this.http.post<Order>(`${this.baseUrl}/orders`, order);
   }
 
-  updateOrder( order:Order ):Observable<Order> {
-    if( !order.order_id ) throw Error("La orden es requerida"); 
-    return this.http.patch<Order>(`${this.baseUrl}/orders/${ order.order_id }`, order)
-  }
+  // updateOrder( order:Order ):Observable<Order> {
+  //   if( !order.order ) throw Error("La orden es requerida"); 
+  //   return this.http.patch<Order>(`${this.baseUrl}/orders/${ order.order }`, order)
+  // }
 
-  removeOrder( id:string ): Observable<boolean> {
-    return this.http.delete(`${this.baseUrl}/orders/${ id }`)
-      .pipe(
-        catchError( err => of(false) ),
-        map( resp => true)
-      )
-  }
+  // removeOrder( id:string ): Observable<boolean> {
+  //   return this.http.delete(`${this.baseUrl}/orders/${ id }`)
+  //     .pipe(
+  //       catchError( err => of(false) ),
+  //       map( resp => true)
+  //     )
+  // }
 
 
 }

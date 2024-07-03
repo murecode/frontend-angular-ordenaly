@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, map } from "rxjs";
 
-import { Product } from "./Product.inteface"; 
+import { Product, ProductData } from "./Product.inteface"; 
 // import { environment } from "src/environments/environment.dev";
 import { environment } from "src/environments/environment.prod";
 
@@ -13,20 +13,23 @@ export class ProductService {
 
   constructor( private http: HttpClient ) {};
 
-  getProducts():Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.baseUrl}/products`);
+  getProducts() {
+    return this.http.get<ProductData>(`${this.baseUrl}/products`)
+    .pipe(
+      map( res => res.content )
+    )
   }
 
-  getProduct(id:string):Observable<Product|undefined> {
-    return this.http.get<Product>(`${this.baseUrl}/products/${id}`);
-  }
+  // getProduct(id:string):Observable<Product|undefined> {
+  //   return this.http.get<Product>(`${this.baseUrl}/products/${id}`);
+  // }
 
-  newProduct(product:Product):Observable<Product> {
-    return this.http.post<Product>(`${this.baseUrl}/products`, product);
-  }
+  // newProduct(product:Product):Observable<Product> {
+  //   return this.http.post<Product>(`${this.baseUrl}/products`, product);
+  // }
 
-  updateProduct( product:Product ):Observable<Product> {
-    return this.http.put<Product>(`${this.baseUrl}/products/${product.product_id}`, product);
-  }
+  // updateProduct( product:Product ):Observable<Product> {
+  //   return this.http.put<Product>(`${this.baseUrl}/products/${product.product_id}`, product);
+  // }
 
 }

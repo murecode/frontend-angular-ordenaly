@@ -1,3 +1,5 @@
+import { Pageable, Sort } from "../util/pageable.interface"
+
 export interface TicketData {
   content:          Ticket[];
   pageable:         Pageable;
@@ -19,17 +21,3 @@ export interface Ticket {
   status:         string;
 }
 
-export interface Pageable {
-  pageNumber: number;
-  pageSize:   number;
-  sort:       Sort;
-  offset:     number;
-  unpaged:    boolean;
-  paged:      boolean;
-}
-
-export interface Sort {
-  empty:    boolean;
-  unsorted: boolean;
-  sorted:   boolean;
-}

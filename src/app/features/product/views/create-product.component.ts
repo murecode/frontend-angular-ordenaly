@@ -59,29 +59,29 @@ export class NewProductComponent implements OnInit {
 
   onSubmit():void {
 
-    if (this.productForm.invalid) return;
+    // if (this.productForm.invalid) return;
 
-    // Si tiene id se actualiza el recurso por su id
-    if ( this.currentProduct.product_id ) {
-      this.productService.updateProduct( this.currentProduct )
-      .subscribe( product => {
-        //TODO: mostrar snackbar
-        console.log("Producto actualizado" );
-      });
-      return;
-    }
+    // // Si tiene id se actualiza el recurso por su id
+    // if ( this.currentProduct.product_id ) {
+    //   this.productService.updateProduct( this.currentProduct )
+    //   .subscribe( product => {
+    //     //TODO: mostrar snackbar
+    //     console.log("Producto actualizado" );
+    //   });
+    //   return;
+    // }
     
-    // Si no tiene id se crea un nuevo recurso
-    this.productService.newProduct(this.currentProduct)
-      .subscribe( product => {
-        //TODO: mostrar snackbar, y navegar a /product/edit/id
-        console.log("Producto Creado");
-      });
+    // // Si no tiene id se crea un nuevo recurso
+    // this.productService.newProduct(this.currentProduct)
+    //   .subscribe( product => {
+    //     //TODO: mostrar snackbar, y navegar a /product/edit/id
+    //     console.log("Producto Creado");
+    //   });
 
-    console.log({
-      // formIsValid: this.productForm.valid,
-      value: this.productForm.value,
-    }) 
+    // console.log({
+    //   // formIsValid: this.productForm.valid,
+    //   value: this.productForm.value,
+    // }) 
      
   }
 

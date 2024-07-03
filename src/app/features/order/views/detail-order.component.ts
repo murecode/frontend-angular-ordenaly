@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Order } from '../Order.interface'; 
-import { Item } from '../Item.interface';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
@@ -17,8 +16,7 @@ import { OrderService } from '../order.service';
 export class OrderDetailsComponent  {
 
   public order?: Order;
-  public item?: Item;
-
+  
   // constructor(
   //   private orderService: OrderService,
   //   private activatedRoute: ActivatedRoute, //*
