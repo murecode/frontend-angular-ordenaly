@@ -21,8 +21,12 @@ export class OrderListComponent {
   constructor( private orderService:OrderService ) { }
 
   ngOnInit(): void { 
+
     this.orderService.getOrders()
-      .subscribe( order => this.orderList = order );
+      .subscribe(
+        order => this.orderList = order
+      );
+
   }
 
 

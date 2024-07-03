@@ -1,17 +1,39 @@
-<div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
-
+<div class="md:px-4 md:grid md:grid-cols-2 m-2 lg:grid-cols-3 gap-5 space-y-2 md:space-y-0">
   <div *ngFor="let ticket of ticketList">
-    <p>Id: {{ ticket.id }}</p>
-    <p>Created At: {{ ticket.createdAt }}</p>
-    <p>Number of People: {{ ticket.numberOfPeople }}</p>
-    <p>Status: {{ ticket.status }}</p>
+
+    <!-- ticket card -->
+    <div class="max-w-sm bg-white px-4 pt-4 pb-2 rounded-xl shadow-lg transform ">
+      <div class="flex items-center justify-between">
+        <p class=" text-lg font-bold text-orange-400">Turno: <span>{{ticket.id}}</span></p>
+      </div>
+
+      <div class="my-2">
+
+        <dl class="mt-1.5 flex gap-4 sm:gap-6">
+          <div class="flex flex-col">
+            <dt class="text-sm font-medium text-gray-600">Creado a las:</dt>
+            <dd class="text-xs text-gray-500">{{ticket.createdAt}}</dd>
+          </div>
+
+          <div class="flex flex-col">
+            <dt class="text-sm font-medium text-gray-600">Personas:</dt>
+            <dd class="text-xs text-gray-500">{{ticket.numberOfPeople}}</dd>
+          </div>
+        </dl>
+
+        <button
+        class="mt-4 w-full font-medium text-white text-lg bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
+        [routerLink]="[ '/order/new',  ]">Atender
+      </button>
+
+       
+
+      </div>
+
+
+
+    </div>
+    <!-- end ticket card -->
+
   </div>
-
-  <!-- boton para generar Nuevo ticket -->
-
-  <!-- <add-button type="button" (click)="addTicket()"></add-button> -->
-
 </div>
-
-
-

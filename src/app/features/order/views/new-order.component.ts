@@ -16,7 +16,7 @@ import { Order } from '../Order.interface';
   styles: [
   ]
 })
-export class NewOrderPageComponent {
+export class NewOrderComponent {
 
   public newItem: FormControl = new FormControl('')
 

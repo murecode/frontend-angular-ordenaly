@@ -1,11 +1,12 @@
 import { Route } from "@angular/router";
 
 import { OrderListComponent } from "./views/list-order.component";  
-import { NewOrderPageComponent } from "./views/new-order.component";
+import { NewOrderComponent } from "./views/new-order.component";
 import { OrderDetailsComponent } from "./views/detail-order.component";  
 
 export default [
   { 
+    path: '',
     children: [
       {
         path: '',
@@ -13,11 +14,11 @@ export default [
       },
       {
         path: 'new',
-        component: NewOrderPageComponent 
+        component: NewOrderComponent 
       },
       {
         path: 'edit/:id',
-        component: NewOrderPageComponent
+        component: NewOrderComponent
       },
       {
         path: ':id',

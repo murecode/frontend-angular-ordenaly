@@ -1,17 +1,32 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+<div class="md:px-4 md:grid md:grid-cols-2 m-2 lg:grid-cols-3 gap-5 space-y-2 md:space-y-0">
 
    <div *ngFor="let product of productList">
-      <img class="object-cover h-36 w-36" [src]="product.imageUrl" alt="Imagen del producto">
-      <p>Titulo: {{ product.title }}</p>
-      <p>Descripción: {{ product.description }}</p>
-      <p>Precio: {{ product.price }}</p>
-      <p>Disponible: {{ product.inStock }}</p>
+      <!-- product card 1 -->
+      <div class="flex max-w-md bg-white shadow-lg rounded-xl overflow-hidden">
+         <div class="w-1/3 bg-cover" style="background-image: url('{{product.imageUrl}}')">
+         </div>
+         <div class="w-2/3 p-2">
+            <h2 class="text-orange-400 font-bold text-xl">{{product.title}}</h2>
+            <p class="mt-1 text-gray-600 text-sm">{{product.description}}</p>
+            <div class="flex space-x-1 justify-between items-center">
+               <dl class="mt-1.5 flex gap-4 sm:gap-6">
+                  <div class="flex flex-col">
+                     <dt class="text-sm font-medium text-gray-600">Precio</dt>
+                     <dd class="text-sm text-gray-500">{{product.price}}</dd>
+                  </div>
+                  <div class="flex flex-col">
+                     <dt class="text-sm font-medium text-gray-600">Disponible</dt>
+                     <dd class="text-sm text-gray-500">{{product.inStock}}</dd>
+                  </div>
+               </dl>
+               <button
+                  class="self-end px-2.5 py-1.5 bg-orange-400 text-white text-sm font-normal rounded-xl">Editar</button>
+            </div>
+         </div>
+      </div>
+      <!-- end product card -->
    </div>
-
-   <button class="self-end px-2.5 py-1.5 bg-ord-yellow text-ord-brown1 text-sm font-bold uppercase rounded-xl"
-      [routerLink]="[]" (click)="openModal()">Editar
-   </button>
-
+   
 </div>
 
 <!-- boton para agregar nuevo producto -->
