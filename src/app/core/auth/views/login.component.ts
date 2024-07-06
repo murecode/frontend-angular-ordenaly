@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [ RouterModule ],
-  templateUrl: './login.component.html',
+  imports: [
+    RouterModule,
+    FormsModule
+
+  ],
+  templateUrl: 'login.component.html',
 })
 export class LoginPageComponent {
 

@@ -1,6 +1,7 @@
 import { Route } from "@angular/router";
 import { LoginPageComponent } from "./views/login.component"; 
 import { RegisterPageComponent } from "./views/register.component"; 
+import { AppLayoutComponent } from "src/app/layout/features-layout/layout.component";
 
 export default [
   {
@@ -13,7 +14,8 @@ export default [
         path:'register', component: RegisterPageComponent 
       },
       {
-        path:'**', component: LoginPageComponent
+        path:'x',
+        component: AppLayoutComponent
       }
     ]
   },

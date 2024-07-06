@@ -12,7 +12,7 @@ import { Order } from '../Order.interface';
   selector: 'new-order-page',
   standalone: true,
   imports: [CommonModule, NgFor, ReactiveFormsModule],
-  templateUrl: './new-order.component.html',
+  templateUrl: 'new-order.component.html',
   styles: [
   ]
 })

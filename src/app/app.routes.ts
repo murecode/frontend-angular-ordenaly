@@ -1,33 +1,41 @@
 import { Routes } from "@angular/router";
 
-import { HomePageComponent } from "./shared/pages/home-page/home.component"; 
+import { HomeComponent } from "./shared/pages/home-page/home.component"; 
+import { AppLayoutComponent } from "./layout/features-layout/layout.component";
 
-// ordenaly-app.com/
+// ordenaly.com/
 export const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./core/auth/auth.routes')
   },
   {
-    path: 'products',
-    loadChildren: () => import('./features/product/product.routes')
+    path: 'app',
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: 'tickets',
+        loadChildren: () => import('./features/ticket/ticket.routes')
+      },
+      {
+        path: 'orders',
+        loadChildren: () => import('./features/order/order.routes')
+      },
+      {
+        path: 'products',
+        loadChildren: () => import('./features/product/product.routes')
+      },
+    ]
   },
-  {
-    path: 'orders',
-    loadChildren: () => import('./features/order/order.routes')
-  },
-  {
-    path: 'tickets',
-    loadChildren: () => import('./features/ticket/ticket.routes')
-  },
+  
   { 
     path: 'home', 
-    component: HomePageComponent,
+    loadComponent: () => import('./shared/pages/home-page/home.component').then(c => c.HomeComponent),
     pathMatch: 'full'
   },
   { 
     path: '**',
-    component: HomePageComponent
+    component: HomeComponent
   },
   
 ];

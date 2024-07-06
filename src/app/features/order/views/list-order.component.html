@@ -17,38 +17,32 @@
 
       <div class="my-2">
 
-        <!-- <div class="flex space-x-1 items-center">
-          <p class="font-medium text-gray-600">Mesa: </p>
-          <span class="text-gray-500">{{order.table}}</span>
-        </div>
-
-        <div class="flex space-x-1 items-center">
-          <p class="font-medium text-gray-600">Responsable: </p>
-          <span class="text-gray-500">{{order.waiter}}</span>
-        </div> -->
-
         <dl class="mt-1.5 flex gap-4 sm:gap-6">
           <div class="flex flex-col">
-            <dt class="text-sm font-medium text-gray-600">Mesa</dt>
+            <dt class="text-sm font-medium text-gray-600">Mesa: </dt>
             <dd class="text-xs text-gray-500">{{order.table}}</dd>
           </div>
 
           <div class="flex flex-col">
-            <dt class="text-sm font-medium text-gray-600">Atendida por:</dt>
+            <dt class="text-sm font-medium text-gray-600">Mesero:</dt>
             <dd class="text-xs text-gray-500">{{order.waiter}}</dd>
           </div>
-
+          
           <div class="flex flex-col">
-            <dt class="text-sm font-medium text-gray-600">Hora: </dt>
-            <dd class="text-xs text-gray-500">{{order.createdAt}}</dd>
+            <dt class="text-sm font-medium text-gray-600">Personas: </dt>
+            <dd class="text-xs text-gray-500">{{order.numberOfPeople}}</dd>
           </div>
-
         </dl>
 
         <dl class="mt-1.5 flex gap-4 sm:gap-6">
           <div class="flex flex-col">
             <dt class="text-sm font-medium text-gray-600">No. orden</dt>
             <dd class="text-xs text-gray-500">321456</dd>
+          </div>
+
+          <div class="flex flex-col">
+            <dt class="text-sm font-medium text-gray-600">Hora: </dt>
+            <dd class="text-xs text-gray-500">{{order.createdAt}}</dd>
           </div>
 
           <div class="flex flex-col">
@@ -59,7 +53,7 @@
 
         <button
           class="mt-4 w-full font-medium text-white text-lg bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
-          [routerLink]="[ '/orders/', order.order ]">Ver pedido
+          [routerLink]="[ order.order ]">Ver pedido
         </button>
 
       </div>
@@ -71,4 +65,3 @@
 
 </div>
 <!-- end card container -->
-

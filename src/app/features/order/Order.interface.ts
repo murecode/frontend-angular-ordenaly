@@ -20,6 +20,7 @@ export interface Order {
   createdAt:       string;
   waiter:          string;
   table:           string;
+  numberOfPeople:  number;
   isOrderComplete: boolean;
   paymentStatus:   string;
 }

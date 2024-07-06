@@ -10,7 +10,12 @@ import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.compone
 @Component({
   selector: 'app-list-page',
   standalone: true,
-  imports: [RouterModule, CommonModule, AddButtonComponent, NavbarComponent],
+  imports: [
+    RouterModule,
+    CommonModule,
+    AddButtonComponent,
+    NavbarComponent
+  ],
   templateUrl: './list-ticket.component.html',
   styles: []
 })

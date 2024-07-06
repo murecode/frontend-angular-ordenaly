@@ -11,7 +11,7 @@
 
         <dl class="mt-1.5 flex gap-4 sm:gap-6">
           <div class="flex flex-col">
-            <dt class="text-sm font-medium text-gray-600">Creado a las:</dt>
+            <dt class="text-sm font-medium text-gray-600">Hora:</dt>
             <dd class="text-xs text-gray-500">{{ticket.createdAt}}</dd>
           </div>
 
@@ -19,21 +19,26 @@
             <dt class="text-sm font-medium text-gray-600">Personas:</dt>
             <dd class="text-xs text-gray-500">{{ticket.numberOfPeople}}</dd>
           </div>
+
+          <div class="flex flex-col">
+            <dt class="text-sm font-medium text-gray-600">Estado:</dt>
+            <dd class="text-xs text-gray-500">{{ticket.status}}</dd>
+          </div>
+
         </dl>
 
         <button
         class="mt-4 w-full font-medium text-white text-lg bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
-        [routerLink]="[ '/order/new',  ]">Atender
+        [routerLink]="[ '',  ]">Atender
+        
       </button>
 
-       
-
-      </div>
-
-
-
-    </div>
-    <!-- end ticket card -->
-
+    </div>    
   </div>
+  <!-- end ticket card -->
+    
+</div>
+
+<add-button [routerLink]="['new',  ]"></add-button>
+
 </div>

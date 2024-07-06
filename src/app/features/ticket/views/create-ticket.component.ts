@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-details-page',
+  selector: 'app-create-ticket',
   standalone: true,
   imports: [ CommonModule ],
-  templateUrl: './create-ticket.component.html',
+  templateUrl: 'create-ticket.component.html',
 })
 export class TicketCreateComponent  {
 

@@ -1,20 +1,25 @@
-
 import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { Order } from '../Order.interface'; 
 import { OrderService } from '../order.service'; 
+import { AppLayoutComponent } from 'src/app/layout/features-layout/layout.component';
 
 @Component({
   selector: 'app-list-page',
   standalone: true,
-  imports: [ NgFor, NgIf, RouterModule ],
+  imports: [
+    NgFor,
+    NgIf,
+    RouterModule,
+    AppLayoutComponent
+  ],
   templateUrl: './list-order.component.html',
 })
 export class OrderListComponent {
   
-  filterTabs:string[] = ['Todo','Pendientes','Completas']
+  // filterTabs:string[] = ['Todo','Pendientes','Completas']
 
   public orderList:Order[] = [];
 
