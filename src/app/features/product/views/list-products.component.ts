@@ -5,13 +5,12 @@ import { RouterModule } from '@angular/router';
 import { AddButtonComponent } from 'src/app/shared/components/add-button/add-button.component'; 
 import { Product } from '../Product.inteface';
 import { ProductService } from '../product.service';
-import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
 import { NewProductComponent } from './create-product.component';
 
 @Component({
   selector: 'app-list-page',
   standalone: true,
-  imports: [ NgFor, NgIf, AddButtonComponent, RouterModule, NavbarComponent, NewProductComponent ],
+  imports: [ NgFor, NgIf, AddButtonComponent, RouterModule ],
   templateUrl: 'list-products.component.html',
   styles: [
   ]

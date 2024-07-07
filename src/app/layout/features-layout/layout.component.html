@@ -1,9 +1,45 @@
-<app-navbar></app-navbar>
-<app-sidebar></app-sidebar>
 
-  <h2>Aqui va el contenido</h2>
+
+<mat-drawer-container class="bg-orange-400" autosize>
+
+  <!-- <mat-toolbar class="bg-orange-400">
+    <span>Ordenaly</span>
+  </mat-toolbar> -->
+
+  <mat-drawer #sidenav class="" mode="side">
+
+    <mat-list>
+      <mat-list-item>
+        <span matListItemTitle>Title</span>
+        <span matListItemLine>Second line</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Title</span>
+        <span>Second line</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Title</span>
+        Second line
+      </mat-list-item>
+    </mat-list>
+
+  </mat-drawer>
+
+  <button class="">
+    <mat-icon mat-icon-button (click)="sidenav.toggle()">menu</mat-icon>
+  </button>
+
+  <mat-toolbar class="bg-orange-400">
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
   <router-outlet></router-outlet>
-
-
-
-
+  
+</mat-drawer-container>
