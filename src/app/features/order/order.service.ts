@@ -20,12 +20,21 @@ export class OrderService {
     )
   }
 
-  getOrderById( ordenId:string ):Observable<Order|undefined> {
-    return this.http.get<Order>(`${ this.baseUrl }/orders/${ ordenId }`)
+  getOrderById(ordenId:string):Observable<Order|undefined> {
+    return this.http.get<Order>(`${ this.baseUrl }/orders/${ordenId}`)
       .pipe(
         catchError(() => of(undefined))
       );
   }
+
+  getOrdersByPayment(status:string) {
+    return this.http.get<OrderData>(`${this.baseUrl}/orders/status/${status}`)
+    .pipe(
+      map(res => res.content)
+    )
+  }
+
+  //getOrdersByPaymentStatus
 
   newOrder( order:Order ):Observable<Order> {
     return this.http.post<Order>(`${this.baseUrl}/orders`, order);

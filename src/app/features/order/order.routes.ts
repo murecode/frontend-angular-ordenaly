@@ -13,6 +13,10 @@ export default [
         component: OrderListComponent
       },
       {
+        path: 'status/:status',
+        component: OrderListComponent
+      },
+      {
         path: 'new',
         component: NewOrderComponent 
       },
