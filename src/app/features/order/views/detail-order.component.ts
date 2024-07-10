@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 import { Order } from '../Order.interface'; 
 
-import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs';
 import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-details-page',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [
+    CommonModule,
+  ],
   templateUrl: './detail-order.component.html',
 })
 export class OrderDetailsComponent  {
+
+  title = "Detalles de Orden"
 
   public order?: Order;
   

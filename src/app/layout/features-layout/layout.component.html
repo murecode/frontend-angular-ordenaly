@@ -1,45 +1,38 @@
+  <mat-drawer-container autosize>
 
+    <div class="bg-orange-400">
+      <mat-toolbar>
+        <button class="">
+          <mat-icon mat-icon-button (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+      </mat-toolbar>
+    </div>
 
-<mat-drawer-container class="bg-orange-400" autosize>
+    <mat-drawer #sidenav class="w-56 h-full" mode="side">
 
-  <!-- <mat-toolbar class="bg-orange-400">
-    <span>Ordenaly</span>
-  </mat-toolbar> -->
+      <div class="bg-orange-400">
+        <mat-toolbar>
+          <span>Ordenaly</span>
+        </mat-toolbar>
+      </div>
 
-  <mat-drawer #sidenav class="" mode="side">
+      <mat-list role="listitem">
+        <mat-list-item routerLink="/app/tickets" role="listitem">Item 1</mat-list-item>
+        <mat-list-item routerLink="/app/orders" role="listitem">Item 2</mat-list-item>
+        <mat-list-item routerLink="/app/products" role="listitem">Item 3</mat-list-item>
+      </mat-list>
 
-    <mat-list>
-      <mat-list-item>
-        <span matListItemTitle>Title</span>
-        <span matListItemLine>Second line</span>
-      </mat-list-item>
-      <mat-list-item>
-        <span matListItemTitle>Title</span>
-        <span>Second line</span>
-      </mat-list-item>
-      <mat-list-item>
-        <span matListItemTitle>Title</span>
-        Second line
-      </mat-list-item>
-    </mat-list>
+    </mat-drawer>
 
-  </mat-drawer>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
 
-  <button class="">
-    <mat-icon mat-icon-button (click)="sidenav.toggle()">menu</mat-icon>
-  </button>
-
-  <mat-toolbar class="bg-orange-400">
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
-
-  <router-outlet></router-outlet>
-  
-</mat-drawer-container>
+  </mat-drawer-container>

@@ -1,5 +1,17 @@
+<!-- <div> -->
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab *ngFor="let tab of filterTabs; let index = index"
+    [label]="tab.label">
+  </mat-tab>
+    <!-- <mat-tab label="Second">Pendientes</mat-tab> -->
+    <!-- <mat-tab label="Third">Cancelada</mat-tab> -->
+</mat-tab-group>
+ 
+<!-- </div> -->
+
 <!-- card container -->
 <div class="md:px-4 md:grid md:grid-cols-2 m-2 lg:grid-cols-3 gap-5 space-y-2 md:space-y-0">
+
   <div *ngFor="let order of orderList">
 
     <!-- order card -->

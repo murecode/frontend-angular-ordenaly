@@ -18,6 +18,8 @@ import { Order } from '../Order.interface';
 })
 export class NewOrderComponent {
 
+  title = "Nueva Orden";
+
   public newItem: FormControl = new FormControl('')
 
   public newOrderForm: FormGroup = this.orderForm.group({

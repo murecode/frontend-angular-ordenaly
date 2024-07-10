@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MatTabsModule } from "@angular/material/tabs";
 
 import { Order } from '../Order.interface'; 
 import { OrderService } from '../order.service'; 
-import { AppLayoutComponent } from 'src/app/layout/features-layout/layout.component';
 
 @Component({
   selector: 'app-list-page',
@@ -13,13 +13,19 @@ import { AppLayoutComponent } from 'src/app/layout/features-layout/layout.compon
     NgFor,
     NgIf,
     RouterModule,
-    AppLayoutComponent
+    MatTabsModule
   ],
   templateUrl: './list-order.component.html',
 })
 export class OrderListComponent {
+
+  title = "Listado de Ordenes";
   
-  // filterTabs:string[] = ['Todo','Pendientes','Completas']
+  filterTabs = [
+    {"label": 'Todo'},
+    {"label": 'Pendiente'},
+    {"label": 'Completada'},
+  ];
 
   public orderList:Order[] = [];
 
