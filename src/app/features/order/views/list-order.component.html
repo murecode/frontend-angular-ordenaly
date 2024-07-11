@@ -1,11 +1,13 @@
-
-<div class="flex justify-end p-2 sm:block bg-orange-400">
-  <label class="mx-2 text-white">Buscar por: </label>
-  <select class="p-1 rounded-md" (change)="selectOption($event)">
-    <option value="ALL">Todos</option>
-    <option value="PENDING">Pendientes</option>
-    <option value="PAID">Pagados</option>
-  </select>
+<div class="flex p-2 justify-end ">
+  <!-- <div class="">Back</div> -->
+  <div class=" border-orange-400 border-2 rounded-lg bg-orange-400 p-1.5">
+    <label class="text-white">Buscar por: </label>
+    <select class="p-1 rounded-md text-gray-600" (change)="selectOption($event)">
+      <option value="ALL">Todos</option>
+      <option value="PENDING">Pendientes</option>
+      <option value="PAID">Pagados</option>
+    </select>
+  </div>
 </div>
 
 <div *ngIf="orderList.length > 0">
@@ -15,16 +17,33 @@
     <div *ngFor="let order of orderList">
 
       <!-- order card -->
-      <div class="max-w-sm bg-white px-4 pt-4 pb-2 rounded-xl shadow-lg transform ">
+      <div class="max-w-* bg-white px-4 pt-4 pb-2 rounded-xl shadow-md transform">
 
         <div class="flex items-center justify-between">
+
           <p class=" text-lg font-bold text-orange-400">Orden: <span>{{order.order}}</span></p>
 
-          <span *ngIf="order.isOrderComplete === false" class="rounded-xl bg-red-100 text-red-600 px-2 py-1 text-xs">{{
-            order.isOrderComplete }}</span>
-          <span *ngIf="order.isOrderComplete === true"
-            class="rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs">{{
-            order.isOrderComplete }}</span>
+          <span *ngIf="order.paymentStatus === 'PAID'"
+            class="inline-flex items-center justify-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-emerald-700">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="-ms-1 me-1.5 h-4 w-4">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+
+            <p class="whitespace-nowrap text-sm">Pagado</p>
+          </span>
+
+          <span *ngIf="order.paymentStatus === 'PENDING'"
+            class="inline-flex items-center justify-center rounded-full bg-red-100 px-2.5 py-0.5 text-red-700">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="-ms-1 me-1.5 h-4 w-4">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+
+            <p class="whitespace-nowrap text-sm">Pendiente</p>
+          </span>
 
         </div>
 
@@ -32,41 +51,45 @@
 
           <dl class="mt-1.5 flex gap-4 sm:gap-6">
             <div class="flex flex-col">
-              <dt class="text-sm font-medium text-gray-600">Mesa: </dt>
-              <dd class="text-xs text-gray-500">{{order.table}}</dd>
+              <dt class="font-medium text-gray-600">Mesa: </dt>
+              <dd class="text-sm text-gray-500">{{order.table}}</dd>
             </div>
 
             <div class="flex flex-col">
-              <dt class="text-sm font-medium text-gray-600">Mesero:</dt>
-              <dd class="text-xs text-gray-500">{{order.waiter}}</dd>
+              <dt class="font-medium text-gray-600">Mesero:  </dt>
+              <dd class="text-sm text-gray-500">{{order.waiter}}</dd>
             </div>
 
             <div class="flex flex-col">
-              <dt class="text-sm font-medium text-gray-600">Personas: </dt>
-              <dd class="text-xs text-gray-500">{{order.numberOfPeople}}</dd>
+              <dt class="font-medium text-gray-600">Personas: </dt>
+              <dd class="text-sm text-gray-500">{{order.numberOfPeople}}</dd>
             </div>
+
           </dl>
-
+          
           <dl class="mt-1.5 flex gap-4 sm:gap-6">
-            <div class="flex flex-col">
+
+
+            <!-- <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">No. orden</dt>
               <dd class="text-xs text-gray-500">321456</dd>
-            </div>
+            </div> -->
 
-            <div class="flex flex-col">
+            <!-- <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Hora: </dt>
               <dd class="text-xs text-gray-500">{{order.createdAt}}</dd>
-            </div>
+            </div> -->
 
-            <div class="flex flex-col">
+            <!-- <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Estado de pago</dt>
               <dd class="text-xs text-gray-500">{{order.paymentStatus}}</dd>
-            </div>
+            </div> -->
           </dl>
 
           <button
             class="mt-4 w-full font-medium text-white text-lg bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
-            [routerLink]="[ order.order ]">Ver pedido
+            routerLink="/app/carts/orders/{{order.order}}"
+            >Ver pedido
           </button>
 
         </div>

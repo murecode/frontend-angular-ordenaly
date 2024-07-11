@@ -1,45 +1,50 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs';
-
-import { Order } from '../Order.interface'; 
 
 import { OrderService } from '../order.service';
+import { OrderDetails } from '../OrderDetails.interface';
 
 @Component({
   selector: 'app-details-page',
   standalone: true,
   imports: [
-    CommonModule,
+    NgFor
   ],
   templateUrl: './detail-order.component.html',
 })
 export class OrderDetailsComponent  {
 
-  title = "Detalles de Orden"
-
-  public order?: Order;
+  public orderDetails: OrderDetails[] = [];
   
-  // constructor(
-  //   private orderService: OrderService,
-  //   private activatedRoute: ActivatedRoute, //*
-  //   private router: Router
-  //   ) {}
+  constructor(
+    private orderService: OrderService,
+    private activatedRoute: ActivatedRoute,
+    // private router: Router
+    ) {}
 
-  // ngOnInit(): void {
-  //   this.activatedRoute.params
-  //     .pipe(
-  //       switchMap( ({ id }) => this.orderService.getOrderById( id ) ), //**
-  //     )
-  //     .subscribe( order => {
-  //       if( !order ) return this.router.navigate(['/orders'])
-  //       this.order = order;
-  //       console.log({order})
-  //       return;
-  //     }
-  //   );
-  // }
+  ngOnInit(): void {
+
+    this.activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+      if (id) {
+            this.loadOrderDetails(id);
+          } else {
+            alert("NO ha detalles")
+          }
+    })
+
+    // this.loadOrderDetails();
+
+  }
+
+  loadOrderDetails(id: string) {
+    this.orderService.getOrderDetails(id)
+    .subscribe(
+      orderDetail => this.orderDetails = orderDetail
+    )
+
+  }
 
   // calcularPrecio(): number | undefined {
   //   return this.order?.item_list.reduce( (total, producto) => total + producto.price, 0)

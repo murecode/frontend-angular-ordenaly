@@ -22,8 +22,8 @@ export class OrderListComponent {
 
   constructor(
     private orderService: OrderService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    // private activatedRoute: ActivatedRoute,
+    // private router: Router
   ) {}
 
   ngOnInit(): void { 

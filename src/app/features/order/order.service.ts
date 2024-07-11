@@ -5,6 +5,7 @@ import { Observable, catchError, map, of } from "rxjs";
 import { Order, OrderData } from "./Order.interface"; 
 // import { environment } from "src/environments/environment.dev";
 import { environment } from "src/environments/environment.prod";
+import { OrderDetails } from "./OrderDetails.interface";
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
@@ -20,23 +21,25 @@ export class OrderService {
     )
   }
 
-  getOrderById(ordenId:string):Observable<Order|undefined> {
+  getOrderById(ordenId: string): Observable<Order|undefined> {
     return this.http.get<Order>(`${ this.baseUrl }/orders/${ordenId}`)
       .pipe(
         catchError(() => of(undefined))
       );
   }
 
-  getOrdersByPayment(status:string) {
+  getOrdersByPayment(status: string) {
     return this.http.get<OrderData>(`${this.baseUrl}/orders/status/${status}`)
     .pipe(
       map(res => res.content)
     )
   }
 
-  //getOrdersByPaymentStatus
+  getOrderDetails(id: string): Observable<OrderDetails|undefined> {
+    return this.http.get<OrderDetails>(`${ this.baseUrl }/carts/orders/${id}`)
+  }
 
-  newOrder( order:Order ):Observable<Order> {
+  newOrder( order: Order ): Observable<Order> {
     return this.http.post<Order>(`${this.baseUrl}/orders`, order);
   }
 

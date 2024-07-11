@@ -24,3 +24,4 @@ export interface Order {
   isOrderComplete: boolean;
   paymentStatus:   string;
 }
+
