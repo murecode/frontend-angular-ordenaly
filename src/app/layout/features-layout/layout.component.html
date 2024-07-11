@@ -1,38 +1,80 @@
-  <mat-drawer-container autosize>
-
-    <div class="bg-orange-400">
-      <mat-toolbar>
-        <button class="">
-          <mat-icon mat-icon-button (click)="sidenav.toggle()">menu</mat-icon>
-        </button>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-toolbar>
-    </div>
-
-    <mat-drawer #sidenav class="w-56 h-full" >
-
-      <div class="bg-orange-400">
-        <mat-toolbar>
-          <span>Ordenaly</span>
-        </mat-toolbar>
+<nav class="bg-white shadow-md fixed w-full z-10 top-0">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
       </div>
-
-      <mat-list role="listitem">
-        <mat-list-item routerLink="/app/tickets" role="listitem">Item 1</mat-list-item>
-        <mat-list-item routerLink="/app/orders" role="listitem">Item 2</mat-list-item>
-        <mat-list-item routerLink="/app/products" role="listitem">Item 3</mat-list-item>
-      </mat-list>
-
-    </mat-drawer>
-
-    <div>
-      <router-outlet></router-outlet>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-xl font-semibold text-gray-800">Ordenaly</a>
+        </div>
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4">
+            <a href="#"
+              class="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            <a href="#"
+              class="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+            <a href="#"
+              class="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
+            <a href="#"
+              class="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-  </mat-drawer-container>
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="hidden sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="#"
+        class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+      <a href="#"
+        class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+      <a href="#"
+        class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+      <a href="#"
+        class="text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mt-16">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="fixed bottom-0 left-0 right-0 bg-orange-400 text-white p-4">
+  <div class="container mx-auto flex justify-between items-center">
+
+    <!-- <div class="sm:hidden">
+      <label for="Tab" class="sr-only">Tab</label>
+      <select id="Tab" class="w-full rounded-md border-gray-200">
+        <option select routerLink="/app/tickets">Todos</option>
+        <option routerLink="/app/orders">Pendientes</option>
+        <option routerLink="/app/products">Pagados</option>
+      </select>
+    </div> -->
+
+    <div class="hidden sm:block">
+
+      <nav class="flex gap-6" aria-label="Tabs">
+        <a routerLink="/app/tickets"
+          class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
+          Turnos
+        </a>
+
+        <a routerLink="/app/orders"
+          class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
+          Ordenes
+        </a>
+
+        <a routerLink="/app/products"
+          class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
+          Productos
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+</div>
+

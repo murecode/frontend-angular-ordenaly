@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule, Validators } 
    ],
   templateUrl: './register.component.html',
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup = this.formBuilder.group({
     name: ['',[ Validators.required, Validators.minLength(4) ]],

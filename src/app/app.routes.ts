@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 
 import { HomeComponent } from "./shared/pages/home-page/home.component"; 
 import { AppLayoutComponent } from "./layout/features-layout/layout.component";
+import { LoginComponent } from "./core/auth/views/login.component";
 
 // ordenaly.com/
 export const routes: Routes = [
@@ -27,7 +28,6 @@ export const routes: Routes = [
       },
     ]
   },
-  
   { 
     path: 'home', 
     loadComponent: () => import('./shared/pages/home-page/home.component').then(c => c.HomeComponent),
@@ -35,7 +35,7 @@ export const routes: Routes = [
   },
   { 
     path: '**',
-    component: HomeComponent
+    component: LoginComponent
   },
   
 ];

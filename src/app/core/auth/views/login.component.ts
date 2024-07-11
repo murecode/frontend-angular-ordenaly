@@ -12,6 +12,6 @@ import { RouterModule } from '@angular/router';
   ],
   templateUrl: 'login.component.html',
 })
-export class LoginPageComponent {
+export class LoginComponent {
 
 }

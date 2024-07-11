@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 import { Order } from '../Order.interface'; 
@@ -14,19 +13,12 @@ import { OrderService } from '../order.service';
     NgFor,
     NgIf,
     RouterModule,
-    MatButtonToggleModule,
   ],
   templateUrl: './list-order.component.html',
 })
 export class OrderListComponent {
 
   public orderList: Order[] = [];
-  
-  paymentStatus = [
-    {"label": 'Pendiente',  "status": 'PENDING'},
-    {"label": 'Pagadas',    "status": 'PAID'},
-  ];
-
 
   constructor(
     private orderService: OrderService,
@@ -35,9 +27,8 @@ export class OrderListComponent {
   ) {}
 
   ngOnInit(): void { 
-
-    // Carga todas las órdenes por defecto al inicio
-    this.loadAllOrders();
+    
+    this.loadAllOrders(); // Carga todas las órdenes por defecto al inicio
 
     // this.activatedRoute.params.subscribe(params => {
     //   const status = params['status'];
@@ -48,6 +39,17 @@ export class OrderListComponent {
     //   }
     // });
     
+  }
+
+  selectOption(event: Event) {
+    const elem = event.target as HTMLSelectElement;
+    const val = elem.value;
+
+    if (val == 'ALL') {
+      this.loadAllOrders();
+    } else {
+      this.loadOrdersByPayment(val)
+    }
   }
 
   loadAllOrders() {
@@ -62,8 +64,6 @@ export class OrderListComponent {
       .subscribe(
         order => this.orderList = order
       );
-      console.log(this.orderList);
-      
   }
 
   // onTabClick(status: string) {

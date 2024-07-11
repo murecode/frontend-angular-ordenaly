@@ -1,77 +1,81 @@
-<div class=" container flex-row flex-wrap justify-center">
-    <button class="border-2 border-zinc-900 rounded-lg" value="ALL" (click)="loadAllOrders()">Todo</button>
-    <button class="border-2 border-zinc-900 rounded-lg" value="PENDING" (click)="loadOrdersByPayment('PENDING')">Pendientes</button>
-    <button class="border-2 border-zinc-900 rounded-lg" value="PAID" (click)="loadOrdersByPayment('PAID')">Pagadas</button>
-</div>
 
+<div class="flex justify-end p-2 sm:block bg-orange-400">
+  <label class="mx-2 text-white">Buscar por: </label>
+  <select class="p-1 rounded-md" (change)="selectOption($event)">
+    <option value="ALL">Todos</option>
+    <option value="PENDING">Pendientes</option>
+    <option value="PAID">Pagados</option>
+  </select>
+</div>
 
 <div *ngIf="orderList.length > 0">
 
   <div class="md:px-4 md:grid md:grid-cols-2 m-2 lg:grid-cols-3 gap-5 space-y-2 md:space-y-0">
 
     <div *ngFor="let order of orderList">
-  
+
       <!-- order card -->
       <div class="max-w-sm bg-white px-4 pt-4 pb-2 rounded-xl shadow-lg transform ">
-  
+
         <div class="flex items-center justify-between">
           <p class=" text-lg font-bold text-orange-400">Orden: <span>{{order.order}}</span></p>
-  
-            <span *ngIf="order.isOrderComplete === false" class="rounded-xl bg-red-100 text-red-600 px-2 py-1 text-xs">{{
-              order.isOrderComplete }}</span> 
-            <span *ngIf="order.isOrderComplete === true" class="rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs">{{
-              order.isOrderComplete }}</span>
-  
+
+          <span *ngIf="order.isOrderComplete === false" class="rounded-xl bg-red-100 text-red-600 px-2 py-1 text-xs">{{
+            order.isOrderComplete }}</span>
+          <span *ngIf="order.isOrderComplete === true"
+            class="rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs">{{
+            order.isOrderComplete }}</span>
+
         </div>
-  
+
         <div class="my-2">
-  
+
           <dl class="mt-1.5 flex gap-4 sm:gap-6">
             <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Mesa: </dt>
               <dd class="text-xs text-gray-500">{{order.table}}</dd>
             </div>
-  
+
             <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Mesero:</dt>
               <dd class="text-xs text-gray-500">{{order.waiter}}</dd>
             </div>
-            
+
             <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Personas: </dt>
               <dd class="text-xs text-gray-500">{{order.numberOfPeople}}</dd>
             </div>
           </dl>
-  
+
           <dl class="mt-1.5 flex gap-4 sm:gap-6">
             <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">No. orden</dt>
               <dd class="text-xs text-gray-500">321456</dd>
             </div>
-  
+
             <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Hora: </dt>
               <dd class="text-xs text-gray-500">{{order.createdAt}}</dd>
             </div>
-  
+
             <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Estado de pago</dt>
               <dd class="text-xs text-gray-500">{{order.paymentStatus}}</dd>
             </div>
           </dl>
-  
+
           <button
             class="mt-4 w-full font-medium text-white text-lg bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
             [routerLink]="[ order.order ]">Ver pedido
           </button>
-  
+
         </div>
         <!-- end order card -->
-  
+
       </div>
     </div>
-  
-  
+
+
   </div>
   <!-- end card container -->
 
@@ -80,5 +84,3 @@
 <div *ngIf="orderList.length === 0">
   No se encontraron ordenes.
 </div>
-
-

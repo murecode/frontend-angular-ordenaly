@@ -1,11 +1,5 @@
 import { Component } from "@angular/core";
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { MatSidenavModule } from "@angular/material/sidenav";
-import { MatListModule } from '@angular/material/list';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from "@angular/material/icon";
-import { MatTabsModule } from "@angular/material/tabs";
 
 
 @Component({
@@ -14,13 +8,6 @@ import { MatTabsModule } from "@angular/material/tabs";
   imports: [
     RouterOutlet,
     RouterModule,
-
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTabsModule
   ],
   templateUrl: 'layout.component.html',
   styles: [
