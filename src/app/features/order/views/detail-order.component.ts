@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { OrderService } from '../order.service';
 import { OrderDetails } from '../OrderDetails.interface';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-details-page',
@@ -16,31 +17,31 @@ import { OrderDetails } from '../OrderDetails.interface';
 })
 export class OrderDetailsComponent {
 
-  public orderDetails: OrderDetails[] = [];
+  public orderDetail?: OrderDetails;
 
   constructor(
     private orderService: OrderService,
-    // private activatedRoute: ActivatedRoute,
-    // private router: Router
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
 
   ngOnInit(): void {
 
-    this.loadOrderDetails
+    this.activatedRoute.params
+    .pipe(
 
-  }
+      switchMap(({id}) => this.orderService.getOrderDetails(id)),
 
-  loadOrderDetails() {
-    this.orderService.getOrderDetails()
-    .subscribe(
-      orderDetail => {
+    ).subscribe(order => {
+      if (!order) return this.router.navigate(['/orders']);
 
-        console.log(orderDetail)
-      }
-    )
-    
- 
+      this.orderDetail = order; 
+      console.log(order)
+
+      return;
+    })
+
   }
 
   // calcularPrecio(): number | undefined {

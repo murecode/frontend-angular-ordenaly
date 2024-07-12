@@ -21,7 +21,7 @@ export class OrderService {
     )
   }
 
-  getOrderById(ordenId: string): Observable<Order|undefined> {
+  getOrderById(ordenId: string): Observable<Order | undefined> {
     return this.http.get<Order>(`${ this.baseUrl }/orders/${ordenId}`)
       .pipe(
         catchError(() => of(undefined))
@@ -35,11 +35,11 @@ export class OrderService {
     )
   }
 
-  getOrderDetails() {
-    return this.http.get<Object>(`${this.baseUrl}/carts/orders/36`)
-    // .pipe(
-    //   map(res => res)
-    // )
+  getOrderDetails(id: string): Observable<OrderDetails | undefined> {
+    return this.http.get<OrderDetails>(`${this.baseUrl}/carts/orders/${id}`)
+    .pipe(
+      catchError(() => of(undefined))
+    )
   }
 
   newOrder( order: Order ): Observable<Order> {
