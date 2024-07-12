@@ -13,7 +13,7 @@ import { switchMap } from 'rxjs';
     NgIf,
     NgFor
   ],
-  templateUrl: './detail-order.component.html',
+  templateUrl: 'detail-order.component.html',
 })
 export class OrderDetailsComponent {
 
@@ -34,7 +34,7 @@ export class OrderDetailsComponent {
       switchMap(({id}) => this.orderService.getOrderDetails(id)),
 
     ).subscribe(order => {
-      if (!order) return this.router.navigate(['/orders']);
+      if (!order) return this.router.navigate(['/orders']); // si el id no existe, redirecciona
 
       this.orderDetail = order; 
       console.log(order)
