@@ -1,24 +1,135 @@
 {
   "orders": [
     {
-      "order_id": 1,
-      "related_ticket": 6,
-      "related_table": 10,
-      "waiter": "Marta",
-      "order_status": "PENDINETE",
-      "payment_status": "PENDIENTE",
-      "item_list": [
-        {
-          "item_id": "8",
-          "product_name": "Calabaza",
-          "price": 12000,
-          "quantity": 2
-        }
-      ],
-      "order_comment": "string"
+			"order": 32,
+			"ticket": 18,
+			"createdAt": "09:51 p. m.",
+			"waiter": "Patricia Quintero",
+			"table": "Sin defini3",
+			"numberOfPeople": 8,
+			"isOrderComplete": true,
+			"paymentStatus": "PAID"
+		},
+		{
+			"order": 36,
+			"ticket": 19,
+			"createdAt": "01:11 p. m.",
+			"waiter": "Sandra Rengifo",
+			"table": "Sin defini4",
+			"numberOfPeople": 6,
+			"isOrderComplete": false,
+			"paymentStatus": "PAID"
+		},
+		{
+			"order": 37,
+			"ticket": 17,
+			"createdAt": "09:27 p. m.",
+			"waiter": "Camilo Restrepo",
+			"table": "Sin definir",
+			"numberOfPeople": 2,
+			"isOrderComplete": false,
+			"paymentStatus": "PENDING"
+		},
+		{
+			"order": 44,
+			"ticket": 16,
+			"createdAt": "09:23 p. m.",
+			"waiter": "Sandra Rengifo",
+			"table": "Sin definir9999",
+			"numberOfPeople": 2,
+			"isOrderComplete": false,
+			"paymentStatus": "PENDING"
+		}
+  ],
+
+  "products": [
+    {
+			"id": 8,
+			"title": "Pizza Italiana",
+			"description": "con queso y pasta de tomate",
+			"imageUrl": "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+			"price": 25800,
+			"inStock": false
+		},
+		{
+			"id": 9,
+			"title": "Alitas de pollo",
+			"description": "Con salsas de la casa",
+			"imageUrl": "https://images.unsplash.com/photo-1600555379765-f82335a7b1b0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+			"price": 85000,
+			"inStock": true
+		},
+		{
+			"id": 1,
+			"title": "Sopa de res",
+			"description": "con costilla de res",
+			"imageUrl": "https://images.unsplash.com/photo-1664741662725-bd131742b7b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+			"price": 17500,
+			"inStock": true
+		},
+		{
+			"id": 10,
+			"title": "Sandwich Cuaban",
+			"description": "Salsa de ajo, y jamón",
+			"imageUrl": "https://images.unsplash.com/photo-1481070414801-51fd732d7184?q=80&w=1924&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+			"price": 20500,
+			"inStock": true
+		}
+  ],
+
+  "orderDetails": [
+    {
+      "id": 22,
+      "product": "Sopa de res",
+      "quantity": 1,
+      "subtotal": 17500
+    },
+    {
+      "id": 23,
+      "product": "Sopa de pollo",
+      "quantity": 3,
+      "subtotal": 52500
+    },
+    {
+      "id": 24,
+      "product": "Hamburgesa",
+      "quantity": 2,
+      "subtotal": 25500
+    },
+    {
+      "id": 25,
+      "product": "Hot Dog",
+      "quantity": 2,
+      "subtotal": 42000
     }
+
+  ],
+
+  "tickets": [
+		{
+			"id":             12,
+			"createdAt":      "09:27 p. m.",
+			"numberOfPeople": 3,
+			"status":         "ATTENDED"
+		},
+		{
+			"id":             13,
+			"createdAt":      "10:27 p. m.",
+			"numberOfPeople": 3,
+			"status":         "CANCELED"
+		},
+		{
+			"id":             14,
+			"createdAt":      "11:27 p. m.",
+			"numberOfPeople": 3,
+			"status":         "PENDING"
+		}
   ]
+
+
+
 }
+
 
 
 

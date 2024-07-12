@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable, catchError, map, of } from "rxjs";
+import { Observable, catchError, map, of, tap } from "rxjs";
 
 import { Order, OrderData } from "./Order.interface"; 
 // import { environment } from "src/environments/environment.dev";
@@ -35,8 +35,11 @@ export class OrderService {
     )
   }
 
-  getOrderDetails(id: string): Observable<OrderDetails|undefined> {
-    return this.http.get<OrderDetails>(`${ this.baseUrl }/carts/orders/${id}`)
+  getOrderDetails() {
+    return this.http.get<Object>(`${this.baseUrl}/carts/orders/36`)
+    // .pipe(
+    //   map(res => res)
+    // )
   }
 
   newOrder( order: Order ): Observable<Order> {

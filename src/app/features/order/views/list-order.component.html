@@ -88,7 +88,7 @@
 
           <button
             class="mt-4 w-full font-medium text-white text-lg bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
-            routerLink="/app/carts/orders/{{order.order}}"
+            [routerLink]="['detail-order' ,order.order]"
             >Ver pedido
           </button>
 

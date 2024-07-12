@@ -1,3 +1,7 @@
+export interface OrderDetailsData {
+  content: OrderDetails[];
+}
+
 export interface OrderDetails {
   id:       number;
   product:  string;

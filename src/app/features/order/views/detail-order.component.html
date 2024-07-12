@@ -1,9 +1,24 @@
-<div class="m-2 overflow-x-auto">
+<!-- <div *ngIf="orderDetails">
+  <h2>Detalles del Pedido</h2>
+  <p><strong>ID:</strong> {{ orderDetails.id }}</p>
+  <p><strong>Producto:</strong> {{ orderDetails.product }}</p>
+  <p><strong>Cantidad:</strong> {{ orderDetails.quantity }}</p>
+  <p><strong>Subtotal:</strong> {{ orderDetails.subtotal  }}</p>
+</div> -->
+<!-- <div *ngFor="let detail of orderDetails">
+  <h2>Detalles del Pedido</h2>
+  <p><strong>ID:</strong> {{ detail.id }}</p>
+  <p><strong>Producto:</strong> {{ detail.product }}</p>
+  <p><strong>Cantidad:</strong> {{ detail.quantity }}</p>
+  <p><strong>Subtotal:</strong> {{ detail.subtotal  }}</p>
+</div> -->
 
-  <div *ngFor="let order of orderDetails">
+<button (click)="loadOrderDetails()">Cargar Pedido</button>
 
-    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+<!-- <div class="m-2 overflow-x-auto">
 
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm" 
+     >
       <thead class="ltr:text-left rtl:text-right">
         <tr >
           <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Producto</th>
@@ -14,22 +29,16 @@
   
       <tbody class="divide-y divide-gray-200">
         <tr class="odd:bg-gray-50">
-          <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{{order.product}}</td>
-          <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{order.quantity}}</td>
-          <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{order.subtotal}}</td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">1</td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">2</td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">3</td>
         </tr>
       </tbody>
 
     </table>
-
+    
+    
   </div>
+   -->
 
 
-  
-</div>
-
-<p>Order details</p>
-
-
-
-<pre>{{ orderDetails  }}</pre>

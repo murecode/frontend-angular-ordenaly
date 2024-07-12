@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
 
-import { HomeComponent } from "./shared/pages/home-page/home.component"; 
 import { AppLayoutComponent } from "./layout/features-layout/layout.component";
 import { LoginComponent } from "./core/auth/views/login.component";
 import { OrderDetailsComponent } from "./features/order/views/detail-order.component";
@@ -22,10 +21,6 @@ export const routes: Routes = [
       {
         path: 'orders',
         loadChildren: () => import('./features/order/order.routes')
-      },
-      {
-        path: 'carts/orders/:id',
-        component: OrderDetailsComponent
       },
       {
         path: 'products',

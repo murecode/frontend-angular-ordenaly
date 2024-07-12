@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -9,41 +9,38 @@ import { OrderDetails } from '../OrderDetails.interface';
   selector: 'app-details-page',
   standalone: true,
   imports: [
+    NgIf,
     NgFor
   ],
   templateUrl: './detail-order.component.html',
 })
-export class OrderDetailsComponent  {
+export class OrderDetailsComponent {
 
   public orderDetails: OrderDetails[] = [];
-  
+
   constructor(
     private orderService: OrderService,
-    private activatedRoute: ActivatedRoute,
+    // private activatedRoute: ActivatedRoute,
     // private router: Router
-    ) {}
+  ) { }
+
 
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe(params => {
-      const id = params['id'];
-      if (id) {
-            this.loadOrderDetails(id);
-          } else {
-            alert("NO ha detalles")
-          }
-    })
-
-    // this.loadOrderDetails();
+    this.loadOrderDetails
 
   }
 
-  loadOrderDetails(id: string) {
-    this.orderService.getOrderDetails(id)
+  loadOrderDetails() {
+    this.orderService.getOrderDetails()
     .subscribe(
-      orderDetail => this.orderDetails = orderDetail
-    )
+      orderDetail => {
 
+        console.log(orderDetail)
+      }
+    )
+    
+ 
   }
 
   // calcularPrecio(): number | undefined {
@@ -62,5 +59,5 @@ export class OrderDetailsComponent  {
 
 }
 
-    
+
 
