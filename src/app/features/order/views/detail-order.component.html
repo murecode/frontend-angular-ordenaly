@@ -1,46 +1,42 @@
-<div *ngIf="orderDetail; else divLoading">
+<div *ngIf="orderDetails?.length; else divNoContent">
 
   <h2>Detalles del Pedido</h2>
-  <p>ID: {{ orderDetail.id }}</p>
-  <p>Producto: {{ orderDetail.product }}</p>
-  <p>Cantidad: {{ orderDetail.quantity }}</p>
-  <p>Subtotal: {{ orderDetail.subtotal }}</p>
+  <div class="m-2 overflow-x-auto">
 
-</div>
-
-<ng-template #divLoading>
-  <p>Cargando detalles del pedido...</p>
-</ng-template>
-
-
-<!-- <div *ngFor="let detail of orderDetails">
-
-</div> -->
-
-<!-- <div class="m-2 overflow-x-auto">
-
-    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm" 
-     >
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm"
+    *ngFor="let detail of orderDetails">
       <thead class="ltr:text-left rtl:text-right">
-        <tr >
+        <tr>
           <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Producto</th>
           <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Cantidad</th>
           <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Subtotal</th>
         </tr>
       </thead>
-  
+
       <tbody class="divide-y divide-gray-200">
         <tr class="odd:bg-gray-50">
-          <td class="whitespace-nowrap px-4 py-2 text-gray-700">1</td>
-          <td class="whitespace-nowrap px-4 py-2 text-gray-700">2</td>
-          <td class="whitespace-nowrap px-4 py-2 text-gray-700">3</td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{detail.product}}</td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{detail.quantity}}</td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{detail.subtotal}}</td>
         </tr>
       </tbody>
 
     </table>
-    
-    
+
+
   </div>
-   -->
+
+  
+</div>
+
+<ng-template #divNoContent>
+  <p>No hay pedidos en la orden.</p>
+</ng-template>
+
+  
+  
 
 
+
+
+<!-- <h3>Contenido Completo (JSON)</h3> -->

@@ -1,5 +1,5 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { OrderService } from '../order.service';
@@ -10,6 +10,7 @@ import { switchMap } from 'rxjs';
   selector: 'app-details-page',
   standalone: true,
   imports: [
+    CommonModule,
     NgIf,
     NgFor
   ],
@@ -17,7 +18,7 @@ import { switchMap } from 'rxjs';
 })
 export class OrderDetailsComponent {
 
-  public orderDetail?: OrderDetails;
+  public orderDetails?: OrderDetails[];
 
   constructor(
     private orderService: OrderService,
@@ -36,26 +37,13 @@ export class OrderDetailsComponent {
     ).subscribe(order => {
       if (!order) return this.router.navigate(['/orders']); // si el id no existe, redirecciona
 
-      this.orderDetail = order; 
+      this.orderDetails = order; 
       console.log(order)
 
       return;
     })
 
   }
-
-  // calcularPrecio(): number | undefined {
-  //   return this.order?.item_list.reduce( (total, producto) => total + producto.price, 0)
-  // }
-
-  // calcularTotal(): number | undefined {
-  //   return this.order?.item_list?.reduce((precio, pedido) => {
-  //     if (pedido.price !== undefined) {
-  //       return precio + pedido.price;
-  //     }
-  //     return precio;
-  //   }, 0);
-  // }
 
 
 }
