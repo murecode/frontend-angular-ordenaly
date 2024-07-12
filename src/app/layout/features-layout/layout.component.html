@@ -2,29 +2,23 @@
 
   <nav class="bg-orange-400 shadow-md fixed w-full z-10 top-0">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div class="relative flex items-center justify-between h-16">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        </div>
-
+      <div class="relative flex items-center justify-between h-14">
+  
         <div class="flex-shrink-0">
           <a href="#" class="text-2xl font-semibold text-white">Ordenaly</a>
         </div>
-
-        <div class="flex-1 flex items-center sm:items-stretch sm:justify-end">
   
-          <div class="hidden sm:block sm:ml-6">
-            <div class="flex space-x-6">
-              <a href="#"
-                class="shrink-0 rounded-lg p-2 text-white hover:bg-white hover:text-orange-400">Inicio</a>
-              <a href="#"
-                class="shrink-0 rounded-lg p-2 text-white hover:bg-white hover:text-orange-400">Cerrar</a>
-            </div>
+  
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-6">
+            <a href="#" class="shrink-0 rounded-lg p-2 text-white hover:bg-white hover:text-orange-400">Inicio</a>
+            <a href="#" class="shrink-0 rounded-lg p-2 text-white hover:bg-white hover:text-orange-400">Cerrar</a>
           </div>
-  
         </div>
+  
       </div>
     </div>
-  
+
     <!-- Mobile menu, show/hide based on menu state. -->
     <!-- <div class="hidden sm:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
@@ -40,7 +34,7 @@
     </div> -->
 
   </nav>
-  
+
 </header>
 
 
@@ -48,39 +42,23 @@
   <router-outlet></router-outlet>
 </div>
 
-<div class="fixed bottom-0 left-0 right-0 bg-orange-400 text-white p-4">
-  <div class="container mx-auto flex justify-between items-center">
+<div class="fixed bottom-0 left-0 right-0 bg-orange-400">
+  <nav class="flex items-center justify-between my-2 mx-9 sm:mx-64">
 
-    <!-- <div class="sm:hidden">
-      <label for="Tab" class="sr-only">Tab</label>
-      <select id="Tab" class="w-full rounded-md border-gray-200">
-        <option select routerLink="/app/tickets">Todos</option>
-        <option routerLink="/app/orders">Pendientes</option>
-        <option routerLink="/app/products">Pagados</option>
-      </select>
-    </div> -->
+    <a routerLink="/tickets"
+      class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
+      Turnos
+    </a>
 
-    <div class="hidden sm:block">
+    <a routerLink="/orders" class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
+      Ordenes
+    </a>
 
-      <nav class="flex gap-6" aria-label="Tabs">
-        <a routerLink="/app/tickets"
-          class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
-          Turnos
-        </a>
+    <a routerLink="/products"
+      class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
+      Productos
+    </a>
 
-        <a routerLink="/app/orders"
-          class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
-          Ordenes
-        </a>
-
-        <a routerLink="/app/products"
-          class="shrink-0 rounded-lg p-2 font-medium text-white hover:bg-white hover:text-orange-400">
-          Productos
-        </a>
-      </nav>
-
-    </div>
-  </div>
+  </nav>
 
 </div>
-

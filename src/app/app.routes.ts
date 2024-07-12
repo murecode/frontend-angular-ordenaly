@@ -11,7 +11,7 @@ export const routes: Routes = [
     loadChildren: () => import('./core/auth/auth.routes')
   },
   {
-    path: 'app',
+    path: '',
     component: AppLayoutComponent,
     children: [
       {
