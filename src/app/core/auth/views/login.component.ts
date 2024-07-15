@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule,
     FormsModule
-
   ],
   templateUrl: 'login.component.html',
 })

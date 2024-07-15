@@ -1,46 +1,70 @@
 <div class="bg-orange-400 flex items-center justify-center h-screen">
-  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+  <div class="bg-white mx-2 p-6 rounded-lg shadow-lg w-full max-w-sm">
+
     <h2 class="text-4xl font-bold text-center text-orange-400">Ordenaly</h2>
     <p class="text-sm text-gray-700 mb-6 text-center">Registro de usuario</p>
-    <form action="#" method="POST" class="space-y-4">
+
+    <form [formGroup]="registerForm" autocomplete="off" (ngSubmit)="onSave()" class="space-y-4">
+
       <div>
-        <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
-        <input type="text" id="name" name="name"
+        <label class="block text-sm font-medium text-gray-700">Nombre</label>
+        <input type="text" formControlName="name"
           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
           required>
       </div>
+
       <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="email" id="email" name="email"
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" formControlName="email"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
+          required>
+        <span class="text-sm text-red-500" >Email es requerido</span>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Nombre de usuario</label>
+        <input type="text" formControlName="username"
           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
           required>
       </div>
+
       <div>
-        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-        <input type="text" id="username" name="username"
+        <label class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <input type="password" formControlName="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
           required>
       </div>
-      <div>
-        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-        <input type="password" id="password" name="password"
-          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-          required>
-      </div>
+
       <div class="flex items-center">
         <input id="terms" name="terms" type="checkbox"
           class="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded" required>
-        <label for="terms" class="ml-2 block text-sm text-gray-900">Acepto los <a href="#"
+        <label class="ml-2 block text-sm text-gray-900">Acepto los <a href="#"
             class="text-orange-600 hover:text-orange-500">términos y condiciones</a></label>
       </div>
+
       <div>
         <button type="submit"
           class="w-full bg-orange-500 text-white px-4 py-2 rounded-md shadow hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Registrar</button>
       </div>
+
     </form>
+
     <p class="mt-6 text-center text-sm text-gray-600">
       ¿Ya tienes una cuenta?
       <a routerLink="/auth/login" class="text-orange-600 hover:text-orange-500">Inicia sesión</a>
     </p>
+
   </div>
 </div>
+
+
+<p>¿Formulario valido?: <span>
+    <pre>{{ registerForm.valid | json }}</pre>
+  </span></p>
+<p>¿Formulario intacto? </p><span>
+  <pre>{{ registerForm.pristine | json }}</pre>
+</span>
+<p>¿Formulario manipulado? </p>
+<pre>{{ registerForm.touched | json }}</pre>
+
+<pre>{{ registerForm.controls[''] | json }}</pre>
