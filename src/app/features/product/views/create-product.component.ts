@@ -21,12 +21,11 @@ export class NewProductComponent implements OnInit {
   product?: Product;
 
   public productForm: FormGroup = this.formBuilder.group({
-    // product_id: [''],
-    product_name: [''],
-    // url_image: [''],
+    title: [''],
     description: [''],
+    imageUrl: [''],
     price: [0.1],
-    in_stock: [true]
+    inStock: [true]
   })
 
   constructor(
@@ -36,7 +35,7 @@ export class NewProductComponent implements OnInit {
     private router:Router
   ) {}
 
-  get currentProduct():Product {
+  get currentProduct(): Product {
     const product = this.productForm.value as Product;
     return product;
   }
@@ -60,29 +59,29 @@ export class NewProductComponent implements OnInit {
 
   onSubmit():void {
 
-    // if (this.productForm.invalid) return;
+    if (this.productForm.invalid) return;
 
-    // // Si tiene id se actualiza el recurso por su id
-    // if ( this.currentProduct.product_id ) {
-    //   this.productService.updateProduct( this.currentProduct )
-    //   .subscribe( product => {
-    //     //TODO: mostrar snackbar
-    //     console.log("Producto actualizado" );
-    //   });
-    //   return;
-    // }
+    // Si tiene id se actualiza el recurso por su id
+    if ( this.currentProduct.id ) {
+      this.productService.updateProduct( this.currentProduct )
+      .subscribe( product => {
+        //TODO: mensaje de confirmacion
+        console.log("Producto actualizado" );
+      });
+      return;
+    }
     
-    // // Si no tiene id se crea un nuevo recurso
-    // this.productService.newProduct(this.currentProduct)
-    //   .subscribe( product => {
-    //     //TODO: mostrar snackbar, y navegar a /product/edit/id
-    //     console.log("Producto Creado");
-    //   });
+    // Si no tiene id se crea un nuevo recurso
+    this.productService.newProduct( this.currentProduct )
+      .subscribe( product => {
+        //TODO: mostrar mensaje de confirmacion, y redirigir a /products
+        console.log("Producto Creado");
+      });
 
-    // console.log({
-    //   // formIsValid: this.productForm.valid,
-    //   value: this.productForm.value,
-    // }) 
+    console.log({
+      // formIsValid: this.productForm.valid,
+      value: this.productForm.value,
+    }) 
      
   }
 

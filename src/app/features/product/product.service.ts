@@ -20,16 +20,12 @@ export class ProductService {
     )
   }
 
-  // getProduct(id:string):Observable<Product|undefined> {
-  //   return this.http.get<Product>(`${this.baseUrl}/products/${id}`);
-  // }
+  newProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(`${this.baseUrl}/products`, product);
+  }
 
-  // newProduct(product:Product):Observable<Product> {
-  //   return this.http.post<Product>(`${this.baseUrl}/products`, product);
-  // }
-
-  // updateProduct( product:Product ):Observable<Product> {
-  //   return this.http.put<Product>(`${this.baseUrl}/products/${product.product_id}`, product);
-  // }
+  updateProduct( product:Product ):Observable<Product> {
+    return this.http.put<Product>(`${this.baseUrl}/products/${product.id}`, product);
+  }
 
 }

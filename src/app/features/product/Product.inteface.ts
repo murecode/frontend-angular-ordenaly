@@ -15,7 +15,7 @@ export interface ProductData {
 }
 
 export interface Product {
-  id:          number;
+  id?:         number;
   title:       string;
   description: string;
   imageUrl:    string;
