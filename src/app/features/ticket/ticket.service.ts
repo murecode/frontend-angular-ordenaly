@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 // import { environment } from "src/environments/environment.dev";
 import { environment } from "src/environments/environment.prod";
-import { Ticket, TicketData } from "./Ticket.interface"; 
+import { Ticket, TicketData, TicketRequest } from "./Ticket.interface"; 
 
 @Injectable({providedIn: 'root'})
 export class TicketService {
@@ -23,13 +23,9 @@ export class TicketService {
     )
   }
 
-  // getTicket( id:string ):Observable<Ticket> {
-  //   return this.http.get<Ticket>(`${this.baseUrl}/tickets/${id}`)
-  // }
-
-  // newTicket():Observable<any> {
-  //   return this.http.post<Ticket>(`${this.baseUrl}/tickets`, undefined )
-  // }
+  newTicket(data: TicketRequest): Observable<any> {
+    return this.http.post<Ticket>(`${this.baseUrl}/tickets`, data )
+  }
 
 
 }

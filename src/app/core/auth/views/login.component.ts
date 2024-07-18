@@ -19,8 +19,8 @@ export class LoginComponent {
   private formBuilder = inject(FormBuilder);
 
   public loginForm: FormGroup = this.formBuilder.group({
-    username: ['sandra', [Validators.required, ] ],
-    password: ['sandra123', [Validators.required, ] ]
+    username: ['', [Validators.required, ] ],
+    password: ['', [Validators.required, ] ]
   });
 
 

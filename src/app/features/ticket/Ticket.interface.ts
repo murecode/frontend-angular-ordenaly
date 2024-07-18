@@ -21,3 +21,7 @@ export interface Ticket {
   status:         string;
 }
 
+export interface TicketRequest {
+  numberOfPeople: number;
+}
+
