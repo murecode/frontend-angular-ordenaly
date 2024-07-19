@@ -53,6 +53,12 @@ export class AuthService {
       )
   }
 
+  // logout() {
+  //   localStorage.removeItem('jwtToken');
+  //   this.jwtToken.set(null);
+  //   // Aquí podrías añadir lógica adicional, como redirección a la página de inicio, etc.
+  // }
+
  
   
 }

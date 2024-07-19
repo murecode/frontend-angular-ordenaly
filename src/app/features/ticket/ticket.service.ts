@@ -23,6 +23,13 @@ export class TicketService {
     )
   }
 
+  getTicketsByStatus(status: string) {
+    return this.http.get<TicketData>(`${this.baseUrl}/tickets/status/${status}`)
+    .pipe(
+      map(res => res.content)
+    )
+  }
+
   newTicket(data: TicketRequest): Observable<any> {
     return this.http.post<Ticket>(`${this.baseUrl}/tickets`, data )
   }

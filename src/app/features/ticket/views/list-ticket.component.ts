@@ -27,23 +27,35 @@ export class TicketListComponent {
 
   ngOnInit():void {
 
-    this.ticketService.getTickets()
-      .subscribe(
-        ticket => this.ticketList = ticket
-        )
+    this.loadAllTickets()
 
   }
 
-  // public verTicket(): void {
-  //   alert("viendo detalles")
-  //   this.router.navigate(['orders/new'], { queryParams: { } }) 
-  // }
+  selectOption(event: Event) {
+    const elem = event.target as HTMLSelectElement;
+    const val = elem.value;
 
-  // addTicket() {
-  //   this.ticketService.newTicket()
-  //     .subscribe(ticket => {
-  //       console.log("Ticket Creado")
-  //     })
-  // }
+    if (val == 'ALL') {
+      this.loadAllTickets();
+    } else {
+      this.loadTicketsByStatus(val)
+    }
+
+  }
+
+  loadAllTickets() {
+    this.ticketService.getTickets()
+    .subscribe(
+      ticket => this.ticketList = ticket
+      )
+  }
+
+  loadTicketsByStatus(status: string) {
+    this.ticketService.getTicketsByStatus(status)
+      .subscribe(
+        tickets => this.ticketList = tickets
+      );
+  }
+
 
 }

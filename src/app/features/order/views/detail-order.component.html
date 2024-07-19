@@ -1,75 +1,64 @@
-<div class="flow-root rounded-lg border border-gray-100 py-3 shadow-sm">
-  <dl class="-my-3 divide-y divide-gray-100 text-sm">
-    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Title</dt>
-      <dd class="text-gray-700 sm:col-span-2">Mr</dd>
-    </div>
+<div class="min-w-full sm:px-8 lg:px-8">
+  <div class="my-2 rounded-lg border border-gray-100 py-3 shadow-sm">
 
-    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Name</dt>
-      <dd class="text-gray-700 sm:col-span-2">John Frusciante</dd>
-    </div>
-
-    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Occupation</dt>
-      <dd class="text-gray-700 sm:col-span-2">Guitarist</dd>
-    </div>
-
-    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Salary</dt>
-      <dd class="text-gray-700 sm:col-span-2">$1,000,000+</dd>
-    </div>
-
-    <!-- <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-      <dt class="font-medium text-gray-900">Bio</dt>
-      <dd class="text-gray-700 sm:col-span-2">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et facilis debitis explicabo
-        doloremque impedit nesciunt dolorem facere, dolor quasi veritatis quia fugit aperiam
-        aspernatur neque molestiae labore aliquam soluta architecto?
-      </dd>
-    </div> -->
-  </dl>
-
+    <dl class=" flex gap-4 sm:gap-6">
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-600">Hora:</dt>
+        <dd class="text-gray-500">asd</dd>
+      </div>
   
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-600">Personas:</dt>
+        <dd class="text-gray-500">dfdf</dd>
+      </div>
+  
+      <div class="flex flex-col">
+        <dt class="font-medium text-gray-600">Estado:</dt>
+        <dd class="text-gray-500">fdfd</dd>
+      </div>
+    </dl>
+  
+  </div>
 </div>
 
-<div *ngIf="orderDetails?.length; else divNoContent">
 
-  <h2>Detalles del Pedido</h2>
+<div *ngIf="orderDetails?.length; else divNoContent">
 
   <!-- component -->
   <div class="flex flex-col">
     <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-        <div class="overflow-hidden rounded-lg border border-gray-100 py-3 shadow-sm">
+        <div class="overflow-hidden rounded-lg border border-gray-100 py-0 shadow-sm">
 
+          <h2 class="m-2 font-medium text-gray-600">Listado de Productos</h2>
+          
           <table class="min-w-full ">
             <thead class="bg-gray-200 border-b">
               <tr>
-                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
                   Producto
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
                   Cantidad
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
                   Subtotal
                 </th>
               </tr>
             </thead>
             <tbody *ngFor="let detail of orderDetails">
               <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{{ detail.product }}</td>
-                <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{{ detail.quantity }}</td>
-                <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{{ detail.subtotal }}</td>
+                <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">{{ detail.product }}</td>
+                <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">{{ detail.quantity }}</td>
+                <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">{{ detail.subtotal }}</td>
               </tr>
             </tbody>
             <tfoot class="bg-gray-200 border-b">
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
                 Total pagar
               </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left"></th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left"></th>
+              <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
                 $$$$
               </th>
             </tfoot>
@@ -80,14 +69,15 @@
     </div>
   </div>
 
+</div>
 
 
+<div class="min-w-full sm:px-8 lg:px-8">
+  <div class="my-2 rounded-lg border border-gray-100 py-3 shadow-sm">
 
-
-
-
-
-
+    <button>Boton</button>
+  
+  </div>
 </div>
 
 <ng-template #divNoContent>

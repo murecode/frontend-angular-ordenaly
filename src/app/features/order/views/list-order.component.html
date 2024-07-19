@@ -17,7 +17,7 @@
     <div *ngFor="let order of orderList">
 
       <!-- order card -->
-      <div class="max-w-* bg-white px-4 pt-4 pb-2 rounded-xl shadow-md transform">
+      <div class="max-w-* bg-white px-4 pt-4 pb-2 rounded-xl shadow-md hover:size">
 
         <div class="flex items-center justify-between">
 
@@ -47,47 +47,49 @@
 
         </div>
 
+        <span class="flex items-center m-1">
+          <span class="h-px flex-1 bg-orange-300"></span>
+        </span>
+
         <div class="my-2">
 
           <dl class="mt-1.5 flex gap-4 sm:gap-6">
             <div class="flex flex-col">
-              <dt class="font-medium text-gray-600">Mesa: </dt>
-              <dd class="text-sm text-gray-500">{{order.table}}</dd>
+              <dt class="text-sm font-medium text-gray-600">Mesa: </dt>
+              <dd class="text-xs text-gray-500">{{order.table}}</dd>
             </div>
 
             <div class="flex flex-col">
-              <dt class="font-medium text-gray-600">Mesero:  </dt>
-              <dd class="text-sm text-gray-500">{{order.waiter}}</dd>
+              <dt class="text-sm font-medium text-gray-600">Mesero:  </dt>
+              <dd class="text-xs text-gray-500">{{order.waiter}}</dd>
             </div>
 
-            <div class="flex flex-col">
-              <dt class="font-medium text-gray-600">Personas: </dt>
-              <dd class="text-sm text-gray-500">{{order.numberOfPeople}}</dd>
-            </div>
+            <!-- <div class="flex flex-col">
+              <dt class="text-sm font-medium text-gray-600">Personas: </dt>
+              <dd class="text-xs text-gray-500">{{order.numberOfPeople}}</dd>
+            </div> -->
 
           </dl>
           
-          <dl class="mt-1.5 flex gap-4 sm:gap-6">
-
-
-            <!-- <div class="flex flex-col">
+          <!-- <dl class="mt-1.5 flex gap-4 sm:gap-6">
+            <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">No. orden</dt>
               <dd class="text-xs text-gray-500">321456</dd>
-            </div> -->
+            </div>
 
-            <!-- <div class="flex flex-col">
+            <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Hora: </dt>
               <dd class="text-xs text-gray-500">{{order.createdAt}}</dd>
-            </div> -->
+            </div>
 
-            <!-- <div class="flex flex-col">
+            <div class="flex flex-col">
               <dt class="text-sm font-medium text-gray-600">Estado de pago</dt>
               <dd class="text-xs text-gray-500">{{order.paymentStatus}}</dd>
-            </div> -->
-          </dl>
+            </div>
+          </dl> -->
 
           <button
-            class="mt-4 w-full font-medium text-white text-lg bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
+            class="mt-4 w-full font-medium text-white bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
             [routerLink]="['details/' ,order.order]"
             >Ver pedido
           </button>
