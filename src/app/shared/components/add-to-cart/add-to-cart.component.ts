@@ -34,7 +34,9 @@ export class AddToCartComponent implements OnInit {
   }
 
   decrement() {
-    this.quantity--;
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
   }
 
   submit() {
