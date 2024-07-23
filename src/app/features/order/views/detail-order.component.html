@@ -5,12 +5,15 @@
     <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
         <div class="overflow-hidden rounded-lg border border-gray-100 py-0 shadow-sm">
-
+          
           <h2 class="m-2 font-medium text-gray-600">Listado de Productos</h2>
           
           <table class="min-w-full ">
             <thead class="bg-gray-200 border-b">
               <tr>
+                <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
+                  ID
+                </th>
                 <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
                   Producto
                 </th>
@@ -24,15 +27,15 @@
             </thead>
             <tbody *ngFor="let detail of orderDetails">
               <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">{{ detail.id }}</td>
                 <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">{{ detail.product }}</td>
                 <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">{{ detail.quantity }}</td>
                 <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">{{ detail.subtotal }}</td>
               </tr>
             </tbody>
             <tfoot class="bg-gray-200 border-b">
-              <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
-                Total pagar
-              </th>
+              <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">Total pagar</th>
+              <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left"></th>
               <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left"></th>
               <th class="text-sm font-medium text-gray-600 px-6 py-4 text-left">
                 $$$$
@@ -44,12 +47,19 @@
       </div>
     </div>
   </div>
-
+  
+  <div class="flex justify-center mt-4">
+    <app-add-to-cart></app-add-to-cart>
+  </div>
+  
 </div>
+
 
 <ng-template #divNoContent>
   <p>No hay pedidos en la orden.</p>
 </ng-template>
+
+
 
 
 

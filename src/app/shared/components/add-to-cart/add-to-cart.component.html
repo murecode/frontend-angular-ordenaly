@@ -1,0 +1,23 @@
+<div class="flex items-center justify-center gap-4 p-2 bg-orange-50 rounded-lg border-2 border-orange-400 border-dashed">
+
+  <div class="flex items-center space-x-2">
+    <label for="product" class="text-gray-600">Plato: </label>
+    <select id="product" [(ngModel)]="selectedProductId" class="border rounded px-2 py-1 text-center w-48">
+      <option *ngFor="let product of products" [value]="product.id">{{ product.title }}</option>
+    </select>
+  </div>
+
+
+  <div class="space-x-2 py-2">
+    <button (click)="decrement()" class="bg-orange-400 text-white font-bold py-1 px-3 rounded-lg">-</button>
+    <span>{{ quantity }}</span>
+    <button (click)="increment()" class="bg-orange-400 text-white font-bold py-1 px-3 rounded-lg">+</button>
+  </div>
+
+  <button
+    class="bg-orange-400 text-white font-bold py-2 px-4 rounded hover:bg-orange-500">
+    
+    Enviar
+  </button>
+
+</div>

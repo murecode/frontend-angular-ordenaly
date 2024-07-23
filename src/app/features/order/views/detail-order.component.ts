@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 import { OrderService } from '../order.service';
 import { OrderDetails } from '../interfaces/OrderDetails.interface';
-import { switchMap } from 'rxjs';
+import { AddToCartComponent } from "../../../shared/components/add-to-cart/add-to-cart.component";
 
 @Component({
   selector: 'app-details-page',
@@ -12,11 +13,15 @@ import { switchMap } from 'rxjs';
   imports: [
     CommonModule,
     NgIf,
-    NgFor
-  ],
+    NgFor,
+    RouterModule,
+    AddToCartComponent
+],
   templateUrl: 'detail-order.component.html',
 })
 export class OrderDetailsComponent {
+
+  addbutton = "Agregar plato";
 
   public orderDetails?: OrderDetails[];
 
