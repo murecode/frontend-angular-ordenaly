@@ -1,7 +1,7 @@
 <form [formGroup]="newOrderForm" (ngSubmit)="onSubmit()">
 
   <label>Turno: </label>
-  <input formControlName="ticketId">
+  <input formControlName="ticket">
 
   <label>Mesa: </label>
   <input formControlName="mesa">
@@ -9,26 +9,13 @@
   <label>Mesero: </label>
   <input formControlName="mesero">
 
-  <label>Estado: </label>
-  <input formControlName="estado">
-
-  <label>Pago: </label>
-  <input formControlName="pago">
-
-  <label>Producto: </label>
-  <input [formControl]="newItem">
-  <button (click)="addProduct()">Agregar</button>
-
-  <label>Nota: </label>
-  <input formControlName="nota">
-
-  <div formArrayName="pedido">
+  <!-- <div formArrayName="pedido">
     <p>Listado pedido: </p>
     <ul *ngFor="let item of pedido.controls; let i = index">
       <li [formControlName]="i">{{ item.value }}</li>
     </ul>
+  </div> -->
 
-  </div>
 </form>
 
 <button (click)="onSubmit()">Enviar</button>

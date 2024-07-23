@@ -1,4 +1,4 @@
-import { Pageable, Sort } from "../../shared/util/pageable.interface"
+import { Pageable, Sort } from "../../../shared/util/pageable.interface"
 
 export interface OrderData {
   content:          Order[];

@@ -28,7 +28,7 @@ export class TicketListComponent {
   ngOnInit():void {
 
     this.loadAllTickets()
-
+ 
   }
 
   selectOption(event: Event) {

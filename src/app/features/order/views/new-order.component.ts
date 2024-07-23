@@ -6,7 +6,7 @@ import { switchMap } from 'rxjs';
 
 import { TicketService } from '../../ticket/ticket.service';
 import { OrderService } from '../order.service'; 
-import { Order } from '../Order.interface'; 
+import { Order } from '../interfaces/Order.interface'; 
 
 @Component({
   selector: 'new-order-page',
@@ -23,13 +23,10 @@ export class NewOrderComponent {
   public newItem: FormControl = new FormControl('')
 
   public newOrderForm: FormGroup = this.orderForm.group({
-    ticketId: [''],
+    ticket: [''],
     mesa: [''],
     mesero: [''],
-    estado: ['PENDIENTE'],
-    pago: ['PENDIENTE'],
-    pedido: this.orderForm.array([]),
-    nota: ['Observaciones del pedido']
+    // pedido: this.orderForm.array([]),
   })
 
   constructor(
@@ -58,20 +55,20 @@ export class NewOrderComponent {
 
   // }
 
-  get pedido() {
-    return this.newOrderForm.get('pedido') as FormArray
-  }
+  // get pedido() {
+  //   return this.newOrderForm.get('pedido') as FormArray
+  // }
 
-  addProduct(): void {
-    if (this.newItem.invalid) return;
-    const newitem = this.newItem.value;
+  // addProduct(): void {
+  //   if (this.newItem.invalid) return;
+  //   const newitem = this.newItem.value;
 
-    console.log(newitem)
+  //   console.log(newitem)
 
-    this.pedido.push(
-      this.orderForm.control(newitem)
-    )
-  }
+  //   this.pedido.push(
+  //     this.orderForm.control(newitem)
+  //   )
+  // }
 
   onSubmit(): void {
     if (this.newOrderForm.invalid) return;
@@ -86,7 +83,7 @@ export class NewOrderComponent {
 
     this.orderService.newOrder(this.currentOrder)
       .subscribe(order => {
-        // TODO: mostrar snackbar y redirigir a /order
+        // TODO: mostrar snackbar y redirigir a /carts/order/id
       })
 
 

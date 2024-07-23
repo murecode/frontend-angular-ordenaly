@@ -3,7 +3,7 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { OrderService } from '../order.service';
-import { OrderDetails } from '../OrderDetails.interface';
+import { OrderDetails } from '../interfaces/OrderDetails.interface';
 import { switchMap } from 'rxjs';
 
 @Component({

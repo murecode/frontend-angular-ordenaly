@@ -3,7 +3,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 
 
-import { Order } from '../Order.interface'; 
+import { Order } from '../interfaces/Order.interface'; 
 import { OrderService } from '../order.service'; 
 
 @Component({

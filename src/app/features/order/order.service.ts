@@ -2,10 +2,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, map, of, tap } from "rxjs";
 
-import { Order, OrderData } from "./Order.interface"; 
+import { Order, OrderData } from "../order/interfaces/Order.interface"; 
 // import { environment } from "src/environments/environment.dev";
 import { environment } from "src/environments/environment.prod";
-import { OrderDetails } from "./OrderDetails.interface";
+import { OrderDetails } from "../order/interfaces/OrderDetails.interface";
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
@@ -46,18 +46,16 @@ export class OrderService {
     return this.http.post<Order>(`${this.baseUrl}/orders`, order);
   }
 
+  addProductToOrder() {
+    
+  }
+
   // updateOrder( order:Order ):Observable<Order> {
   //   if( !order.order ) throw Error("La orden es requerida"); 
   //   return this.http.patch<Order>(`${this.baseUrl}/orders/${ order.order }`, order)
   // }
 
-  // removeOrder( id:string ): Observable<boolean> {
-  //   return this.http.delete(`${this.baseUrl}/orders/${ id }`)
-  //     .pipe(
-  //       catchError( err => of(false) ),
-  //       map( resp => true)
-  //     )
-  // }
+  
 
 
 }

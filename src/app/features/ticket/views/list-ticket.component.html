@@ -12,80 +12,69 @@
 
 <div class="md:px-4 md:grid md:grid-cols-2 m-2 lg:grid-cols-3 gap-5 space-y-2 md:space-y-0">
 
-  <add-button [routerLink]="['new',  ]"></add-button>
-
   <div *ngFor="let ticket of ticketList">
     <!-- ticket card -->
     <div class="max-w-sm bg-white px-4 pt-4 pb-2 rounded-xl shadow-lg transform ">
 
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between pb-1 border-b-2 border-orange-400 border-dashed">
         <p class=" text-lg font-bold text-orange-400">Turno: <span>{{ticket.id}}</span></p>
 
         <span *ngIf="ticket.status == 'ATTENDED'"
           class="inline-flex items-center justify-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-emerald-700">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25" stroke-width="1.5"
             stroke="currentColor" class="-ms-1 me-1.5 h-4 w-4">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <p class="whitespace-nowrap text-sm">Atendido</p>
+          <p class="whitespace-nowrap text-xs">Atendido</p>
         </span>
 
         <span *ngIf="ticket.status == 'WAITING'"
           class="inline-flex items-center justify-center rounded-full bg-amber-100 px-2.5 py-0.5 text-amber-700">
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#b45309" class="-ms-1 me-1.5 h-4 w-4">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -990 990 990" fill="#b45309" class="-ms-1 me-1.5 h-4 w-4">
             <path d="M324-168h312v-120q0-65-45.5-110.5T480-444q-65 0-110.5 45.5T324-288v120Zm156-348q65 0 110.5-45.5T636-672v-120H324v120q0 65 45.5 110.5T480-516ZM192-96v-72h60v-120q0-59 28-109.5t78-82.5q-49-32-77.5-82.5T252-672v-120h-60v-72h576v72h-60v120q0 59-28.5 109.5T602-480q50 32 78 82.5T708-288v120h60v72H192Zm288-72Zm0-624Z"/></svg>
-          <p class="whitespace-nowrap text-sm">En espera</p>
+          <p class="whitespace-nowrap text-xs">Sin atender</p>
         </span>
 
         <span *ngIf="ticket.status == 'CANCELED'"
           class="inline-flex items-center justify-center rounded-full bg-red-100 px-2.5 py-0.5 text-red-700">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" stroke-width="1.5"
             stroke="currentColor" class="-ms-1 me-1.5 h-4 w-4">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
           </svg>
-          <p class="whitespace-nowrap text-sm">Cancelado</p>
+          <p class="whitespace-nowrap text-xs">Cancelado</p>
         </span>
 
       </div>
 
-      <span class="flex items-center m-1">
-        <span class="h-px flex-1 bg-orange-300"></span>
-      </span>
-
       <div class="my-2">
 
         <dl class="flex justify-around ">
-          <div class="flex flex-col">
-            <dt class="text-sm font-medium text-gray-600">Hora:</dt>
+          <div class="flex items-center flex-col">
+            <dt class="text-sm font-medium text-gray-600">Emitido a las:</dt>
             <dd class="text-xs text-gray-500">{{ticket.createdAt}}</dd>
           </div>
 
-          <div class="flex flex-col">
-            <dt class="text-sm font-medium text-gray-600">Personas:</dt>
+          <div class="flex items-center flex-col">
+            <dt class="text-sm font-medium text-gray-600">No. Personas:</dt>
             <dd class="text-xs text-gray-500">{{ticket.numberOfPeople}}</dd>
           </div>
 
-          <!-- <div class="flex flex-col">
-            <dt class="text-sm font-medium text-gray-600">Estado:</dt>
-            <dd class="text-xs text-gray-500">{{ticket.status}}</dd>
-          </div> -->
-
-
           <div *ngIf="ticket.status != 'ATTENDED' && ticket.status != 'CANCELED'">
             <button
-              class="px-4 font-medium text-white bg-orange-400 py-2 rounded-xl shadow-lg hover:bg-orange-500"
-              [routerLink]="[ '/new',  ]">Atender
+              class="px-3 py-2 text-sm font-medium text-white bg-orange-400 rounded-xl shadow-lg hover:bg-orange-500"
+              [routerLink]="[ '/orders/new',  ]">Atender
             </button>
           </div>
 
         </dl>
 
-
       </div>
     </div>
     <!-- end ticket card -->
   </div>
+
+  <add-button [routerLink]="['new',  ]"></add-button>
 
 </div>
