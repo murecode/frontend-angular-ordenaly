@@ -65,20 +65,7 @@ export class AddToCartComponent implements OnInit {
     });
   }
 
-  increment() {
-    const currentValue = this.addToOrderForm.get('quantity')?.value;
-    this.addToOrderForm.get('quantity')?.setValue(currentValue + 1)
-    // this.quantity++;
-  }
 
-  decrement() {
-    const currentValue = this.addToOrderForm.get('quantity')?.value;
-    if (currentValue > 1) {
-      this.addToOrderForm.get('quantity')?.setValue(currentValue - 1);
-    }
-  }
-
-  //Importar el OrderService para realizar la solicitud 
   submit() {
 
     const payload: AddToOrderRequest = {
@@ -91,6 +78,8 @@ export class AddToCartComponent implements OnInit {
     }, error => {
       console.error('Error en la solicitud POST', error);
     });
+
+    this.addToOrderForm.reset();
   }
 
 }
