@@ -5,7 +5,7 @@ import { switchMap } from 'rxjs';
 
 import { OrderService } from '../order.service';
 import { OrderDetails } from '../interfaces/OrderDetails.interface';
-import { AddToCartComponent } from "../../../shared/components/add-to-cart/add-to-cart.component";
+import { AddToCartComponent } from "../components/add-to-order/add-to-order.component";
 
 @Component({
   selector: 'app-details-page',

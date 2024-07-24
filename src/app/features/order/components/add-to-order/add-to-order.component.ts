@@ -9,14 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 import { AddToOrderRequest } from 'src/app/features/order/interfaces/OrderCart.interface';
 
 @Component({
-  selector: 'app-add-to-cart',
+  selector: 'app-add-to-order',
   standalone: true,
   imports: [
     NgFor,
     FormsModule,
     ReactiveFormsModule
   ],
-  templateUrl: 'add-to-cart.component.html',
+  templateUrl: 'add-to-order.component.html',
 })
 export class AddToCartComponent implements OnInit {
 
@@ -79,7 +79,8 @@ export class AddToCartComponent implements OnInit {
       console.error('Error en la solicitud POST', error);
     });
 
-    this.addToOrderForm.reset();
+    location.reload();
+    // this.addToOrderForm.reset();
   }
 
 }
