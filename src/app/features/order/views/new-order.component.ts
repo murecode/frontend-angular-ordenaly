@@ -37,7 +37,7 @@ export class NewOrderComponent {
     private router:Router
   ) {}
 
-  get currentOrder():Order {
+  get currentOrder(): Order {
     const order = this.newOrderForm.value as Order;
     return order;
   }

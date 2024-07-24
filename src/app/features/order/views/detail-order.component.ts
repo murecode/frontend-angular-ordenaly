@@ -21,8 +21,6 @@ import { AddToCartComponent } from "../../../shared/components/add-to-cart/add-t
 })
 export class OrderDetailsComponent {
 
-  addbutton = "Agregar plato";
-
   public orderDetails?: OrderDetails[];
 
   constructor(

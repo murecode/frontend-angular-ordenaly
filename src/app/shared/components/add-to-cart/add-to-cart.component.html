@@ -1,23 +1,53 @@
 <div class="flex flex-wrap items-center justify-center gap-2 p-2 bg-orange-50 rounded-lg border-2 border-orange-400 border-dashed">
 
-  <div class="flex items-center space-x-2 px-2">
-    <label for="product" class="text-gray-600">Plato: </label>
-    <select id="product" [(ngModel)]="selectedProductId" class="border rounded px-2 py-1 text-center w-48">
-      <option *ngFor="let product of products" [value]="product.id">{{ product.title }}</option>
-    </select>
-  </div>
+  <form [formGroup]="addToOrderForm">
 
+    <div class="flex items-center space-x-2 px-2">
+      <label class="text-gray-600">Plato: </label>
+      <select formControlName="product"
+        [(ngModel)]="selectedProductId"
+        class="border rounded px-2 py-1 text-center w-48">
+        <option *ngFor="let product of products" [value]="product.id">{{ product.title }}</option>
+      </select>
+    </div>
+  
+  
+    <div class="space-x-3 px-2">
+      <button type="button" (click)="decrement()" class="text-orange-400 font-bold">-</button>
+      <input type="number" formControlName="quantity" class="px-2 py-1 bg-white border rounded border-gray-300" />
+      <button type="button" (click)="increment()" class="text-orange-400 font-bold">+</button>
+    </div>
+  
+    <button type="button" (click)="submit()"
+      class=" text-orange-400 text-lg font-bold py-1 px-3 rounded cursor-pointer hover:text-white hover:bg-orange-400">
+      Enviar
+    </button>
 
-  <div class="space-x-3 px-2">
-    <button (click)="decrement()" class="text-orange-400 font-bold">-</button>
-    <span class="px-2 py-1 bg-white border rounded border-gray-300">{{ quantity }}</span>
-    <button (click)="increment()" class="text-orange-400 font-bold">+</button>
-  </div>
-
-  <button
-    class=" text-orange-400 text-lg font-bold py-1 px-3 rounded cursor-pointer hover:text-white hover:bg-orange-400">
-    
-    Enviar
-  </button>
-
+  </form>
+  
 </div>
+
+<!-- <form [formGroup]="addToOrderForm">
+  <div class="flex flex-col space-y-4">
+    <div class="flex items-center space-x-4">
+      <label for="product">Producto:</label>
+      <select id="product" formControlName="product" class="border rounded px-2 py-1">
+        <option *ngFor="let product of products" [value]="product.id">{{ product.title }}</option>
+      </select>
+    </div>
+    
+    <div class="flex items-center space-x-4">
+      <button type="button" (click)="decrement()" class="bg-red-500 text-white font-bold py-2 px-4 rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+        -
+      </button>
+      <input type="number" formControlName="quantity" class="border rounded px-2 py-1 text-center w-16" />
+      <button type="button" (click)="increment()" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+        +
+      </button>
+    </div>
+    
+    <button type="button" (click)="submit()" class="bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+      Submit
+    </button>
+  </div>
+</form> -->

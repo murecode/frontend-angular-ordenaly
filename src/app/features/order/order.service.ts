@@ -46,10 +46,6 @@ export class OrderService {
     return this.http.post<Order>(`${this.baseUrl}/orders`, order);
   }
 
-  addProductToOrder() {
-    
-  }
-
   // updateOrder( order:Order ):Observable<Order> {
   //   if( !order.order ) throw Error("La orden es requerida"); 
   //   return this.http.patch<Order>(`${this.baseUrl}/orders/${ order.order }`, order)
