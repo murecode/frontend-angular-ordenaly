@@ -21,7 +21,9 @@ import { AddToOrderRequest } from 'src/app/features/order/interfaces/OrderCart.i
 export class AddToCartComponent implements OnInit {
 
   products: Product[] = [];
-  orderId?: string;
+
+  orderId!: number;
+
   selectedProductId?: number;
   quantity?: number;
 
@@ -42,17 +44,22 @@ export class AddToCartComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe(params => {
-      this.orderId= params['orderid']; // el + convierte de cadena a numero
-      // if (isNaN(this.orderId)) {
-      //   console.error('El ID de la orden no es un número válido');
-      // }
+
+      this.orderId = +params['id'];
+
+      if (isNaN(this.orderId)) {
+        console.error('El ID de la orden no es un número válido');
+      } else {
+        console.log('Order ID:', this.orderId);
+      }
+      
     })
 
-    this.loadAllProducts();
+    this.loadProducts();
     
   }
 
-  loadAllProducts() {
+  loadProducts() {
     this.productService.getProducts().subscribe((data: Product[]) => {
       this.products = data;
     });
@@ -84,12 +91,6 @@ export class AddToCartComponent implements OnInit {
     }, error => {
       console.error('Error en la solicitud POST', error);
     });
-
-    // const payload = {
-    //   product: this.selectedProductId,
-    //   quantity: this.quantity
-    // };
-    // console.log(payload); // Aquí enviarías el payload con HttpClient.post()
   }
 
 }

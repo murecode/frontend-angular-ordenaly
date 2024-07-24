@@ -15,8 +15,8 @@ export class OrderCartService {
   constructor( private http: HttpClient ) {};
 
 
-  addProductToOrder(orderid: string, body: AddToOrderRequest): Observable<AddToOrderRequest> {
-    return this.http.post<AddToOrderRequest>(`${this.baseUrl}/carts/${orderid}`, body);
+  addProductToOrder(orderId: number, body: AddToOrderRequest): Observable<AddToOrderRequest>{
+    return this.http.post<AddToOrderRequest>(`${this.baseUrl}/carts/${orderId}`, body);
   }
 
 
