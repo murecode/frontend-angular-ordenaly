@@ -4,7 +4,7 @@ import { NgFor } from '@angular/common';
 import { ProductService } from 'src/app/features/product/product.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from 'src/app/features/product/Product.inteface';
-import { OrderCartService } from 'src/app/features/order/orderCart.service';
+import { OrderCartService } from 'src/app/features/order/orderItem.service';
 import { ActivatedRoute } from '@angular/router';
 import { AddToOrderRequest } from 'src/app/features/order/interfaces/OrderCart.interface';
 
@@ -73,7 +73,7 @@ export class AddToCartComponent implements OnInit {
       quantity: this.addToOrderForm.get('quantity')?.value
     };
 
-    this.orderCartService.addProductToOrder(this.orderId, payload).subscribe(response => {
+    this.orderCartService.addItemToOrder(this.orderId, payload).subscribe(response => {
       console.log('Solicitud POST exitosa', response);
     }, error => {
       console.error('Error en la solicitud POST', error);
