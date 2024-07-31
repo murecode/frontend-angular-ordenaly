@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { RouterOutlet, RouterModule } from '@angular/router';
+import { HeaderComponent } from "src/app/shared/components/header/header.component";
 
 
 @Component({
@@ -8,6 +9,8 @@ import { RouterOutlet, RouterModule } from '@angular/router';
   imports: [
     RouterOutlet,
     RouterModule,
+
+    HeaderComponent
   ],
   templateUrl: 'layout.component.html',
   styles: [

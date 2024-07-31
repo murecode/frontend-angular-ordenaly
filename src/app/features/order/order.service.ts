@@ -36,7 +36,7 @@ export class OrderService {
   }
 
   getOrderDetails(id: string): Observable<OrderDetails[] | undefined> {
-    return this.http.get<OrderDetails[]>(`${this.baseUrl}/carts/orders/${id}`)
+    return this.http.get<OrderDetails[]>(`${this.baseUrl}/items/orders/${id}`)
     .pipe(
       catchError(() => of(undefined))
     )

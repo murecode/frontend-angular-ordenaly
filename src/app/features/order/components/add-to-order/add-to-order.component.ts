@@ -79,8 +79,6 @@ export class AddToCartComponent implements OnInit {
       console.error('Error en la solicitud POST', error);
     });
 
-    location.reload();
-    // this.addToOrderForm.reset();
   }
 
 }

@@ -17,18 +17,19 @@ export class AuthService {
   private _jwtToken = signal<string | null>(localStorage.getItem('jwtToken'));
 
   //Lo que se expone al exterior
-  public authStauts = computed( () => this._authStatus() );  
+  public authStatus = computed( () => this._authStatus() );  
   
 
   constructor() {}
+
 
   get jwtToken$() {
     return this._jwtToken;
   }
 
 
-  register(user: User): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/auth/register`, user);
+  register(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/auth/register`, user);
   }
 
 

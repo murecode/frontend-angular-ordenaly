@@ -17,18 +17,18 @@ export class OrderCartService {
 
 
   getOrderDetails(id: number): Observable<OrderDetails[] | undefined> {
-    return this.http.get<OrderDetails[]>(`${this.baseUrl}/carts/orders/${id}`)
+    return this.http.get<OrderDetails[]>(`${this.baseUrl}/items/orders/${id}`)
     .pipe(
       catchError(() => of(undefined))
     )
   }
 
   addItemToOrder(orderId: number, body: AddToOrderRequest): Observable<AddToOrderRequest>{
-    return this.http.post<AddToOrderRequest>(`${this.baseUrl}/carts/${orderId}`, body);
+    return this.http.post<AddToOrderRequest>(`${this.baseUrl}/items/orders/${orderId}`, body);
   }
 
   deleteItemFromOrder(itemId: string): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/carts/product/${itemId}`);
+    return this.http.delete<void>(`${this.baseUrl}/items/${itemId}`);
   }
 
 
