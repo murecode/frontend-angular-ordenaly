@@ -1,49 +1,37 @@
-<form [formGroup]="newOrderForm" (ngSubmit)="onSubmit()">
 
-  <label>Turno: </label>
-  <input formControlName="ticket">
 
-  <label>Mesa: </label>
-  <input formControlName="mesa">
+    <form [formGroup]="newOrderForm" (ngSubmit)="onSubmit()">
 
-  <label>Mesero: </label>
-  <input formControlName="mesero">
+      <label>Turno: </label>
+      <input formControlName="ticket">
+    
+      <label>Mesa: </label>
+      <input formControlName="mesa">
+    
+      <label>Mesero: </label>
+      <input formControlName="mesero">
+    
+    </form>
+    
+    <button (click)="onSubmit()">Enviar</button>
 
-  <!-- <div formArrayName="pedido">
-    <p>Listado pedido: </p>
-    <ul *ngFor="let item of pedido.controls; let i = index">
-      <li [formControlName]="i">{{ item.value }}</li>
-    </ul>
-  </div> -->
-
-</form>
-
-<button (click)="onSubmit()">Enviar</button>
 
 <pre>{{ currentOrder | json }}</pre>
 
-<div> "ESTE BLOCQUE VA PERO EN EL FORMULARIO DE ORDENES"
-  <label for="OrderNotes" class="block text-sm font-medium text-gray-700">
-    Order notes
-  </label>
-  <textarea id="OrderNotes" class="mt-2 w-full rounded-lg border-gray-200 align-top shadow-sm sm:text-sm" rows="4"
-    placeholder="Enter any additional order notes..."></textarea>
-</div>
 
 <!-- Botones -->
-<div class="flex items-center">
+<!-- <div class="flex items-center">
   <a href="#" class="inline-block rounded bg-orange-400 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700">
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
       <path
         d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
     </svg>
-    <!-- <p class="mx-1">Editar</p> -->
+ 
   </a>
   <a href="#" class="inline-block rounded bg-orange-400 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700">
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
       <path
         d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z" />
     </svg>
-    <!-- Editar -->
   </a>
-</div>
+</div> -->

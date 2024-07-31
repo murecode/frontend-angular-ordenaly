@@ -6,12 +6,13 @@ import { switchMap } from 'rxjs';
 
 import { TicketService } from '../../ticket/ticket.service';
 import { OrderService } from '../order.service'; 
-import { Order } from '../interfaces/Order.interface'; 
+import { Order } from '../interfaces/Order.interface';
+import { ModalComponent } from "../../../shared/components/modal/modal.component"; 
 
 @Component({
   selector: 'new-order-page',
   standalone: true,
-  imports: [CommonModule, NgFor, ReactiveFormsModule],
+  imports: [CommonModule, NgFor, ReactiveFormsModule, ModalComponent],
   templateUrl: 'new-order.component.html',
   styles: [
   ]

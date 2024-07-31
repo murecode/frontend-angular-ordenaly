@@ -5,6 +5,7 @@ import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 
 import { Order } from '../interfaces/Order.interface'; 
 import { OrderService } from '../order.service'; 
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-list-page',
@@ -13,6 +14,8 @@ import { OrderService } from '../order.service';
     NgFor,
     NgIf,
     RouterModule,
+
+    ModalComponent
   ],
   templateUrl: './list-order.component.html',
 })

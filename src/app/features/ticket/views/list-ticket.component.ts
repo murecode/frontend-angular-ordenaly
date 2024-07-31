@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Ticket } from '../Ticket.interface'; 
 import { TicketService } from '../ticket.service';
 
 import { AddButtonComponent } from 'src/app/shared/components/add-button/add-button.component';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
+import { NewTicketComponent } from "./new-ticket.component";
 
 @Component({
   selector: 'app-list-page',
@@ -13,14 +15,18 @@ import { AddButtonComponent } from 'src/app/shared/components/add-button/add-but
     RouterModule,
     CommonModule,
     AddButtonComponent,
-  ],
+    ModalComponent,
+    NewTicketComponent
+],
   templateUrl: './list-ticket.component.html',
   styles: []
 })
 export class TicketListComponent {
 
+  @ViewChild('ticketmodal') modal?: ModalComponent;
+
   public ticketList: Ticket[] = [];
-  
+
   constructor(
     private ticketService: TicketService,
   ) {}
@@ -57,5 +63,8 @@ export class TicketListComponent {
       );
   }
 
+  openModal(): void {
+    this.modal?.openModal();
+  }
 
 }

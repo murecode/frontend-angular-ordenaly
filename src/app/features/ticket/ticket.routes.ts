@@ -1,7 +1,7 @@
 import { Route } from "@angular/router";
 
 import { TicketListComponent } from "./views/list-ticket.component"; 
-import { TicketCreateComponent } from "./views/create-ticket.component";
+import { NewTicketComponent } from "./views/new-ticket.component";
 
 export default [
   { 
@@ -11,7 +11,7 @@ export default [
         path: '', component: TicketListComponent,
       },
       {
-        path: 'new', component: TicketCreateComponent
+        path: 'new', component: NewTicketComponent
       },
     ]
   }

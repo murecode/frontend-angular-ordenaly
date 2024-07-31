@@ -1,20 +1,21 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, ViewChild } from '@angular/core';
 import { TicketService } from '../ticket.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { min } from 'rxjs';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
 @Component({
-  selector: 'app-create-ticket',
+  selector: 'app-new-ticket',
   standalone: true,
   imports: [
     FormsModule,
     ReactiveFormsModule,
+
+    ModalComponent
   ],
-  templateUrl: 'create-ticket.component.html',
+  templateUrl: 'new-ticket.component.html',
 })
-export class TicketCreateComponent  {
+export class NewTicketComponent  {
 
   private ticketService = inject(TicketService);
   private formBuilder = inject(FormBuilder);
@@ -37,5 +38,7 @@ export class TicketCreateComponent  {
     this.router.navigateByUrl('/tickets');
 
   }
+
+  
 
 }
