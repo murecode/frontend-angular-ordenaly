@@ -2,10 +2,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, map, of, tap } from "rxjs";
 
-import { Order, OrderData } from "../order/interfaces/Order.interface"; 
+import { Order, OrderData } from "../interfaces/Order.interface"; 
 // import { environment } from "src/environments/environment.dev";
 import { environment } from "src/environments/environment.prod";
-import { OrderDetails } from "../order/interfaces/OrderDetails.interface";
+import { OrderDetails } from "../interfaces/OrderDetails.interface";
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {

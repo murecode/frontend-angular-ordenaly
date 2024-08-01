@@ -2,8 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../auth.service';
-import { User } from '../auth.interface';
+
+import { AuthService } from '../../../auth/services/auth.service';
+import { User } from '../../interfaces/auth.interface';
 
 @Component({
   selector: 'app-register-page',
@@ -18,7 +19,7 @@ import { User } from '../auth.interface';
 })
 export class RegisterComponent {
 
-  private authService = inject(AuthService)
+  protected authService = inject(AuthService)
 
   public registerForm: FormGroup = this.formBuilder.group({
 

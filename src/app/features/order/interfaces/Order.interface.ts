@@ -1,15 +1,15 @@
-import { Pageable, Sort } from "../../../shared/util/pageable.interface"
+// import { Pageable, Sort } from "../../../shared/util/pageable.interface"
 
 export interface OrderData {
   content:          Order[];
-  pageable:         Pageable;
+  // pageable:         Pageable;
   last:             boolean;
   totalPages:       number;
   totalElements:    number;
   first:            boolean;
   size:             number;
   number:           number;
-  sort:             Sort;
+  // sort:             Sort;
   numberOfElements: number;
   empty:            boolean;
 }

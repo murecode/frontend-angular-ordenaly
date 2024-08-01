@@ -2,11 +2,11 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, map, of, tap } from "rxjs";
 
-import {  } from "./interfaces/Order.interface"; 
+import {  } from "../interfaces/Order.interface"; 
 // import { environment } from "src/environments/environment.dev";
 import { environment } from "src/environments/environment.prod";
-import { AddToOrderRequest } from "./interfaces/OrderCart.interface";
-import { OrderDetails } from "./interfaces/OrderDetails.interface";
+import { AddItem } from "../interfaces/AddItem.interface";
+import { OrderDetails } from "../interfaces/OrderDetails.interface";
 
 @Injectable({ providedIn: 'root' })
 export class OrderCartService {
@@ -23,8 +23,8 @@ export class OrderCartService {
     )
   }
 
-  addItemToOrder(orderId: number, body: AddToOrderRequest): Observable<AddToOrderRequest>{
-    return this.http.post<AddToOrderRequest>(`${this.baseUrl}/items/orders/${orderId}`, body);
+  addItemToOrder(orderId: number, body: AddItem): Observable<AddItem>{
+    return this.http.post<AddItem>(`${this.baseUrl}/items/orders/${orderId}`, body);
   }
 
   deleteItemFromOrder(itemId: string): Observable<void> {

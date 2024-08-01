@@ -1,14 +1,14 @@
 import { Routes } from "@angular/router";
 
-import { AppLayoutComponent } from "./layout/features-layout/layout.component";
-import { LoginComponent } from "./core/auth/views/login.component";
-import { OrderDetailsComponent } from "./features/order/views/detail-order.component";
+import { AppLayoutComponent } from "./layout/layout.component";
+import { LoginComponent } from "./auth/components/login/login.component";
+import { loginGuard } from "./auth/guards/login.guard";
 
 // ordenaly.com/
 export const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./core/auth/auth.routes')
+    loadChildren: () => import('./auth/routes/auth.routes')
   },
   {
     path: '',
@@ -20,11 +20,12 @@ export const routes: Routes = [
       },
       {
         path: 'orders',
-        loadChildren: () => import('./features/order/order.routes')
+        loadChildren: () => import('./features/order/routes/order.routes')
       },
       {
         path: 'products',
-        loadChildren: () => import('./features/product/product.routes')
+        loadChildren: () => import('./features/product/product.routes'),
+        canActivate: [loginGuard],
       },
     ]
   },

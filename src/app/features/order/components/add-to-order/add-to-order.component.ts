@@ -4,9 +4,9 @@ import { NgFor } from '@angular/common';
 import { ProductService } from 'src/app/features/product/product.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from 'src/app/features/product/Product.inteface';
-import { OrderCartService } from 'src/app/features/order/orderItem.service';
+import { OrderCartService } from 'src/app/features/order/services/orderItem.service';
 import { ActivatedRoute } from '@angular/router';
-import { AddToOrderRequest } from 'src/app/features/order/interfaces/OrderCart.interface';
+import { AddItem } from 'src/app/features/order/interfaces/AddItem.interface';
 
 @Component({
   selector: 'app-add-to-order',
@@ -68,7 +68,7 @@ export class AddToCartComponent implements OnInit {
 
   submit() {
 
-    const payload: AddToOrderRequest = {
+    const payload: AddItem = {
       product: this.addToOrderForm.get('product')?.value,
       quantity: this.addToOrderForm.get('quantity')?.value
     };

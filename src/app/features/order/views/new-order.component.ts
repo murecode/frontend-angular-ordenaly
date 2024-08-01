@@ -5,7 +5,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Va
 import { switchMap } from 'rxjs';
 
 import { TicketService } from '../../ticket/ticket.service';
-import { OrderService } from '../order.service'; 
+import { OrderService } from '../services/order.service'; 
 import { Order } from '../interfaces/Order.interface';
 import { ModalComponent } from "../../../shared/components/modal/modal.component"; 
 

@@ -1,9 +1,9 @@
 import { computed, inject, Injectable, signal } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { firstValueFrom, map, Observable, of, tap } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { map, Observable, of, tap } from "rxjs";
 
 import { environment } from "src/environments/environment.prod";
-import { AuthStatus, LoginRequest, LoginResponse, User } from "./auth.interface";
+import { AuthStatus, LoginResponse, User } from "../interfaces/auth.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -34,12 +34,9 @@ export class AuthService {
 
 
   login(username: string, password: string): Observable<boolean> {
-
     const body = { username, password };
-
     return this.http.post<LoginResponse>(`${this.baseUrl}/auth/login`, body)
       .pipe(
-
         tap( res => {
           const token = res.jwt;
           localStorage.setItem('jwtToken', token);
@@ -47,18 +44,28 @@ export class AuthService {
           this._authStatus.set( AuthStatus.authenticated );
 
           console.log(token);
-
         }),
-
         map( () => true )
       )
   }
 
-  // logout() {
-  //   localStorage.removeItem('jwtToken');
-  //   this.jwtToken.set(null);
-  //   // Aquí podrías añadir lógica adicional, como redirección a la página de inicio, etc.
-  // }
+  checkAuthStatus(): Observable<Boolean> {
+    if ( !localStorage.getItem('jwtToken') ) return of(false);
+    
+    const token = localStorage.getItem('token');
+
+    return of(true); 
+  }
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem('jwtToken') ? true : false;
+  }
+
+  logout() {
+    this._jwtToken.set(null);
+    localStorage.removeItem('jwtToken');
+    // Aquí podrías añadir lógica adicional, como redirección a la página de inicio, etc.
+  }
 
  
   

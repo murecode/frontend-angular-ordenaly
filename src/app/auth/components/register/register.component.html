@@ -1,4 +1,4 @@
-<div class="bg-orange-400 flex items-center justify-center h-screen">
+<div *ngIf="!authService.isLoggedIn()" class="bg-orange-400 flex items-center justify-center h-screen">
   <div class="bg-white mx-2 p-6 rounded-lg shadow-lg w-full max-w-sm">
 
     <h2 class="text-4xl font-bold text-center text-orange-400">Ordenaly</h2>
@@ -56,7 +56,7 @@
 </div>
 
 
-<p>¿Formulario valido?: <span>
+<!-- <p>¿Formulario valido?: <span>
     <pre>{{ registerForm.valid | json }}</pre>
   </span></p>
 <p>¿Formulario intacto? </p><span>
@@ -65,4 +65,4 @@
 <p>¿Formulario manipulado? </p>
 <pre>{{ registerForm.touched | json }}</pre>
 
-<pre>{{ registerForm.controls[''] | json }}</pre>
+<pre>{{ registerForm.controls[''] | json }}</pre> -->

@@ -1,7 +1,7 @@
 import { Route } from "@angular/router";
-import { LoginComponent } from "./views/login.component"; 
-import { RegisterComponent } from "./views/register.component"; 
-import { AppLayoutComponent } from "src/app/layout/features-layout/layout.component";
+import { LoginComponent } from "../components/login/login.component"; 
+import { RegisterComponent } from "../components/register/register.component"; 
+import { AppLayoutComponent } from "src/app/layout/layout.component";
 
 export default [
   {

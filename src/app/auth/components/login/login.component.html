@@ -1,4 +1,4 @@
-<div class="bg-orange-400 flex items-center justify-center h-screen">
+<div *ngIf="!authService.isLoggedIn()" class="bg-orange-400 flex items-center justify-center h-screen">
   <div class="bg-white mx-2 p-6 rounded-lg shadow-lg w-full max-w-sm">
 
     <h2 class="text-4xl font-bold text-center text-orange-400">Ordenaly</h2>
