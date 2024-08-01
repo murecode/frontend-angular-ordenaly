@@ -1,19 +1,12 @@
-import { computed, inject, Injectable, signal } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { map, Observable, of, tap } from "rxjs";
-
+import {  Injectable } from "@angular/core";
 import { jwtDecode } from "jwt-decode";
 
-import { environment } from "src/environments/environment.prod";
-import { AuthStatus, LoginResponse, User } from "../interfaces/auth.interface";
-
-
+// propiedades que se espera decodificar del payload
 interface DecodedToken {
+  id: number;
   fullname: string;
   email: string;
-  // Agrega aquí otras propiedades que esperas en el payload
 }
-
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +17,7 @@ export class AuthService {
 
   constructor() {}
 
+  //se crea la clave en el localStorage
   getToken(): string | null {
     if (!this.token) {
       this.token = localStorage.getItem('token');
@@ -31,10 +25,12 @@ export class AuthService {
     return this.token;
   }
 
+  //desde el LoginComponent se asigna el jwt a la clave en localStorage 
   setToken(jwt: string) {
     this.token = jwt;
     localStorage.setItem('token', jwt);
   }
+
 
   //Se decodifica el JWT para extraer datos necesarios
   decodeToken(): any {
@@ -45,15 +41,21 @@ export class AuthService {
     return null;
   }
 
-  getUserName(): string | null {
+  getId(): number | null {
+    const decodedToken = this.decodeToken();
+    return decodedToken ? decodedToken.id : null;
+  }
+
+  getFullname(): string | null {
     const decodedToken = this.decodeToken();
     return decodedToken ? decodedToken.fullname : null;
   }
 
-  getUserEmail(): string | null {
+  getEmail(): string | null {
     const decodedToken = this.decodeToken();
     return decodedToken ? decodedToken.email : null
   }
+
 
   isLoggedIn(): boolean {
     return localStorage.getItem('token') ? true : false;

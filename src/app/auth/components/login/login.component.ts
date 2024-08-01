@@ -42,9 +42,8 @@ export class LoginComponent {
 
     this.http.post<LoginResponse>(`${this.baseUrl}/auth/login`, {username, password}).subscribe(
       response => {
-        this.authService.setToken(response.jwt);
-        this.router.navigate(['/tickets']); // Redirigir al usuario a la página principal
-        // Redirigir al usuario a la página principal
+        this.authService.setToken(response.jwt); // se asigna el jwt al localStorage con el metodo 'setToken'
+        this.router.navigate(['/tickets']); // Redirigir al usuario a la página principal una vez se asigna el token
       },
       error => {
         // Manejar el error

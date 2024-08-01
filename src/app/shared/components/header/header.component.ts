@@ -26,8 +26,8 @@ export class HeaderComponent {
   ) {}
 
   ngOnInit() {
-    this.username = this.authService.getUserName();
-    this.userEmail = this.authService.getUserEmail();
+    this.username = this.authService.getFullname();
+    this.userEmail = this.authService.getEmail();
   }
 
   
