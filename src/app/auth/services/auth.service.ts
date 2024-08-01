@@ -2,6 +2,8 @@ import { computed, inject, Injectable, signal } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map, Observable, of, tap } from "rxjs";
 
+import { jwtDecode } from "jwt-decode";
+
 import { environment } from "src/environments/environment.prod";
 import { AuthStatus, LoginResponse, User } from "../interfaces/auth.interface";
 
@@ -13,14 +15,43 @@ export class AuthService {
   private readonly baseUrl:string = environment.baseUrl;
   private http = inject(HttpClient);
 
+  private token: string | null = null; //
+
   private _authStatus = signal<AuthStatus>(AuthStatus.checking);
   private _jwtToken = signal<string | null>(localStorage.getItem('jwtToken'));
 
   //Lo que se expone al exterior
   public authStatus = computed( () => this._authStatus() );  
   
-
   constructor() {}
+
+  getToken(): string | null { //
+    if (!this.token) {
+      this.token = localStorage.getItem('token');
+    }
+    return this.token;
+  }
+
+  setToken(token: string) { //
+    this.token = token;
+    localStorage.setItem('token', token);
+  }
+
+  decodeToken(): any { //
+    const token = this.getToken();
+    if (token) {
+      return jwtDecode(token);
+    }
+    return null;
+  }
+
+  getUserName(): string | null { //
+    const decodedToken = this.decodeToken();
+    return decodedToken ? decodedToken.nombre : null;
+  }
+
+
+
 
 
   get jwtToken$() {
@@ -28,9 +59,9 @@ export class AuthService {
   }
 
 
-  register(user: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/auth/register`, user);
-  }
+  // register(user: User): Observable<User> {
+  //   return this.http.post<User>(`${this.baseUrl}/auth/register`, user);
+  // }
 
 
   login(username: string, password: string): Observable<boolean> {
@@ -47,14 +78,6 @@ export class AuthService {
         }),
         map( () => true )
       )
-  }
-
-  checkAuthStatus(): Observable<Boolean> {
-    if ( !localStorage.getItem('jwtToken') ) return of(false);
-    
-    const token = localStorage.getItem('token');
-
-    return of(true); 
   }
 
   isLoggedIn(): boolean {
