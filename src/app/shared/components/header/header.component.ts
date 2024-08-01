@@ -11,6 +11,9 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class HeaderComponent {
 
+  username: string | null = null;
+  userEmail: string | null = null;
+
   public navlist = [
     { label: 'Turnos',   icon: 'label', url: '/tickets'  },
     { label: 'Comandas', icon: 'label', url: '/orders'  },
@@ -21,6 +24,13 @@ export class HeaderComponent {
     private authService: AuthService,
     private router: Router
   ) {}
+
+  ngOnInit() {
+    this.username = this.authService.getUserName();
+    this.userEmail = this.authService.getUserEmail();
+  }
+
+  
 
   // get username(): User | undefined {
   //   return this.authService.
