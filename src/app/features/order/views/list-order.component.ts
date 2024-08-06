@@ -25,23 +25,11 @@ export class OrderListComponent {
 
   constructor(
     private orderService: OrderService,
-    // private activatedRoute: ActivatedRoute,
-    // private router: Router
+    
   ) {}
 
   ngOnInit(): void { 
-    
-    this.loadAllOrders(); // Carga todas las órdenes por defecto al inicio
-
-    // this.activatedRoute.params.subscribe(params => {
-    //   const status = params['status'];
-    //   if (status) {
-    //     this.loadOrdersByPayment(status);
-    //   } else {
-    //     this.loadAllOrders();
-    //   }
-    // });
-    
+    this.loadAllOrders(); 
   }
 
   selectOption(event: Event) {

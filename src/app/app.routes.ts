@@ -16,11 +16,13 @@ export const routes: Routes = [
     children: [
       {
         path: 'tickets',
-        loadChildren: () => import('./features/ticket/ticket.routes')
+        loadChildren: () => import('./features/ticket/ticket.routes'),
+        canActivate: [loginGuard],
       },
       {
         path: 'orders',
-        loadChildren: () => import('./features/order/routes/order.routes')
+        loadChildren: () => import('./features/order/routes/order.routes'),
+        canActivate: [loginGuard],
       },
       {
         path: 'products',

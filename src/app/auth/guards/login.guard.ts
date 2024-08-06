@@ -5,7 +5,7 @@ export const loginGuard = () => {
 
   const router = inject(Router)
 
-  if (localStorage.getItem('jwtToken')) {
+  if (localStorage.getItem('token')) {
     return true
   } else {
     router.navigate(['/auth/login'])

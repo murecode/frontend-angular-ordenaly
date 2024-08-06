@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { switchMap } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
-import { TicketService } from '../../ticket/ticket.service';
 import { OrderService } from '../services/order.service'; 
 import { Order } from '../interfaces/Order.interface';
 import { ModalComponent } from "../../../shared/components/modal/modal.component"; 
@@ -28,14 +26,14 @@ export class NewOrderComponent {
   title = "Nueva Orden";
   ticketId: number | null = null;
   waiter: string | null = null;
+  waiterId: number | null = null;
 
   public newItem: FormControl = new FormControl('')
 
   public newOrderForm: FormGroup = this.orderForm.group({
     ticket: [ ],
     waiter: [ ],
-    diningTable: [ '', Validators.required ],
-    // pedido: this.orderForm.array([]),
+    table: [ '', Validators.required ],
   })
 
   constructor(
@@ -43,6 +41,7 @@ export class NewOrderComponent {
     private authService: AuthService, 
     private orderForm: FormBuilder,
     private activeRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   get currentOrder(): Order {
@@ -62,9 +61,10 @@ export class NewOrderComponent {
     });
 
     this.waiter = this.authService.getFullname();
+    this.waiterId = this.authService.getId(); 
     // Actualiza el formulario con el valor de waiterName
     this.newOrderForm.patchValue({
-      waiter: this.waiter
+      waiter: this.waiterId
     });
 
   }
@@ -75,6 +75,8 @@ export class NewOrderComponent {
     this.orderService.newOrder(this.currentOrder)
       .subscribe(order => {
         // TODO: mostrar snackbar y redirigir a /carts/order/id
+        this.router.navigate(['/orders'])
+
       })
 
     //Solo muestra datos en consola
