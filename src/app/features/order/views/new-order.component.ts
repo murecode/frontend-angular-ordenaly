@@ -8,11 +8,17 @@ import { TicketService } from '../../ticket/ticket.service';
 import { OrderService } from '../services/order.service'; 
 import { Order } from '../interfaces/Order.interface';
 import { ModalComponent } from "../../../shared/components/modal/modal.component"; 
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
-  selector: 'new-order-page',
+  selector: 'new-order',
   standalone: true,
-  imports: [CommonModule, NgFor, ReactiveFormsModule, ModalComponent],
+  imports: [
+    CommonModule,
+    NgFor,
+    ReactiveFormsModule,
+    ModalComponent,
+  ],
   templateUrl: 'new-order.component.html',
   styles: [
   ]
@@ -20,22 +26,23 @@ import { ModalComponent } from "../../../shared/components/modal/modal.component
 export class NewOrderComponent {
 
   title = "Nueva Orden";
+  ticketId: number | null = null;
+  waiter: string | null = null;
 
   public newItem: FormControl = new FormControl('')
 
   public newOrderForm: FormGroup = this.orderForm.group({
-    ticket: [''],
-    mesa: [''],
-    mesero: [''],
+    ticket: [ ],
+    waiter: [ ],
+    diningTable: [ '', Validators.required ],
     // pedido: this.orderForm.array([]),
   })
 
   constructor(
-    private orderService:OrderService,
-    private ticketService:TicketService, 
-    private orderForm:FormBuilder,
-    private activeRoute:ActivatedRoute,
-    private router:Router
+    private orderService: OrderService,
+    private authService: AuthService, 
+    private orderForm: FormBuilder,
+    private activeRoute: ActivatedRoute,
   ) {}
 
   get currentOrder(): Order {
@@ -43,50 +50,32 @@ export class NewOrderComponent {
     return order;
   }
 
-  // ngOnInit():void {
+  ngOnInit():void {
 
-  //   this.activeRoute.params
-  //     .pipe(
-  //       switchMap(({ id }) => this.ticketService.getTicket(id)),
-  //     ).subscribe(ticket => {
-  //       if (!ticket) return this.router.navigateByUrl('/');
-  //       this.newOrderForm.reset(ticket)
-  //       return;
-  //     });
+    this.activeRoute.paramMap.subscribe(params => {
+      // Se obtiene el id del path
+      this.ticketId = +params.get('id')!;
+      // Actualiza el formulario con el valor de waiterName
+      this.newOrderForm.patchValue({
+        ticket: this.ticketId
+      });
+    });
 
-  // }
+    this.waiter = this.authService.getFullname();
+    // Actualiza el formulario con el valor de waiterName
+    this.newOrderForm.patchValue({
+      waiter: this.waiter
+    });
 
-  // get pedido() {
-  //   return this.newOrderForm.get('pedido') as FormArray
-  // }
-
-  // addProduct(): void {
-  //   if (this.newItem.invalid) return;
-  //   const newitem = this.newItem.value;
-
-  //   console.log(newitem)
-
-  //   this.pedido.push(
-  //     this.orderForm.control(newitem)
-  //   )
-  // }
+  }
 
   onSubmit(): void {
     if (this.newOrderForm.invalid) return;
-
-    // if (this.currentOrder.order) {
-    //   this.orderService.updateOrder(this.currentOrder)
-    //     .subscribe(order => {
-    //       // TODO: mostrar snackbar
-    //     });
-    //   return;
-    // }
 
     this.orderService.newOrder(this.currentOrder)
       .subscribe(order => {
         // TODO: mostrar snackbar y redirigir a /carts/order/id
       })
-
 
     //Solo muestra datos en consola
     console.log({

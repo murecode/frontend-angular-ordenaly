@@ -8,9 +8,7 @@ interface DecodedToken {
   email: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class AuthService {
 
   private token: string | null = null; 

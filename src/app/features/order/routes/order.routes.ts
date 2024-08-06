@@ -17,7 +17,7 @@ export default [
         component: OrderDetailsComponent
       },
       {
-        path: 'new',
+        path: 'new/:id',
         component: NewOrderComponent 
       },
       {
