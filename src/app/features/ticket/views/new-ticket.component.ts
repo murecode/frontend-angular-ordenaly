@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { TicketService } from '../ticket.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -27,17 +27,15 @@ export class NewTicketComponent  {
 
 
   onSubmit() {
-
     this.ticketService.newTicket(this.ticketForm.value).subscribe(
       ticket => {
         console.log("Se ha generado un nuevo Turno")
       }
     )
-
-    location.reload
-    this.router.navigateByUrl('/tickets');
-
+    this.router.navigate(['/tickets']);
   }
+
+
 
   
 

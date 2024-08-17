@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable, catchError, map, of, tap } from "rxjs";
+import { Observable, catchError, of } from "rxjs";
 
 import {  } from "../interfaces/Order.interface"; 
-// import { environment } from "src/environments/environment.dev";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment.dev";
 import { AddItem } from "../interfaces/AddItem.interface";
 import { OrderDetails } from "../interfaces/OrderDetails.interface";
 

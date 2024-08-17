@@ -3,8 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, map } from "rxjs";
 
 import { Product, ProductData } from "./Product.inteface"; 
-// import { environment } from "src/environments/environment.dev";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment.dev";
 
 @Injectable({providedIn: 'root'})
 export class ProductService {

@@ -75,15 +75,15 @@ export class NewOrderComponent {
     this.orderService.newOrder(this.currentOrder)
       .subscribe(order => {
         // TODO: mostrar snackbar y redirigir a /carts/order/id
-        this.router.navigate(['/orders'])
-
       })
+      
+    this.router.navigate(['/orders'])
 
     //Solo muestra datos en consola
-    console.log({
-      formIsValid: this.newOrderForm.valid,
-      value: this.newOrderForm.value,
-    })
+    // console.log({
+    //   formIsValid: this.newOrderForm.valid,
+    //   value: this.newOrderForm.value,
+    // })
 
   }
 

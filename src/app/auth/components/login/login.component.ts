@@ -4,7 +4,8 @@ import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
+
+import { environment } from 'src/environments/environment.dev';
 import { LoginResponse } from '../../interfaces/auth.interface';
 
 @Component({

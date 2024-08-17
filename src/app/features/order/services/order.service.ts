@@ -3,8 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, map, of, tap } from "rxjs";
 
 import { Order, OrderData } from "../interfaces/Order.interface"; 
-// import { environment } from "src/environments/environment.dev";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment.dev";
 import { OrderDetails } from "../interfaces/OrderDetails.interface";
 
 @Injectable({ providedIn: 'root' })

@@ -3,8 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
 
-// import { environment } from "src/environments/environment.dev";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment.dev";
 import { Ticket, TicketData, TicketRequest } from "./Ticket.interface"; 
 
 @Injectable({providedIn: 'root'})
